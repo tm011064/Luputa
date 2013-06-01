@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MyCacheController>
+  <MyCacheSection enabled="True" minutes="15">
+    <MyCacheItem name="UniqueUser" enabled="true" cacheItemPriority="Normal" isIterating="true" suffix="_UU" />
+    <MyCacheItem cacheItemPriority="Default" cacheKey="testkey2" enabled="True" isIterating="False" minutes="10" name="testname2" suffix="testsuffix2" />
+    <MyCacheItem cacheItemPriority="Default" cacheKey="testkey3" enabled="True" isIterating="False" minutes="10" name="testname3" suffix="testsuffix3" />
+  </MyCacheSection>
+</MyCacheController>

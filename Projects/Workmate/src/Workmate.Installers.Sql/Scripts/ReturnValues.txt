@@ -1,0 +1,24 @@
+cms_Sections_Delete: -101
+cms_Sections_UpdateContentBlock: -111
+
+cms_Threads_Delete: -201 
+cms_Threads_Insert: -211
+
+cms_ThreadRatings_Delete: -251
+cms_ThreadRatings_InsertOrUpdate: -261
+
+cms_Contents_Delete: -301
+cms_Contents_Insert: -311
+cms_Contents_Update: -321
+
+cms_ContentLevelNodes_Insert: -351
+
+cms_ContentRatings_Delete: -401
+cms_ContentRatings_InsertOrUpdate: -411
+cms_ContentTag_InsertUpdateDelete: -421
+
+cms_Files_Insert: -501
+cms_Files_MoveTempFile: ???
+cms_Files_Update: -521
+
+cms_FileTag_InsertUpdateDelete: -571

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MockupSitemapController>
+  <page name="Home" directory="~/" filepath="Default.aspx" />
+  <page name="UrlRewriteTest_Home" directory="~/UrlRewriteTest" filepath="/{0}/Default.aspx" pattern="/([a-zA-Z]*)/Default.aspx" vanity="/Default.aspx?theme=$1" />
+</MockupSitemapController>

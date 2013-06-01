@@ -1,0 +1,140 @@
+Author: Roman Majewski
+State: Untested! (09.05.2008)
+
+Description:
+The CommonTools.Components.Caching.ClusteredCacheManager handles HttpRuntime.Cache 
+synchronization on a cluster. 
+
+
+--		Theory:
+
+Basically, there are two ways to achieve clustered caching: 
+
+	(1) Cache all items on a dedicated caching server/cluster (like NCoherence, NCache, Memcached...)
+	(2) Use each clustered machine's HttpRuntime.Cache and synchronize it's state
+	
+This component implements the (2) approach. The differences between approach (1) and (2) are as follows:
+
+Scalability: 
+	(1) unlimited scalability (you can always add a new server into the caching cluster...)
+	(2) scalability is reduced to each machine's caching ability (it's not as bad as it sounds as
+		HttpRuntime.Cache handles caching quite well through it's CacheItemPriority property, however,
+		this method has it's limitations if the cache is constantly overloaded -> you have to be aware
+		of what and how you cache it, at approach (1) you can throw everything into cache
+		as long as you have enough caching server resources...)
+
+Performance:
+	(1) Good performance (depends on serialization/network transport bandwidth)
+	(2) Better performance as there are no byte transfers over a network when requesting an object
+
+Database loads:
+	(1) Can reduce the database load to almost nothing if you put every read into the cache
+	(2) Dependant on each machine's caching capabilities -> There are definitely more database
+		loads than at approach (1).
+
+In theory, it is possible to combine both ways to optimize performance: Use approach (2)
+for caching but, instead of loading data from a database when the cached item is purged or expires, 
+get the data from the cache server of approach (1).
+
+
+--		Implementation:
+
+Currently, there are two different modes:
+
+	[A] using SQL Server 2005 service broker query notifications to set up SQL dependencies on database changes
+	[B] using a 'Check synchronization at every cache item request' approach
+	
+Ad [A]
+All keys from the HttpRuntime.Cache collection are stored at a database
+which has to have Service Broker enabled (sql command: ALTER DATABASE MyDatabase SET ENABLE_BROKER, only 
+works on SQL Server 2005 Enterprise Edition). When a programmer adds an item to the machine's cache 
+collection via this manager class (ClusteredCacheManager.AddCacheItem), a record with the cache key 
+will be created at a specified database table with an SQL Dependency set on the record row. 
+Now, when you call this manager's PurgeCacheItem method, the sql record row will be updated
+which will cause the cache dependency to fire and eventually purge the item from each machine's 
+HttpRuntime.Cache collection.
+
+Ad [B]
+Each time an object is requested from cache, an unremovably cached dictionary compares it's requested
+cacheitem key against the database. If the record is out of sync, the item is removed from cache
+and newly requested. In order to increase performance, the attribute CheckAtRequestIsUpToDateDelayInMilliseconds
+can be used to simulate a 'sliding expiration' mechanism when checking whether the object is up to date
+against the database. This may result in the object being out of sync for the specified time, but cuts 
+database calls significally on busy websites. 
+
+Installation:
+Run the ClusteredCacheManager.SQL2005.InstallationScripts.sql script against your database.
+
+Example:
+	[1] web.config or app.config:
+
+	<configSections>
+		<!-- ClusteredCache Section Definition -->
+		<section name="ClusteredCache" type="CommonTools.Components.Caching.ClusteredCacheSection, CommonTools"/>
+	</configSections>
+  
+	ServiceBroker:
+	<ClusteredCache connectionStringName="CommonTools.TestSuite.ClusteredCacheConnectionString" 
+					storedProcedurePrefix="cc_"
+					clusteredCachingMode="ServiceBroker"
+					millisecondsToSleepAfterCachePurge="40"/>
+	
+	Check at each request:
+	<ClusteredCache connectionStringName="CommonTools.TestSuite.ClusteredCacheConnectionString" 
+					storedProcedurePrefix="cc_"
+					clusteredCachingMode="CheckAtRequest" />
+
+	[2.1] Service Broker Code example:
+	
+	// ****************************************
+	// Service Broker mode:
+	// ----------------------------------------
+
+	// this could be called at global.asax
+	ClusteredCacheManager.RestartSQLDependencyListener("myConnectionString");
+
+	string cacheKey1 = "ck_1";
+	int oldCacheValue = 1;
+	int newCacheValue = 2;
+
+	ClusteredCacheManager.AddCacheItem(cacheKey1, oldCacheValue, CacheItemPriority.Normal);
+
+	// get the value from cache -> test == 1
+	int test = ClusteredCacheManager.GetCacheItem(cacheKey1, delegate() { return newCacheValue; }, CacheItemPriority.Normal));
+
+	// purge from cache
+	ClusteredCacheManager.PurgeCacheItem(cacheKey1);
+
+	// this call should refresh the cache... -> test == 2
+	cachedValue = ClusteredCacheManager.GetCacheItem(cacheKey1, delegate() { return newCacheValue; }, CacheItemPriority.Normal));
+
+	// this could be called at global.asax
+	ClusteredCacheManager.StopSQLDependencyListener();
+
+	[2.2] CheckAtRequest Code example:
+ 	
+ 	// ****************************************
+	// CheckAtRequest mode:
+	// ----------------------------------------
+
+	string cacheKey1 = "ck_1";
+	int oldCacheValue = 1;
+	int newCacheValue = 2;
+
+	ClusteredCacheManager.AddCacheItem(cacheKey1, oldCacheValue, CacheItemPriority.Normal);
+
+	// get the value from cache -> test == 1
+	int test = ClusteredCacheManager.GetCacheItem(cacheKey1, delegate() { return newCacheValue; }, CacheItemPriority.Normal));
+
+	// purge from cache
+	ClusteredCacheManager.PurgeCacheItem(cacheKey1);
+
+	// this call should refresh the cache... -> test == 2
+	cachedValue = ClusteredCacheManager.GetCacheItem(cacheKey1, delegate() { return newCacheValue; }, CacheItemPriority.Normal));
+
+	// remove dependency and cache...
+	ClusteredCacheManager.RemoveDependecy(cacheKey1);
+
+	// the cachedValue will be null...
+	cachedValue = ClusteredCacheManager.GetCacheItem(cacheKey1, delegate() { return newCacheValue; }, CacheItemPriority.Normal));
+	    

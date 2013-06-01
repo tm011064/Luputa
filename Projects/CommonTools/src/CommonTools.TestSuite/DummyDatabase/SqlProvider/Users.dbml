@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Class="UsersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.IncrementingUsers" Member="IncrementingUsers">
+    <Type Name="IncrementingUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountStatus" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Timezone" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="IsNewletterSubscriber" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UniqueUsers" Member="UniqueUsers">
+    <Type Name="UniqueUser" Id="ID1">
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountStatus" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Timezone" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="IsNewletterSubscriber" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.IncrementingUsers_Delete" Method="DeleteIncrementingUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UniqueUsers_Delete" Method="DeleteUniqueUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UniqueUsers_GetUserPageOrderedByDateOfBirth" Method="GetUniqueUserPageOrderedByDateOfBirth">
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.IncrementingUsers_Insert" Method="InsertIncrementingUser">
+    <Parameter Name="AccountStatus" Parameter="accountStatus" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Timezone" Parameter="timezone" Type="System.Double" DbType="Float" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="IsNewletterSubscriber" Parameter="isNewletterSubscriber" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="IncrementingUsers_InsertResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountStatus" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Timezone" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="IsNewletterSubscriber" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UniqueUsers_Insert" Method="InsertUniqueUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="AccountStatus" Parameter="accountStatus" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Timezone" Parameter="timezone" Type="System.Double" DbType="Float" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="IsNewletterSubscriber" Parameter="isNewletterSubscriber" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.IncrementingUsers_Update" Method="UpdateIncrementingUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccountStatus" Parameter="accountStatus" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Timezone" Parameter="timezone" Type="System.Double" DbType="Float" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="IsNewletterSubscriber" Parameter="isNewletterSubscriber" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UniqueUsers_Update" Method="UpdateUniqueUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="AccountStatus" Parameter="accountStatus" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Timezone" Parameter="timezone" Type="System.Double" DbType="Float" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="IsNewletterSubscriber" Parameter="isNewletterSubscriber" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

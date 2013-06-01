@@ -1,0 +1,98 @@
+﻿@using Workmate.Web.UI.Models.Account
+@model SearchAccountModel
+
+@using Workmate.Web.Components.Application.Sitemaps;
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container" style="width: auto;">  
+        <ul class="nav">
+          @foreach (MenuItem menuItem in this.GetMenu(this.MenuInfo.TopMenuName).MenuItems)
+          {
+            if (!menuItem.HasUserRoleRestrictions
+                || menuItem.ContainsAllowedRole(this.User.UserRoles))
+            {
+              if (menuItem.HasDropdownMenuItems)
+              {
+            <li class="dropdown" id="drop1">
+              <a href="#drop1" role="button" class="dropdown-toggle" data-toggle="dropdown">@this.GetContent(menuItem.ContentKey) <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                @foreach (MenuItem dropdownItem in menuItem.DropdownMenuItems)
+                {
+                  <li><a tabindex="-1" href="@Url.Action(dropdownItem.Action, dropdownItem.Controller)">@this.GetContent(dropdownItem.ContentKey)</a></li>
+                }
+              </ul>
+            </li>
+              }
+              else
+              {
+            <li><a href="@Url.Action(menuItem.Action, menuItem.Controller)">@this.GetContent(menuItem.ContentKey)</a></li>
+              }
+            }
+          }
+        </ul>
+        
+      @if (!this.User.IsAnonymous)
+      {
+        using (Html.BeginForm("Search", "Account", FormMethod.Post, null))
+        {    
+          <!-- TODO (Roman): proper styling -->
+          <div class="pull-right" style="margin-top: 5px; margin-right: 22px;">
+            <div class="input-append">
+              @Html.TextBoxFor(model => model.Search, new { @maxlength = "256", @placeholder = "Find user", @class="span3" }) 
+              <button class="btn" type="submit" title="find user"><i class="icon-user"></i></button>
+            </div>
+          </div>
+        }
+      }
+      
+    </div>
+  </div>
+</div>
+<div class="hero">
+  <ul class="nav nav-pills">
+    @foreach (MenuItem menuItem in this.GetMenu(this.MenuInfo.TopMenuName).GetMenuItem(this.MenuInfo.TopMenuItemName).Children)
+    {
+      if (menuItem.ShowInNavPills 
+          && (!menuItem.HasUserRoleRestrictions
+              || menuItem.ContainsAllowedRole(this.User.UserRoles)))
+      {
+      <li><a href="@Url.Action(menuItem.Action, menuItem.Controller)">@this.GetContent(menuItem.ContentKey)</a></li>
+      }
+    }
+    @if (this.User.IsAnonymous)
+    {
+      <li class="pull-right">
+        <button class="btn" type="submit" onclick="window.location.href='@FormsAuthentication.LoginUrl';">
+          Sign in</button></li>
+    }
+    else
+    {
+      <li class="pull-right">
+        <button class="btn" type="submit" onclick="window.location.href='@Url.Action("Logout", "Account")';">
+          Sign out</button></li>
+    }
+  </ul>
+</div>
+<!-- TODO (Roman): don't show breadcrumbs on every page... -->
+<ul class="breadcrumb">
+  @foreach (Breadcrumb breadcrumb in this._RequestContextData.BreadCrumb.Parents)
+  {  
+    <li><a href="@Url.Action(breadcrumb.Action, breadcrumb.Controller)">@this.GetContent(breadcrumb.ContentKey)</a> <span class="divider">/</span></li>
+  }
+  <li class="active">@this.GetContent(this._RequestContextData.BreadCrumb.ContentKey)</li>
+</ul>
+
+
+@{ this.RegisterJavascript(
+@<text>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    $('.dropdown-toggle').dropdown();
+  });
+
+</script>
+
+</text>
+); }

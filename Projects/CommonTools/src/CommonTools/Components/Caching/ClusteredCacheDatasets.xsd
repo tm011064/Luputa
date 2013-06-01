@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ClusteredCacheDatasets" targetNamespace="http://tempuri.org/ClusteredCacheDatasets.xsd" xmlns:mstns="http://tempuri.org/ClusteredCacheDatasets.xsd" xmlns="http://tempuri.org/ClusteredCacheDatasets.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ClusteredCacheDatasets" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ClusteredCacheDatasets" msprop:Generator_DataSetName="ClusteredCacheDatasets" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CacheKeys" msprop:Generator_UserTableName="CacheKeys" msprop:Generator_RowDeletedName="CacheKeysRowDeleted" msprop:Generator_RowChangedName="CacheKeysRowChanged" msprop:Generator_RowClassName="CacheKeysRow" msprop:Generator_RowChangingName="CacheKeysRowChanging" msprop:Generator_RowEvArgName="CacheKeysRowChangeEvent" msprop:Generator_RowEvHandlerName="CacheKeysRowChangeEventHandler" msprop:Generator_TableClassName="CacheKeysDataTable" msprop:Generator_TableVarName="tableCacheKeys" msprop:Generator_RowDeletingName="CacheKeysRowDeleting" msprop:Generator_TablePropName="CacheKeys">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CacheKey" msprop:Generator_UserColumnName="CacheKey" msprop:Generator_ColumnPropNameInRow="CacheKey" msprop:Generator_ColumnVarNameInTable="columnCacheKey" msprop:Generator_ColumnPropNameInTable="CacheKeyColumn" type="xs:string" default="null" />
+              <xs:element name="LastUpdate" msprop:Generator_UserColumnName="LastUpdate" msprop:Generator_ColumnPropNameInRow="LastUpdate" msprop:Generator_ColumnVarNameInTable="columnLastUpdate" msprop:Generator_ColumnPropNameInTable="LastUpdateColumn" type="xs:long" default="-1" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:CacheKeys" />
+      <xs:field xpath="mstns:CacheKey" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

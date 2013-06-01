@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Home"  description="" resourceKey="Home">
+    <siteMapNode url="~/UrlRewriteTest" title="UrlRewriteTest" resourceKey="UrlRewriteTest_Home" path="/{0}/Default.aspx" 
+        pattern="/([a-zA-Z]*)/Default.aspx" vanity="/Default.aspx?theme=$1" >
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

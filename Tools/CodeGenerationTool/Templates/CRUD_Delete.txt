@@ -1,0 +1,13 @@
+﻿CREATE PROCEDURE [<# schemaName #>].[<# tableName #>_Delete]
+(
+<# deleteParameters #>
+)
+AS
+BEGIN
+
+  DELETE FROM [<# schemaName #>].[<# tableName #>] 
+  WHERE  <# whereClause #>
+	
+  RETURN @@ROWCOUNT;
+  
+END

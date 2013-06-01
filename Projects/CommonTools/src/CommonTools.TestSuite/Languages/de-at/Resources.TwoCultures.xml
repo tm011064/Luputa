@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+  <resource key="resource1">Erster text</resource>
+  <resource key="resource2">Zweiter text</resource> 
+</Resources>

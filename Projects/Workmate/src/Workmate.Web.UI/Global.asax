@@ -1,0 +1,1 @@
+﻿<%@ Application Inherits="Workmate.Web.Components.MvcApplication" Language="C#" %>

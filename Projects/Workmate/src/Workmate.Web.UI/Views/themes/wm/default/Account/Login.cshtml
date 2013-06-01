@@ -1,0 +1,38 @@
+﻿@model Workmate.Web.UI.Models.Account.LoginDetailsModel
+
+<div class="container content">
+  <div class="header">
+    <span>Login</span>e
+  </div>
+  <p>Enter your email address and password to log in to your account</p>  
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal" }))
+{    
+  
+  <div class="control-group">
+	  <label class="control-label" for="UserName">Email Address</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.UserName, new { @maxlength = "256", @placeholder = "Email" }) 
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Password">Password</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Password, new { @maxlength = "256", @placeholder = "First Name" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="RememberMe">Remember me</label>
+    <div class="controls">
+      @Html.EditorFor(model => model.RememberMe) 
+    </div>
+  </div>
+    
+  
+  <div class="control-group">
+    <div class="controls">    
+      <button class="btn" type="submit">Log in</button>
+    </div>
+  </div>
+}
+
+</div>

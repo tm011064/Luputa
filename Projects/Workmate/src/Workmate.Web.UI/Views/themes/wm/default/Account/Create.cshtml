@@ -1,0 +1,86 @@
+﻿@model Workmate.Web.UI.Models.Account.CreateAccountModel
+@using Workmate.Web.Components.Application.Sitemaps
+@using Workmate.Components.Contracts.Membership
+    
+@{
+    this.RegisterJavascriptInclude("validate");
+    this.RegisterJavascriptInclude("validateUnobtrusive");
+    this.RegisterJavascriptInclude("selectmenu");   
+    
+}       
+
+<div class="container content">
+  <p class="lead">Create a new User Account</p>
+  <p>Here you can create a new user account. You currently have 501 active accounts and are allowed to add 103.</p>  
+  @switch (Model.UserCreateStatus)
+  {
+    case UserCreateStatus.EmailAlreadyExists:            
+    case UserCreateStatus.UsernameAlreadyExists:            
+  <text><p class="text-error">Email address already exists. Please choose a unique email.</p></text>
+      break;
+
+    case UserCreateStatus.ValidationFailed:
+  <text><p class="text-error">@Model.ValidationFailedErrorMessage</p></text>    
+      break;
+
+    case UserCreateStatus.SqlError:
+  <text><p class="text-error">SQL PROBLEM</p></text>
+      break;
+  }
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "createForm", @class = "form-horizontal" }))
+{    
+  
+  <div class="control-group">
+	  <label class="control-label" for="Email">Email Address</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Email, new { @maxlength = "256", @placeholder = "Email" })
+      <span class="muted">*</span>
+      @Html.ValidationMessageFor(model => model.Email, "Please provide a valid email address.", new { @class = "text-error" })  
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="FirstName">First Name</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.FirstName, new { @maxlength = "256", @placeholder = "First Name" })
+      <span class="muted">*</span>
+      @Html.ValidationMessageFor(model => model.FirstName, "Please enter a first name.", new { @class = "text-error" })  
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="LastName">Last Name</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.LastName, new { @maxlength = "256", @placeholder = "Last Name" })
+      <span class="muted">*</span>
+      @Html.ValidationMessageFor(model => model.LastName, "Please provide a last name.", new { @class = "text-error" })  
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Gender">Gender</label>
+    <div class="controls">
+      @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(Workmate.Components.Contracts.Membership.Gender))))
+    </div>
+  </div>
+  
+  
+  <div class="control-group">
+    <div class="controls">    
+      <button class="btn" type="submit">Create</button>
+    </div>
+  </div>
+}
+
+</div>
+
+
+@{ this.RegisterJavascript(
+@<text>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('select#Gender').selectmenu({ style: 'dropdown' });
+  });
+</script>
+
+</text>
+); }

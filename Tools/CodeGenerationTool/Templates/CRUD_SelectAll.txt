@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [<# schemaName #>].[<# tableName #>_GetAll]
+AS
+BEGIN
+
+  SET NOCOUNT ON;
+
+  SELECT  <# selectAllValues #>
+  FROM    [<# schemaName #>].[<# tableName #>]
+  
+END

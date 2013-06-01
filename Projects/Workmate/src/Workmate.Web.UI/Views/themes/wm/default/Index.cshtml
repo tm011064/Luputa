@@ -1,0 +1,39 @@
+﻿<h1>I want to...</h1>
+
+<div class="largeLinkContainer clear">
+    <a class="color1 colorhover" href="@Url.Action("Index", "Articles")">Articles</a>
+    <a class="color2 colorhover2" href="@Url.Action("Search", "Articles")">Search Articles</a>
+    <a class="color3" href="@Url.Action("Create", "Articles")">Create Article</a>
+    <a class="color4" href="@Url.Action("ViewArticle", "Articles", new { @name="Test" })">View Test Article</a>
+    <a class="color5">Link5</a>
+    <a class="color6">Link6</a>
+    <a class="color7">Link7</a>
+    <a class="color8">Link8</a>
+    <a class="color9">Link9</a>
+    <a class="color10">Link10</a>
+</div>
+
+<img src="Themes/wm/default/images/profile/normal/pi_13.png" />
+
+<div class="clear">
+  <p><strong>ApplicationGroup</strong> @this._RequestContextData.ApplicationThemeInfo.ApplicationGroup</p>
+  <p><strong>ApplicationId</strong> @this._RequestContextData.ApplicationThemeInfo.ApplicationId</p>
+  <p><strong>ApplicationName</strong> @this._RequestContextData.ApplicationThemeInfo.ApplicationName</p>
+  <p><strong>DefaultThemeName</strong> @this._RequestContextData.ApplicationThemeInfo.DefaultThemeName</p>
+  <p><strong>DomainName</strong> @this._RequestContextData.ApplicationThemeInfo.DomainName</p>
+  <p><strong>IsDefault</strong> @this._RequestContextData.ApplicationThemeInfo.IsDefault</p>
+  <p><strong>ThemeName</strong> @this._RequestContextData.ApplicationThemeInfo.ThemeName</p>
+  <p><strong>DefaultThemeImageFolderRootUrl</strong> @this._RequestContextData.ApplicationThemeInfo.Images.DefaultThemeImageFolderRootUrl</p>
+  <p><strong>DefaultThemeImageFolderServerPath</strong> @this._RequestContextData.ApplicationThemeInfo.Images.DefaultThemeImageFolderServerPath</p>
+  <p><strong>HasCustomDefaultThemeImageFolderRootUrl</strong> @this._RequestContextData.ApplicationThemeInfo.Images.HasCustomDefaultThemeImageFolderRootUrl</p>
+  <p><strong>HasCustomImageFolderRootUrl</strong> @this._RequestContextData.ApplicationThemeInfo.Images.HasCustomImageFolderRootUrl</p>
+  <p><strong>ImageFolderRootUrl</strong> @this._RequestContextData.ApplicationThemeInfo.Images.ImageFolderRootUrl</p>
+  <p><strong>ImageFolderServerPath</strong> @this._RequestContextData.ApplicationThemeInfo.Images.ImageFolderServerPath</p>
+  <p><strong>FemaleSystemProfileImageId</strong> @this._RequestContextData.ApplicationThemeInfo.Images.FemaleSystemProfileImageId</p>
+  <p><strong>MaleSystemProfileImageId</strong> @this._RequestContextData.ApplicationThemeInfo.Images.MaleSystemProfileImageId</p>
+</div>
+
+@using (Html.BeginForm("ClearCache", "Home", FormMethod.Post))
+{
+    <input type="submit" value="Clear Cache" />
+}

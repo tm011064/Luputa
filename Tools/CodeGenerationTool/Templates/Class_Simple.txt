@@ -1,0 +1,21 @@
+﻿public class <# className #>
+{
+  #region properties
+<# properties 
+{
+   public <# propertyType #> <# propertyName #> { get; set; }
+} 
+#>
+  #endregion
+  
+  #region constructors
+  public <# className #>()
+  {
+  
+  }
+  public <# className #>(<# constructorParameters #>)
+  {
+<# constructorPropertyAssignments #>
+  } 
+  #endregion
+}

@@ -1,0 +1,17 @@
+﻿@using Workmate.Components.Contracts.Company
+@model IOfficeModel
+
+<div class="container content delete">
+  <div class="header">
+    <span>Delete office: @if (string.IsNullOrWhiteSpace(this.Model.Name)) { <text>@Model.AddressLine1</text> } else { <text>@Model.Name</text> }</span>
+    <a class="pull-right" href="@Url.Action("Offices_Index","ControlPanel")">go back</a>
+  </div>  <p>TODO (Roman): review copy</p>  <p>Are you sure you want to delete this office? All existing departments associated with this office will be deleted as well.</p>  <p>You are only able to delete offices that have no active users associated with it.</p>  <p>If you have moved office locations it might be better to update the old office's addresss details, that way you don't need  to do any further administration</p>  
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "deleteForm", @class = "form-horizontal" }))
+{   
+  <div class="control-group">
+    <div class="controls">    
+      <button class="btn-danger" type="submit">Delete &amp; Return</button>
+      <a href="@Url.Action("Offices_Index", "ControlPanel")">Cancel</a>
+    </div>
+  </div>
+}</div>

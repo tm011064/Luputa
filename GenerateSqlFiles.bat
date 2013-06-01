@@ -1,0 +1,1 @@
+Tools\CodeGenerationTool.Console\CodeGenerationTool.Console.exe -s:COMPI\SQLEXPRESS -d:Workmate_debug -p:"Projects\Workmate\src\Workmate.Installers.Sql\Scripts"

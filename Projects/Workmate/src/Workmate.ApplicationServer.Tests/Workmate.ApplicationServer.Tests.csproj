@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A3E9288-0B7B-4DA3-931F-26AC0C8B3267}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.ApplicationServer.Tests</RootNamespace>
+    <AssemblyName>Workmate.ApplicationServer.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonTools">
+      <HintPath>..\..\lib\internal\CommonTools\CommonTools.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\external\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\lib\external\NSubstitute\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\external\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseTestSetup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSetup.cs" />
+    <Compile Include="Test_EmailPublisherDaemon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workmate.ApplicationServer\Workmate.ApplicationServer.csproj">
+      <Project>{C433934E-8B3C-4AEC-8668-7E6764B5CC9B}</Project>
+      <Name>Workmate.ApplicationServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components.Contracts\Workmate.Components.Contracts.csproj">
+      <Project>{57495C2D-2E2E-4DA1-874A-D430AA29A75D}</Project>
+      <Name>Workmate.Components.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components.Entities\Workmate.Components.Entities.csproj">
+      <Project>{18DD4A64-70F7-4613-8F29-77B4482C080D}</Project>
+      <Name>Workmate.Components.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components\Workmate.Components.csproj">
+      <Project>{0663AB42-AAF0-4AB1-A7FE-BEF4D3169237}</Project>
+      <Name>Workmate.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Configuration\Workmate.Configuration.csproj">
+      <Project>{6820B266-258C-4D7E-BAEB-F256A0F707C3}</Project>
+      <Name>Workmate.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Data.SqlProvider\Workmate.Data.SqlProvider.csproj">
+      <Project>{09994B9F-AC30-4981-9B76-FC6ED064B9A5}</Project>
+      <Name>Workmate.Data.SqlProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Data\Workmate.Data.csproj">
+      <Project>{01737C63-4BE2-43C7-B58B-693DD9ED7480}</Project>
+      <Name>Workmate.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Messaging.Contracts\Workmate.Messaging.Contracts.csproj">
+      <Project>{A36CA57A-8011-4C0B-8C60-FF041641E7FD}</Project>
+      <Name>Workmate.Messaging.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Messaging\Workmate.Messaging.csproj">
+      <Project>{8A23A9CC-92E6-4F97-AB50-0D1182B162FB}</Project>
+      <Name>Workmate.Messaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

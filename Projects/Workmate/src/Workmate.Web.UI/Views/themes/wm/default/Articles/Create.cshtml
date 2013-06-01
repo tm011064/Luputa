@@ -1,0 +1,389 @@
+﻿@model Workmate.Web.UI.Models.Articles.CreateArticleModel
+@using Workmate.Web.Components.Application.Sitemaps
+    
+@{
+  this.RegisterJavascriptInclude("validate");
+  this.RegisterJavascriptInclude("validateUnobtrusive");
+
+  this.RegisterJavascriptInclude("fileUpload_tmpl");
+  this.RegisterJavascriptInclude("fileUpload_canvas_to_blob");
+  this.RegisterJavascriptInclude("fileUpload_load_image");
+  this.RegisterJavascriptInclude("jquery_iframe_transport");
+  this.RegisterJavascriptInclude("jquery_fileupload");
+  this.RegisterJavascriptInclude("jquery_fileupload_ip");
+  this.RegisterJavascriptInclude("jquery_fileupload_ui");
+  
+  //this.RegisterJavascriptInclude("jquery_workmate");  
+  this.RegisterJavascriptInclude("globals");  
+}       
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "createForm" }))
+{  
+<h3 class="sub-heading">User Details</h3>
+  
+<fieldset class="formsEntry">
+
+    <label for="Language">Language</label>
+    @Html.DropDownListFor(model => model.Language, Model.LanguageSelectList) 
+    <br /><br />
+    
+    <div id="categories" class="clear">
+
+      @for (int i = 0; i < Model.Categories.Count; i++)
+      {
+        <div class="left">
+          <div class="clear">
+            <div class="clear">Category @i</div>
+            @Html.TextBoxFor(model => model.Categories[i])
+            <a id="aCategoryArrow_@(i)">+</a>
+            </div>       
+        </div>
+      }
+
+    </div>
+    <div class="clear"></div><br />
+        
+    <label for="Subject">Title</label>
+    @Html.TextBoxFor(model => model.Subject, new { @class = "text", @maxlength = "256" })
+    <span class="black">*</span>
+    @Html.ValidationMessageFor(model => model.Subject, "Please provide a title", new { @class = "colorError" })  
+    <br /><br />
+                
+    <a id="aBodyText" class="selectButton">Edit</a><a id="aBodyPreview" class="selectButton">Preview</a>
+    <label for="Body">Body</label><br /><br />
+    @Html.TextAreaFor(model => model.Body, new { @class = "largeTextArea" })
+    <span id="BodyFormatted"></span>
+    <br /><br />            
+
+</fieldset>
+    
+<input type="submit" value="Create" />  
+  
+}
+
+
+
+<!-- Shim to make HTML5 elements usable in older Internet Explorer versions -->
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<form id="fileupload" action="@Url.RouteUrl(this.FormatRouteName("Articles_FileUploadHandler"))" method="POST" enctype="multipart/form-data">
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+    <div class="row fileupload-buttonbar">
+        <div class="span7">
+            <!-- The fileinput-button span is used to style the file input field as button -->
+            <span class="btn btn-success fileinput-button">
+                <i class="icon-plus icon-white"></i>
+                <span>Add files...</span>
+                <input type="file" name="files[]" multiple>
+            </span>
+            <button type="submit" class="btn btn-primary start">
+                <span>Start upload</span>
+            </button>
+            @*<button type="reset" class="btn btn-warning cancel">
+                <i class="icon-ban-circle icon-white"></i>
+                <span>Cancel upload</span>
+            </button>
+            <button type="button" class="btn btn-danger delete">
+                <i class="icon-trash icon-white"></i>
+                <span>Delete</span>
+            </button>*@
+            <input type="checkbox" class="toggle">
+        </div>
+        <div class="span5">
+            <!-- The global progress bar -->
+            <div class="progress progress-success progress-striped active fade">
+                <div class="bar" style="width:0%;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- The loading indicator is shown during image processing -->
+    <div class="fileupload-loading"></div>
+    <br>
+    <!-- The table listing the files available for upload/download -->
+    <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
+</form>
+    
+<!-- modal-gallery is the modal dialog used for the image gallery -->@*
+<div id="modal-gallery" class="modal modal-gallery hide fade">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+    <div class="modal-footer">
+        <a class="btn btn-primary modal-next">
+            <span>Next</span>
+            <i class="icon-arrow-right icon-white"></i>
+        </a>
+        <a class="btn btn-info modal-prev">
+            <i class="icon-arrow-left icon-white"></i>
+            <span>Previous</span>
+        </a>
+        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+            <i class="icon-play icon-white"></i>
+            <span>Slideshow</span>
+        </a>
+        <a class="btn modal-download" target="_blank">
+            <i class="icon-download"></i>
+            <span>Download</span>
+        </a>
+    </div>
+</div>*@
+
+<!-- The template to display files available for upload -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td class="preview"><span class="fade"></span></td>
+        <td class="name"><span>{%=file.name%}</span></td>
+        <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+        {% if (file.error) { %}
+            <td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+        {% } else if (o.files.valid && !i) { %}
+            <td>
+                <div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+            </td>
+            <td class="start">{% if (!o.options.autoUpload) { %}
+                <button class="btn btn-primary">
+                    <i class="icon-upload icon-white"></i>
+                    <span>{%=locale.fileupload.start%}</span>
+                </button>
+            {% } %}</td>
+        {% } else { %}
+            <td colspan="2"></td>
+        {% } %}
+        <td class="cancel">{% if (!i) { %}
+            <button class="btn btn-warning">
+                <i class="icon-ban-circle icon-white"></i>
+                <span>{%=locale.fileupload.cancel%}</span>
+            </button>
+        {% } %}</td>
+    </tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        {% if (file.error) { %}
+            <td></td>
+            <td class="name"><span>{%=file.name%}</span></td>
+            <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+            <td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+        {% } else { %}
+            <td class="preview">{% if (file.thumbnail_url) { %}
+                <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+            {% } %}</td>
+            <td class="name">
+                <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+            </td>
+            <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+            <td colspan="2"></td>
+        {% } %}
+        <td class="delete">
+            <button class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+                <i class="icon-trash icon-white"></i>
+                <span>{%=locale.fileupload.destroy%}</span>
+            </button>
+            <input type="checkbox" name="delete" value="1">
+        </td>
+    </tr>
+{% } %}
+</script>
+
+@{ this.RegisterJavascript(
+@<text>
+
+<script type="text/javascript">
+
+  // TODO (Roman): move to js file
+  (function ($) {
+    $.workmate.content = {
+      getArticleCategories: function (sender, level, parentContentLevelNodeId, articleGroupThreadId, doOpenWhenLoaded, doAutoAssignKeys) {
+
+        if ( parentContentLevelNodeId == null 
+             && level != 0 )
+        {
+          $(sender).autocomplete("destroy");
+          return;
+        }
+
+        $.ajax(
+        {
+          type: "POST",
+          url: $.workmate.global.services.articlesController.url + $.workmate.global.services.articlesController.methods.GetArticleCategories,
+          data: "{ level: '" + level + "', parentContentLevelNodeId: '" + parentContentLevelNodeId + "', articleGroupThreadId: '" + articleGroupThreadId + "' }",
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          success: function (msg, id) {
+
+            var names = [];
+            var data = eval(msg);
+            $.each(data, function (index, item) {
+                names.push({ 
+                    "key" : item.ContentLevelNodeId,
+                    "value" : item.Name,
+                    "lowered" : item.Name.toLowerCase()
+                });
+            });
+
+            $(sender).autocomplete({              
+			        source: names,
+              delay: 300,
+              minLength: 0,
+              select: function(e, ui) {
+                $(sender).attr("key", ui.item.key);
+              },
+              change: function(e, ui) { 
+                $(sender).attr("key", null);
+                var selectedValue = $(sender).val().toLowerCase();
+                $.each(names, function(i, v) {
+                    if (v.lowered == selectedValue) {
+                      $(sender).attr("key", v.key);
+                    }
+                });
+              },
+		        });
+
+            if ( doOpenWhenLoaded )
+            {
+              $(sender).autocomplete("search");
+            }
+            if ( doAutoAssignKeys )
+            {
+              var selectedValue = $(sender).val().toLowerCase();
+              $.each(names, function(i, v) {
+                  if (v.lowered == selectedValue) {
+                    $(sender).attr("key", v.key);
+                  }
+              });
+            }
+          },
+          error: function (xmlHttpRequest, id) {
+            // TODO (Roman): error handling
+            console.log(xmlHttpRequest.responseText);
+          }
+        })
+      },
+      initCategoryDropdown: function (textboxId, parentTextboxId, arrowAnchorId, level, articleGroupIdDropdown) {
+
+        if ( parentTextboxId == null)
+        {
+         $.workmate.content.getArticleCategories($("#" + textboxId), level, null, $("#" + articleGroupIdDropdown).val(), false, true);
+        }
+        if ( $("#" + parentTextboxId).val() != null && $("#" + parentTextboxId).val() != "")
+        {
+          setTimeout(function() { // timeout hack to allow change event to fire
+            $.workmate.content.getArticleCategories($("#" + textboxId), level, $("#" + parentTextboxId).attr("key"), $("#" + articleGroupIdDropdown).val(), false, true);
+          }, level * 500 );   
+        }
+        $("#" + textboxId).focus(function () {
+          setTimeout(function() { // timeout hack to allow change event to fire
+              $.workmate.content.getArticleCategories($("#" + textboxId), level, $("#" + parentTextboxId).attr("key"), $("#" + articleGroupIdDropdown).val(), false, false);
+          }, 250 );      
+          return false;
+        });
+        $("#" + arrowAnchorId).click(function() {
+          setTimeout(function() { // timeout hack to allow change event to fire
+            var source = $("#" + textboxId).autocomplete("option", "source");
+            if ( source == null || source.length == 0 || source[0].key == null )
+              $.workmate.content.getArticleCategories($("#" + textboxId), level, $("#" + parentTextboxId).attr("key"), $("#" + articleGroupIdDropdown).val(), true, false);
+            else
+              $("#" + textboxId).autocomplete("search");
+        
+            document.getElementById(textboxId).focus();
+        
+           }, 250 );
+        });
+      },
+      temporaryFiles : [],
+    }
+  })(jQuery);
+</script>
+  
+<script type="text/javascript">
+
+  $(document).ready(function () {  
+    // always load the first drop down      
+    @for (int i = 0; i < Model.Categories.Count; i++)
+    {
+    <text>$.workmate.content.initCategoryDropdown("Categories_@(i)_", @Html.Raw((i == 0 ? "null" : "\"Categories_" + (i - 1) + "_\"")), "aCategoryArrow_@(i)", @(i), "Language");</text>
+    }
+    
+    $("#BodyFormatted").hide();
+    $("#aBodyText").addClass("selected");
+
+    $("#aBodyText").click(function () {
+      $("#Body").show();
+      $("#BodyFormatted").hide();
+
+      $("#aBodyText").addClass("selected");
+      $("#aBodyPreview").removeClass("selected");
+
+      return false;
+    });
+    $("#aBodyPreview").click(function () {
+      $("#BodyFormatted").html($("#Body").val());
+      $("#Body").hide();
+      $("#BodyFormatted").show();
+
+      $("#aBodyText").removeClass("selected");
+      $("#aBodyPreview").addClass("selected");
+
+      return false;
+    });
+
+    window.locale = {
+        "fileupload": {
+            "errors": {
+                "maxFileSize": "File is too big",
+                "minFileSize": "File is too small",
+                "acceptFileTypes": "Filetype not allowed",
+                "maxNumberOfFiles": "Max number of files exceeded",
+                "uploadedBytes": "Uploaded bytes exceed file size",
+                "emptyResult": "Empty file upload result"
+            },
+            "error": "Error",
+            "start": "Start",
+            "cancel": "Cancel",
+            "destroy": "Delete"
+        }
+    };
+
+    // Initialize the jQuery File Upload widget:
+    $('#fileupload').fileupload();
+
+    $('#fileupload').fileupload('option', {
+      maxFileSize: 500000000,
+      resizeMaxWidth: 1920,
+      resizeMaxHeight: 1200,
+      success: function (data) {
+      
+        var d = eval(data);   
+        $.each(d, function (index, item) {
+            $.workmate.content.temporaryFiles.push({ 
+                    "attachmentId" : item.attachmentId
+                });
+        });
+
+      },
+      
+    });
+        
+    $('#createForm').submit(function () {
+      $.post('@Url.Action("Create","Articles")'
+        , { Language : $("#Language").val(), 
+            Subject:   $("#Subject").val(),
+            Body:   $("#Body").val(),
+            "Categories[0]": $("#Categories_0_").val(),
+          } 
+        , function (data) {
+          alert(data)
+        });
+        return false;       
+    });
+
+  });
+</script>
+
+</text>
+); }

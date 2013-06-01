@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13544335-B387-4D41-95CB-8B6EC47037E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonTools</RootNamespace>
+    <AssemblyName>CommonTools</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>http://localhost/CommonTools/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CommonTools.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>1587</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\CommonTools.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1587</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\BusinessTier\Attributes\BusinessObjectPropertyAttribute.cs" />
+    <Compile Include="Components\BusinessTier\Attributes\BusinessObjectStringSecurityAttribute.cs" />
+    <Compile Include="Components\BusinessTier\Attributes\BusinessObjectValidatorAttribute.cs" />
+    <Compile Include="Components\BusinessTier\BusinessObjectActionStatus.cs" />
+    <Compile Include="Components\BusinessTier\ObjectPropertyInfoContainer.cs" />
+    <Compile Include="Components\BusinessTier\Enumerations\PropertyValidationError.cs" />
+    <Compile Include="Components\BusinessTier\ErrorHandling\BusinessObjectManagerException.cs" />
+    <Compile Include="Components\BusinessTier\ObjectPropertyInfo.cs" />
+    <Compile Include="Components\Caching\CacheControllerFactory.cs" />
+    <Compile Include="Components\Caching\CacheKeySqlDependency.cs" />
+    <Compile Include="Components\Caching\ClusteredCacheDatasets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClusteredCacheDatasets.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Caching\ClusteredCacheManager.cs" />
+    <Compile Include="Components\Caching\CheckAtRequestInfo.cs" />
+    <Compile Include="Components\Caching\Enumerations\CacheMode.cs" />
+    <Compile Include="Components\Caching\Enumerations\ClusteredCachingMode.cs" />
+    <Compile Include="Components\Caching\Enumerations\ClusteredCachingSynchronizationStatus.cs" />
+    <Compile Include="Components\Caching\Enumerations\TriggerAsynchronousFetchStatus.cs" />
+    <Compile Include="Components\Caching\Interfaces\IClusteredCacheSection.cs" />
+    <Compile Include="Components\Caching\ClusteredCacheControllerFactory.cs" />
+    <Compile Include="Components\Caching\ClusteredCacheSection.cs" />
+    <Compile Include="Components\Caching\ClusteredCacheSectionManager.cs" />
+    <Compile Include="Components\Combinatorics\Combinations.cs" />
+    <Compile Include="Components\Combinatorics\GenerateOption.cs" />
+    <Compile Include="Components\Combinatorics\IMetaCollection.cs" />
+    <Compile Include="Components\Combinatorics\Permutations.cs" />
+    <Compile Include="Components\Combinatorics\SmallPrimeUtility.cs" />
+    <Compile Include="Components\Combinatorics\Variations.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Axis.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\AxisLabel.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Chart.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\ChartBase.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\ChartStylableTextElement.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Charts\LineChart.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Charts\PieChart.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Charts\PieChartValue.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\ChartTextElement.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\ChartValueBase.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\YAxisLabels.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Enumerations\ChartType.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Enumerations\LineChartType.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Enumerations\Orientation.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\EnumUtility.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Interfaces\IValue.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\Structs\TipConstants.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\XAxis.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\XAxisLabels.cs" />
+    <Compile Include="Components\Flash\OpenFlashChart\YAxis.cs" />
+    <Compile Include="Components\Graphics\Enumerations\CropPosition.cs" />
+    <Compile Include="Components\Graphics\ImageHelper.cs" />
+    <Compile Include="Components\Localization\TimeZoneUtility.cs" />
+    <Compile Include="Components\Logging\AsynchronousLogManager.cs" />
+    <Compile Include="Components\Logging\LogManagerBase.cs" />
+    <Compile Include="Components\Logging\ErrorHandling\LoggingException.cs" />
+    <Compile Include="Components\Logging\Interfaces\ILogSection.cs" />
+    <Compile Include="Components\Logging\LogControllerFactory.cs" />
+    <Compile Include="Components\Logging\LogSection.cs" />
+    <Compile Include="Components\Logging\LogSectionManager.cs" />
+    <Compile Include="Components\Logging\LogDatasets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogDatasets.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Mathematics\Statistics.cs" />
+    <Compile Include="Components\Reflection\ReflectionHelper.cs" />
+    <Compile Include="Components\RegularExpressions\ValidationExpressions.cs" />
+    <Compile Include="Components\Security\RandomCharactersGenerator.cs" />
+    <Compile Include="Components\Security\Enumerations\CharacterType.cs" />
+    <Compile Include="Components\Security\RandomPin.cs" />
+    <Compile Include="Components\Security\SimplePassword.cs" />
+    <Compile Include="Components\Testing\DebugUtility.cs" />
+    <Compile Include="Components\Testing\DisposableStopwatch.cs" />
+    <Compile Include="Components\Testing\ElapsedTimeInfo.cs" />
+    <Compile Include="Components\Testing\GlobalStopwatchSingleThread.cs" />
+    <Compile Include="Components\TextResources\ErrorHandling\TextResourceManagerException.cs" />
+    <Compile Include="Components\TextResources\Interfaces\ITextResourceManager.cs" />
+    <Compile Include="Components\TextResources\TextResourceManager.cs" />
+    <Compile Include="Components\Threading\Enumerations\PreciseTimerCallbackMode.cs" />
+    <Compile Include="Components\Threading\ErrorHandling\JobsException.cs" />
+    <Compile Include="Components\Threading\PreciseTimer.cs" />
+    <Compile Include="Components\Threading\Interfaces\IJobItem.cs" />
+    <Compile Include="Components\Threading\Interfaces\IJobController.cs" />
+    <Compile Include="Components\Threading\JobControllerFactory.cs" />
+    <Compile Include="Components\Threading\JobSectionManager.cs" />
+    <Compile Include="Core\CatastrophicException.cs" />
+    <Compile Include="Core\Collections\Generic\LimitedQueue.cs" />
+    <Compile Include="Core\CompareHelper.cs" />
+    <Compile Include="Core\BaseException.cs" />
+    <Compile Include="Core\DataStoreException.cs" />
+    <Compile Include="Core\UnhandledException.cs" />
+    <Compile Include="Core\Eunmerations\TextFormat.cs" />
+    <Compile Include="Components\BusinessTier\MandatoryFieldViolation.cs" />
+    <Compile Include="Components\BusinessTier\PropertyError.cs" />
+    <Compile Include="Components\Caching\CacheManager.cs" />
+    <Compile Include="Components\Caching\CacheObject.cs" />
+    <Compile Include="Components\Caching\CacheSection.cs" />
+    <Compile Include="Components\Caching\CacheSectionManager.cs" />
+    <Compile Include="Components\Caching\Interfaces\ICacheController.cs" />
+    <Compile Include="Components\Caching\Interfaces\ICacheItem.cs" />
+    <Compile Include="Components\Flash\FlashDetection.cs" />
+    <Compile Include="Components\Graphics\CaptchaImage.cs" />
+    <Compile Include="Components\Graphics\Enumerations\WarpStrength.cs" />
+    <Compile Include="Components\Logging\Enumerations\ExceptionHandlingStatus.cs" />
+    <Compile Include="Core\Text.cs" />
+    <Compile Include="Core\UtilityHelper.cs" />
+    <Compile Include="Data\ErrorHandling\DataAccessManagerStoredProcedureException.cs" />
+    <Compile Include="Data\ErrorHandling\DataAccessManagerConnectionStringException.cs" />
+    <Compile Include="Data\ErrorHandling\DataAccessManagerException.cs" />
+    <Compile Include="Data\ExcelReader.cs" />
+    <Compile Include="Extensions\ConversionHelper.cs" />
+    <Compile Include="Enumerations\QuoteReplacementMode.cs" />
+    <Compile Include="Extensions\Enumerations\DateTimeRoundingAccuracy.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Data\DataAccessFactory.cs" />
+    <Compile Include="Data\DataAccessManager.cs" />
+    <Compile Include="Finance\MagicFields.cs" />
+    <Compile Include="Finance\RegularExpressions\ValidationExpressions.cs" />
+    <Compile Include="IO\ApplicationDataStorageManager.cs" />
+    <Compile Include="IO\IApplicationDataStorageManager.cs" />
+    <Compile Include="IO\Csv\CachedCsvReader.cs" />
+    <Compile Include="IO\Csv\CachedCsvReader.CsvBindingList.cs" />
+    <Compile Include="IO\Csv\CachedCsvReader.CsvPropertyDescriptor.cs" />
+    <Compile Include="IO\Csv\CachedCsvReader.CsvRecordComparer.cs" />
+    <Compile Include="IO\Csv\CsvReader.cs" />
+    <Compile Include="IO\Csv\CsvReader.DataReaderValidations.cs" />
+    <Compile Include="IO\Csv\CsvReader.RecordEnumerator.cs" />
+    <Compile Include="IO\Csv\Events\ParseErrorEventArgs.cs" />
+    <Compile Include="IO\Csv\Exceptions\MalformedCsvException.cs" />
+    <Compile Include="IO\Csv\Exceptions\MissingFieldCsvException.cs" />
+    <Compile Include="IO\Csv\MissingFieldAction.cs" />
+    <Compile Include="IO\Csv\ParseErrorAction.cs" />
+    <Compile Include="IO\Csv\Resources\ExceptionMessage.Designer.cs" />
+    <Compile Include="IO\Csv\ValueTrimmingOptions.cs" />
+    <Compile Include="IO\Enumerations\ApplicationDataStorageMode.cs" />
+    <Compile Include="Web\ErrorHandling\WebException.cs" />
+    <Compile Include="Web\HtmlValidator.cs" />
+    <Compile Include="Web\JavaScript\JsonIgnoreAttribute.cs" />
+    <Compile Include="Web\JavaScript\JsonNameAttribute.cs" />
+    <Compile Include="Web\JavaScript\JsonPropertyAttribute.cs" />
+    <Compile Include="Web\JavaScript\JsonReader.cs" />
+    <Compile Include="Web\JavaScript\JsonSerializationException.cs" />
+    <Compile Include="Web\JavaScript\JsonToken.cs" />
+    <Compile Include="Web\JavaScript\JsonWriter.cs" />
+    <Compile Include="Web\Navigation\Attributes\SiteMapItemPropertyAttribute.cs" />
+    <Compile Include="Web\Navigation\Attributes\SiteMapMenuPropertyAttribute.cs" />
+    <Compile Include="Web\Navigation\CachedSiteMapUrls.cs" />
+    <Compile Include="Web\Navigation\ErrorHandling\NavigationException.cs" />
+    <Compile Include="Web\Navigation\GenericSiteMapMenuController.cs" />
+    <Compile Include="Web\Navigation\GenericUrlRewriteController.cs" />
+    <Compile Include="Web\Navigation\Interfaces\ISiteMapUrls.cs" />
+    <Compile Include="Web\Navigation\Interfaces\ISiteMapMenuController.cs" />
+    <Compile Include="Web\Navigation\Interfaces\ISiteMapMenu.cs" />
+    <Compile Include="Web\Navigation\Interfaces\ISiteMapMenuItem.cs" />
+    <Compile Include="Web\Navigation\Interfaces\IUrlRewriteController.cs" />
+    <Compile Include="Web\Navigation\Interfaces\IUrlRewriteItem.cs" />
+    <Compile Include="Web\Navigation\SiteMapMenuControllerFactory.cs" />
+    <Compile Include="Web\Navigation\SiteMapMenuSection.cs" />
+    <Compile Include="Web\Navigation\SiteMapMenuSectionManager.cs" />
+    <Compile Include="Web\Navigation\NavigationUtility.cs" />
+    <Compile Include="Web\Navigation\SiteMapManager.cs" />
+    <Compile Include="Web\Navigation\UrlRewriteSection.cs" />
+    <Compile Include="Web\Navigation\UrlRewriteSectionManager.cs" />
+    <Compile Include="Web\Navigation\UrlRewriteControllerFactory.cs" />
+    <Compile Include="Web\Navigation\WebSitemapWrapper.cs" />
+    <Compile Include="Web\Security\AuthenticationCookieManager.cs" />
+    <Compile Include="Web\UI\BusinessObjectValidationControl.cs" />
+    <Compile Include="Web\UI\NavigationBreadcrumbsSkin.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\SkinnedNavigationBreadcrumbs.cs" />
+    <Compile Include="Web\UI\NavigationBreadcrumbsBase.cs" />
+    <Compile Include="Web\UI\MultipleFormsSubmitBehavior.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\SiteMapLink.cs" />
+    <Compile Include="Web\UI\StringLengthValidator.cs" />
+    <Compile Include="Web\UI\TextResourceLiteral.cs" />
+    <Compile Include="Web\UI\NavigationBreadcrumbs.cs" />
+    <Compile Include="Web\UI\ExceptionLogView.cs" />
+    <Compile Include="Components\Logging\LogManager.cs" />
+    <Compile Include="Web\UI\FlashDetectionControl.cs" />
+    <Compile Include="Web\UI\EventLogView.cs" />
+    <Compile Include="Components\Security\DataProtector.cs" />
+    <Compile Include="Components\Security\EncryptionManager.cs" />
+    <Compile Include="Components\Security\NativeMethods.cs" />
+    <Compile Include="Components\Security\RandomPassword.cs" />
+    <Compile Include="Components\Security\RijndaelEnhanced.cs" />
+    <Compile Include="Components\Security\RijndaelSimple.cs" />
+    <Compile Include="Components\Security\RijndaelSimpleHashAlgorithm.cs" />
+    <Compile Include="Components\Security\RijndaelSimpleKeySize.cs" />
+    <Compile Include="Components\Security\SimpleHash.cs" />
+    <Compile Include="Components\Testing\DummyData\DummyDataManager.cs" />
+    <Compile Include="Components\Testing\DummyData\DummyUser.cs" />
+    <Compile Include="Components\Testing\DummyData\Enums\Gender.cs" />
+    <Compile Include="Components\Testing\DummyData\Enums\UsernameType.cs" />
+    <Compile Include="Components\Threading\Interfaces\IJob.cs" />
+    <Compile Include="Components\Threading\Job.cs" />
+    <Compile Include="Components\Threading\Jobs.cs" />
+    <Compile Include="Components\Threading\JobSection.cs" />
+    <Compile Include="IO\Directory.cs" />
+    <Compile Include="IO\Enumerations\FilenameFormatOptions.cs" />
+    <Compile Include="Web\Navigation\FormattedRedirectRule.cs" />
+    <Compile Include="Web\Navigation\SiteMapUrls.cs" />
+    <Compile Include="Web\Navigation\UrlManager.cs" />
+    <Compile Include="Web\Navigation\UrlRewriteModule.cs" />
+    <Compile Include="Web\UI\Enumerations\CacheViewTheme.cs" />
+    <Compile Include="Web\UI\Enumerations\JobViewTheme.cs" />
+    <Compile Include="Web\UI\Internals\CachedElement.cs" />
+    <Compile Include="Web\UI\Internals\ThemeColors.cs" />
+    <Compile Include="Web\UI\JobView.cs" />
+    <Compile Include="Core\Eunmerations\TextFormatOptions.cs" />
+    <Compile Include="Web\UI\CacheView.cs" />
+    <Compile Include="Components\Caching\ErrorHandling\CachingException.cs" />
+    <Compile Include="Components\BusinessTier\Enumerations\ActionType.cs" />
+    <Compile Include="Components\BusinessTier\Attributes\BusinessObjectCacheAttribute.cs" />
+    <Compile Include="Components\BusinessTier\BusinessObjectManager.cs" />
+    <Compile Include="Components\BusinessTier\BusinessObjectValidationResult.cs" />
+    <Compile Include="Components\BusinessTier\Enumerations\ValidationStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WPF\HotkeyMappingManager.cs" />
+    <Compile Include="Xml\Attributes\CascadableAttribute.cs" />
+    <Compile Include="Xml\Attributes\XmlExtraInfoAttribute.cs" />
+    <Compile Include="Xml\ErrorHandling\XmlConfigurationFileManagerException.cs" />
+    <Compile Include="Xml\ErrorHandling\XmlSettingsManagerException.cs" />
+    <Compile Include="Xml\XmlConfigurationFileManager.cs" />
+    <Compile Include="Xml\XmlSerializationHelper.cs" />
+    <Compile Include="Xml\XmlSettingsManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\BusinessTier\README.txt" />
+    <Content Include="Components\Caching\ClusteredCacheManager.SQL2005.UnInstallScripts.sql" />
+    <Content Include="Components\Caching\ClusteredCacheManager.SQL2005.InstallationScripts.sql" />
+    <Content Include="Components\Caching\ClusteredCache.README.txt" />
+    <Content Include="Components\Caching\ClusteredCacheManager.SQL2000.InstallationScripts.sql" />
+    <Content Include="Components\Caching\ClusteredCacheManager.SQL2000.UnInstallScripts.sql" />
+    <Content Include="Components\Caching\ClusteredCacheManager.SQL2005.InstallationScripts.1.1.3.0.sql" />
+    <Content Include="Components\Caching\README.txt" />
+    <None Include="Components\Logging\LogManager.SQL2005.UnInstallScripts.sql" />
+    <None Include="Components\Logging\LogManager.SQL2000.InstallationScripts.sql" />
+    <None Include="Components\Logging\LogManager.SQL2000.UnInstallScripts.sql" />
+    <Content Include="Components\Flash\OpenFlashChart\Swf\open-flash-chart_v2.0.swf" />
+    <Content Include="Components\Flash\OpenFlashChart\README.txt" />
+    <None Include="Components\Logging\LogManager.SQL2005.InstallationScripts.1.0.3.0.sql" />
+    <Content Include="Components\Logging\LogManager.SQL2005.InstallationScripts.1.1.0.0.sql" />
+    <Content Include="Components\Logging\README.txt" />
+    <Content Include="Components\Logging\LogManager.SQL2005.InstallationScripts.1.0.4.1.sql" />
+    <Content Include="Components\Testing\DummyData\DummyData.xml" />
+    <Content Include="Components\Testing\DummyData\README.txt" />
+    <Content Include="Components\TextResources\README.txt" />
+    <Content Include="Components\Threading\README.txt" />
+    <Content Include="README.txt" />
+    <Content Include="Scripts\SqlServer2005.GenerateClassCode.sql" />
+    <Content Include="UpdateLog.txt" />
+    <Content Include="Web\JavaScript\readme.txt" />
+    <Content Include="Web\Navigation\README.UrlRewriteModule.txt" />
+    <Content Include="Xml\README.XmlSettingsManager.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Components\Caching\ClusteredCacheDatasets.xsc">
+      <DependentUpon>ClusteredCacheDatasets.xsd</DependentUpon>
+    </None>
+    <None Include="Components\Caching\ClusteredCacheDatasets.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClusteredCacheDatasets.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Components\Caching\ClusteredCacheDatasets.xss">
+      <DependentUpon>ClusteredCacheDatasets.xsd</DependentUpon>
+    </None>
+    <None Include="Components\Logging\LogDatasets.xsc">
+      <DependentUpon>LogDatasets.xsd</DependentUpon>
+    </None>
+    <None Include="Components\Logging\LogDatasets.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LogDatasets.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Components\Logging\LogDatasets.xss">
+      <DependentUpon>LogDatasets.xsd</DependentUpon>
+    </None>
+    <None Include="Components\Logging\LogManager.SQL2005.InstallationScripts.sql" />
+    <None Include="Components\Testing\DummyData\DummyData.xsd">
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="Components\Testing\DummyData\DummyData.xsx">
+      <DependentUpon>DummyData.xsd</DependentUpon>
+    </None>
+    <None Include="Web\Navigation\Sample.web.config" />
+    <None Include="Web\Navigation\Sample.web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IO\Csv\Resources\ExceptionMessage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\BusinessTier\Interfaces\" />
+    <Folder Include="IO\Interfaces\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

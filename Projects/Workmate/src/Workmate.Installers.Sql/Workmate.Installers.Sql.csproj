@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90D41DDD-C626-41F6-A7BE-3867EA264143}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.Installers.Sql</RootNamespace>
+    <AssemblyName>Workmate.Installers.Sql</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlInstall.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ContentRatings_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ContentRatings_wm_Users.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Contents_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Contents_cms_Threads.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ContentTag_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ContentTag_cms_Tags.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ContentUser_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ContentUser_wm_Users.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_FilesTemp_wm_Users.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Files_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Files_wm_Users.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_FileTag_cms_Files.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_FileTag_cms_Tags.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_LinkedThreads_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_LinkedThreads_cms_Threads.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Sections_cms_Groups.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Sections_cms_Sections.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Sections_wm_Applications.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ThreadRatings_cms_Threads.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_ThreadRatings_wm_Users.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_cms_Threads_cms_Sections.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_wm_Roles_wm_Applications.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_wm_UserRole_wm_Roles.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_wm_UserRole_wm_Users.sql" />
+    <Content Include="Scripts\Schema\ConstraintsDrop\dbo.drop.constraint.FK_wm_Users_wm_Applications.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ContentRatings_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ContentRatings_wm_Users.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Contents_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Contents_cms_Threads.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ContentTag_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ContentTag_cms_Tags.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ContentUser_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ContentUser_wm_Users.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_FilesTemp_wm_Users.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Files_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Files_wm_Users.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_FileTag_cms_Files.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_FileTag_cms_Tags.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_LinkedThreads_cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_LinkedThreads_cms_Threads.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Sections_cms_Groups.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Sections_cms_Sections.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Sections_wm_Applications.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ThreadRatings_cms_Threads.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_ThreadRatings_wm_Users.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_cms_Threads_cms_Sections.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_wm_Roles_wm_Applications.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_wm_UserRole_wm_Roles.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_wm_UserRole_wm_Users.sql" />
+    <Content Include="Scripts\Schema\Constraints\dbo.constraint.FK_wm_Users_wm_Applications.sql" />
+    <Content Include="Scripts\Schema\CreateObjects.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Schema\DefaultsDrop\dbo.drop.default.DF_cms_Threads_TotalContents.sql" />
+    <Content Include="Scripts\Schema\Defaults\dbo.default.DF_cms_Threads_TotalContents.sql" />
+    <Content Include="Scripts\Schema\DropObjects.sql" />
+    <Content Include="Scripts\Schema\FunctionsDrop\dbo.drop.function.wm_SplitIntegers.sql" />
+    <Content Include="Scripts\Schema\FunctionsDrop\dbo.drop.function.wm_SplitStrings.sql" />
+    <Content Include="Scripts\Schema\Functions\dbo.function.wm_SplitIntegers.sql" />
+    <Content Include="Scripts\Schema\Functions\dbo.function.wm_SplitStrings.sql" />
+    <Content Include="Scripts\Schema\IndexesDrop\dbo.drop.index.IX_cms_Contents_LoweredUrlFriendlyName.sql" />
+    <Content Include="Scripts\Schema\Indexes\dbo.index.IX_cms_Contents_LoweredUrlFriendlyName.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ContentRatings_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ContentRatings_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ContentRatings_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_GetAllWithSectionName.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_GetArticleInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_GetBaseArticleInfoPage.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_GetBaseRatingInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_GetMessageInfoPageFromThreadIndex.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_IncreaseTotalViews.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Contents_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ContentTag_InsertUpdateDelete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ContentUser_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ContentUser_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_FilesTemp_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_FilesTemp_DeleteByUserId.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_FilesTemp_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_FilesTemp_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Files_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Files_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Files_GetAttachmentInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Files_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Files_MoveTempFile.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Files_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_FileTag_InsertUpdateDelete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Groups_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Groups_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Groups_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Sections_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Sections_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Sections_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Sections_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Sections_UpdateContentBlock.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Tags_GetByContentId.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Tags_GetByFileId.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ThreadRatings_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ThreadRatings_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_ThreadRatings_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Threads_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Threads_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Threads_IncreaseTotalViews.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Threads_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.cms_Threads_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Roles_GetByUserId.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_UserRole_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_UserRole_GetByApplicationId.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_UserRole_GetByRoleName.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_UserRole_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_GetNumberOfUsersOnline.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_GetPassword.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_GetUserBasic.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_GetUserInfos.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_SetPassword.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_UnlockUser.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_UpdateCredentials.sql" />
+    <Content Include="Scripts\Schema\StoredProceduresDrop\dbo.drop.sp.wm_Users_UpdateUserInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ContentRatings_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ContentRatings_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ContentRatings_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_GetAllWithSectionName.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_GetArticleInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_GetBaseArticleInfoPage.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_GetBaseRatingInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_GetMessageInfoPageFromThreadIndex.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_IncreaseTotalViews.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Contents_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ContentTag_InsertUpdateDelete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ContentUser_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ContentUser_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_FilesTemp_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_FilesTemp_DeleteByUserId.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_FilesTemp_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_FilesTemp_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Files_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Files_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Files_GetAttachmentInfo.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Files_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Files_MoveTempFile.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Files_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_FileTag_InsertUpdateDelete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Groups_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Groups_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Groups_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Sections_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Sections_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Sections_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Sections_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Sections_UpdateContentBlock.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Tags_GetByContentId.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Tags_GetByFileId.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ThreadRatings_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ThreadRatings_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_ThreadRatings_InsertOrUpdate.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Threads_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Threads_Get.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Threads_IncreaseTotalViews.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Threads_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.cms_Threads_Update.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Roles_GetByUserId.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_UserRole_Delete.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_UserRole_GetByApplicationId.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_UserRole_GetByRoleName.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_UserRole_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_GetNumberOfUsersOnline.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_GetPassword.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_GetUserBasic.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_GetUserInfos.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_Insert.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_SetPassword.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_UnlockUser.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_UpdateCredentials.sql" />
+    <Content Include="Scripts\Schema\StoredProcedures\dbo.sp.wm_Users_UpdateUserInfo.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_ContentRatings.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_Contents.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_ContentTag.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_ContentUser.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_Files.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_FilesTemp.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_FileTag.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_Groups.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_LinkedThreads.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_Sections.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_Tags.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_ThreadRatings.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.cms_Threads.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.wm_Applications.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.wm_DatabaseInfo.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.wm_Roles.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.wm_UserRole.sql" />
+    <Content Include="Scripts\Schema\Tables\dbo.table.wm_Users.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Data\" />
+    <Folder Include="Scripts\UpgradeScripts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

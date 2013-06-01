@@ -1,0 +1,14 @@
+﻿CREATE PROCEDURE [<# schemaName #>].[<# tableName #>_Get]
+(
+<# selectParameters #>
+)
+AS
+BEGIN
+
+  SET NOCOUNT ON;
+
+  SELECT  <# selectValues #>
+  FROM    [<# schemaName #>].[<# tableName #>]
+  WHERE   <# whereClause #>
+  
+END

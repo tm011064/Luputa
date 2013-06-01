@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MockupSiteMapMenuControllerFromGeneric>
+
+  <menu name="test1" enableCaching="true" cacheDurationInSeconds="60" cacheItemPriority="Low">
+    <menunode urlRewriteItemName="UrlRewriteTest_Home" name="index_1" breadcrumbTitle="bc_index_1" title="t_index_1">
+      <menunode urlRewriteItemName="UrlRewriteTest_HomeSpecial" name="index_1_1" breadcrumbTitle="bc_index_1_1" title="t_index_1" testproperty="some text" />
+      <menunode urlRewriteItemName="UrlRewriteTest_HomeSpecial_Special1" name="index_1_2" breadcrumbTitle="bc_index_1_2" title="t_index_1" testinteger="100">
+        <menunode urlRewriteItemName="UrlRewriteTest_HomeSpecial_Special2" name="index_1_2_1" breadcrumbTitle="bc_index_1_2_1" title="t_index_1" testinteger="100" />
+      </menunode>
+    </menunode>
+  </menu>
+
+  <menu name="test2" enableCaching="false">
+    <menunode urlRewriteItemName="UrlRewriteTest_Home">
+      <menunode urlRewriteItemName="Home" />
+      <menunode urlRewriteItemName="UrlRewriteTest_Home">
+        <menunode urlRewriteItemName="Home" />
+        <menunode urlRewriteItemName="UrlRewriteTest_Home" />
+      </menunode>
+    </menunode>
+    <menunode urlRewriteItemName="Home">
+      <menunode urlRewriteItemName="Home" />
+      <menunode urlRewriteItemName="UrlRewriteTest_Home">
+        <menunode urlRewriteItemName="Home" />
+        <menunode urlRewriteItemName="UrlRewriteTest_Home" />
+      </menunode>
+    </menunode>
+    <menunode urlRewriteItemName="test" />
+  </menu>
+
+</MockupSiteMapMenuControllerFromGeneric>

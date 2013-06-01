@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MockupSiteMapMenuController>
+
+  <menu name="test1">
+    <menunode urlRewriteItemName="UrlRewriteTest_Home" name="index_1" breadcrumbTitle="bc_index_1" title="t_index_1">
+      <menunode urlRewriteItemName="Home" name="index_1_1" breadcrumbTitle="bc_index_1" title="t_index_1" />
+      <menunode urlRewriteItemName="UrlRewriteTest_Home" name="index_1_2" breadcrumbTitle="bc_index_1" title="t_index_1" />
+    </menunode>
+  </menu>
+
+  <menu name="test2">
+    <menunode urlRewriteItemName="UrlRewriteTest_Home">
+      <menunode urlRewriteItemName="Home" />
+      <menunode urlRewriteItemName="UrlRewriteTest_Home">
+        <menunode urlRewriteItemName="Home" />
+        <menunode urlRewriteItemName="UrlRewriteTest_Home" />
+      </menunode>
+    </menunode>
+    <menunode urlRewriteItemName="Home">
+      <menunode urlRewriteItemName="Home" />
+      <menunode urlRewriteItemName="UrlRewriteTest_Home">
+        <menunode urlRewriteItemName="Home" />
+        <menunode urlRewriteItemName="UrlRewriteTest_Home" />
+      </menunode>
+    </menunode>
+    <menunode urlRewriteItemName="test" />
+  </menu>
+  
+</MockupSiteMapMenuController>

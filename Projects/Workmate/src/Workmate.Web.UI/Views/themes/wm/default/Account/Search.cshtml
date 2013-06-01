@@ -1,0 +1,22 @@
+﻿@model Workmate.Web.UI.Models.Account.SearchAccountModel
+@using Workmate.Web.Components.Application.Sitemaps
+@using Workmate.Components.Contracts.Membership
+@using Workmate.Web.Components
+ 
+@{
+  this.RegisterJavascriptInclude("validate");
+  this.RegisterJavascriptInclude("validateUnobtrusive");   
+}     
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "createForm" }))
+{    
+<h2>search accounts</h2>
+<div class="clear">@Html.TextBoxFor(model => model.Search, new { @class = "text", @maxlength = "256" }) <input type="submit" value="search" /></div>
+}
+
+@foreach (IBaseUserModel record in Model.BaseUserModels)
+{
+  <div class="clear">Name: <a href="@Url.RouteUrl(this.FormatRouteName("Account_View_User"), new { userId = record.UserId })">@(record.FirstName +" " + record.LastName)</a></div>
+}
+
+TODO (Roman): paging

@@ -1,0 +1,1657 @@
+﻿/** General IE Styling Fixes
+ *  
+ *  Any css value (not selector) preceded with '*' applies the style to IE6 and 7 only.
+ *  Any css value preceded with '_' applies only to ie6.
+ *  EG: margin:0 -2px 0 0; *margin-bottom:-3px; _margin: 0 0 -3px 0;
+ *  **** Do not delete these values! ****
+ */
+
+html						{ background:#eee url(../images/content-bg.gif) repeat-y center; }
+body						{ font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size:13px; color:#333; background:url(../images/bg-top.gif) no-repeat top center; }
+
+/**
+**  Float classes 
+**/
+
+.clear, br.cl				{ clear:both; }
+.left						{ float:left; }
+.right						{ float:right; }
+
+/**
+**  Typography 
+**/
+
+/* Typography > Headers */
+h1							{ font-weight:bold; padding:0 0 10px; color:#333; }
+h2							{ font-size:13px; font-weight:bold; margin:0 0 5px; }
+h3							{ font-size:13px; font-weight:bold; margin:0 0 5px; padding:0 1px 3px; color:#666; }
+h4							{ font-size:15px; font-weight:bold; color:#0aa245; margin:0 0 5px; }
+h5							{ font-size:13px; font-weight:bold; text-align:left; padding:5px 10px 0; color:#3B87C5; }
+h6							{ font-size:11px; padding:0 0 5px 5px; }
+h6 img						{ margin:0 5px 0 0; }
+h3.sub-heading				{ clear:both; float:left; border-bottom:3px solid #0aa245; width:100%; color:#0aa245; padding:0 0 3px; font-size:18px; font-weight:700; margin:0 0 15px; }
+.content h1.page-heading	{ clear:both; float:left; color:#333; border:0; padding:0; font-size:24px; font-weight:700; letter-spacing:-1px; margin:0px 0 25px }
+.newsNow					{
+/*background: url(../images/newsnow_sw.jpg) no-repeat right 0; */
+}
+/* Typography > Links */
+a							{ text-decoration:none; color:#333; outline:none; cursor:pointer; }
+a:hover						{ text-decoration:underline; }
+a.cur						{ background:#eee; }
+a.info						{ margin:-4px 0 0 0 !important; }
+a.green						{ font-size:11px; color:#40911B !important; padding:1px 3px; font-weight:normal; }
+a.red						{ font-size:11px; color:#FF0000 !important; padding:1px 3px; font-weight:normal; }
+a.green:hover				{ background:#40911B; color:#fff !important; text-decoration:none; }
+a.red:hover					{ background:#FF0000; color:#fff !important; text-decoration:none; }
+span.new					{ color:#ff0000; font-size:11px; position:relative; margin:0 5px; font-weight:bold; }
+span.green					{ color:#40911B; }
+span.red					{ color:#FF0000; }
+
+/* Buttons */
+a.button					{ background:url(../images/buttons.png) no-repeat right -150px; border-bottom:0 none !important; color:#333333; font-size:11px; line-height:normal; margin:2px 0 0 0; padding:0 14px 0 0; }
+a.button div				{ background:url(../images/buttons.png) no-repeat left -150px; padding:4px 0 5px 20px;  }
+a.button:hover div			{ text-decoration:underline; }
+
+a.button-lge				{ background:url(../images/buttons.png) no-repeat right -25px; display:block; color:#fff !important; line-height:normal; font-size:13px; padding:0 10px 0 0; text-decoration:none; }
+a.button-lge div			{ background:url(../images/buttons.png) no-repeat left -25px;  padding:4px 0 5px 20px;  }
+a.button-lge:hover			{ background:url(../images/buttons.png) no-repeat right 0 !important; color:#fff; text-decoration:none; }
+a.button-lge:hover div		{ background:url(../images/buttons.png) no-repeat left 0 !important; color:#fff; }
+
+a.button-lge-red			{ background:url(../images/buttons.png) no-repeat right -125px; display:block; color:#fff !important; line-height:normal; font-size:13px; padding:0 10px 0 0; }
+a.button-lge-red div		{ background:url(../images/buttons.png) no-repeat left -125px; padding:4px 0 5px 20px;  }
+a.button-lge-red:hover		{ background:url(../images/buttons.png) no-repeat right -75px !important; color:#fff; text-decoration:none; }
+a.button-lge-red:hover div	{ background:url(../images/buttons.png) no-repeat left -75px !important; color:#fff; }
+
+a.button-lge-green			{ background:url(../images/buttons.png) no-repeat right -100px; display:block; color:#fff !important; line-height:normal; font-size:13px; padding:0 10px 0 0; }
+a.button-lge-green div		{ background:url(../images/buttons.png) no-repeat left -100px; padding:4px 0 5px 20px;  }
+a.button-lge-green:hover	{ background:url(../images/buttons.png) no-repeat right -50px !important; color:#fff; text-decoration:none; }
+a.button-lge-green:hover div{ background:url(../images/buttons.png) no-repeat left -50px !important; color:#fff; }
+
+a.button.left				{ margin-right:5px; }
+a.button.right				{ margin-left:5px; }
+
+a.button-lge.left,
+a.button-lge-red.left,
+a.button-lge-green.left		{ margin-right:5px; text-decoration:none; }
+
+a.button-lge.right,
+a.button-lge-red.right,
+a.button-lge-green.right	{ margin-left:5px; text-decoration:none; }
+
+
+a.signup,
+a.signup:hover				{ background:url(../images/GlobalSignUp.gif) 0 0 no-repeat !important; display:block; padding:0; height:27px;  }
+
+/* Typography > Other */
+input, textarea				{ font-family: "lucida grande", tahoma, verdana, arial, sans-serif; padding:4px; font-size:13px; }
+input.text					{ float:left; width:250px; display:block; }
+div.form input				{ margin:2px; }
+strong, p.strong, em		{ font-weight:bold; }
+sup							{ font-size:9px; color:#666; vertical-align:top; }
+cite						{ color:#9E9E9E; font-size:13px; font-weight:bold; line-height:5px; position:relative; top:1px; }
+img.fl						{ margin:0 3px -3px 0; }
+p.on						{ border:1px solid #efefef; border-width:1px 0; background:#f1f1f1; }
+.content-page p.half		{ width:300px; float:left; clear:none; }
+ul.list						{ list-style-position:inside; list-style-type:disc; margin:5px 0 15px; clear:both; }
+ol							{ list-style-position:inside; list-style-type:decimal;  margin:5px 0 15px; clear:both; }
+select						{ font-family:"lucida grande",tahoma,verdana,arial,sans-serif; }
+input.check					{ margin-right:5px; }
+
+/* Typography > Tabs */
+ul.tabs								{ height:18px; position:relative; padding-left:3px; }
+ul.tabs li							{ float:left; background:url(../images/sprite.png) no-repeat right -70px; padding-right:5px; }
+ul.tabs li.tab-cur					{ background:url(../images/sprite.png) no-repeat right -49px; }			
+ul.tabs li a.tab					{ background:url(../images/sprite.png) no-repeat left -70px; display:inline-block; font-size:11px; font-weight:bold; height:18px; line-height:19px; padding:0px 3px 0px 9px; }
+ul.tabs li a.cur,
+ul.tabs li.tab-cur a				{ background:url(../images/sprite.png) no-repeat left -49px; color:#fff !important; }			
+ul.tabs li a.tab.off				{ color:#bbb;} 
+ul.tabs li a.tab.off:hover,
+ul.tabs li a.tab:hover				{ text-decoration:none; }
+	
+/* Rounded Images */
+.rounded-image						{ position:relative; display:block; width:155px; height:124px; overflow:hidden; margin:0 15px 0 0; }
+.rounded-image img					{ position:absolute; left:0; top:0; overflow:hidden; vertical-align:middle; display:block; width:155px; height:124px; }
+
+.rounded-image-ext					{ position:relative; display:block; width:155px; height:124px; overflow:hidden; margin:0 15px 0 0; }
+.rounded-image-ext img				{ position:absolute; left:0; top:0; overflow:hidden; vertical-align:middle; display:block; height:124px; }
+
+.rounded-avatar						{ position:relative; display:block; width:46px; height:46px; overflow:hidden; margin:0 10px 0 0; }
+.rounded-avatar img					{ position:absolute; left:0; top:0; overflow:hidden; vertical-align:middle; display:block; width:46px; height:46px; }
+
+.rounded-avatar-small				{ position:relative; top:0; left:0; display:block; width:24px; height:24px; overflow:hidden; margin:0 5px 0 0; }
+.rounded-avatar-small img			{ position:absolute; left:0; top:0; overflow:hidden; vertical-align:middle; display:block; width:24px; height:24px; }
+
+.rounded-image-large				{ position:relative; display:block; width:545px; height:204px; overflow:hidden; margin:25px 15px 25px 0; }
+.rounded-image-large img			{ position:absolute; left:0; top:0; overflow:hidden; vertical-align:middle; display:block; width:545px; height:204px; }
+
+/* IE6 PNG Fix */
+/*.pngfix								{ _behavior:url(iepngfix.htc); } */
+
+/**
+**  Tables
+**/
+
+/* General */
+table								{ clear:both; }
+table.general						{ width:100%;  border-bottom:1px solid #0ba245; border-collapse:separate; *border-collapse:collapse; }
+table.general td,
+table.general th					{ padding:5px 2px; font-size:12px; vertical-align:top; }
+table.general th					{ padding:8px 2px 6px; background:url(../images/sprite.png) no-repeat right -88px; font-weight:bold; }
+table.general th a					{ padding:1px; }
+table.general tr.lighter			{ background:#fff; } 
+table.general tr.lighter th			{ background:url(../images/sprite.png) no-repeat right -121px; padding:5px 2px;}
+table.general tr.subheader th		{ background:#fff; padding:3px 5px 2px; border-top:3px solid #0ba245;  }
+table.general td					{ background:#fff; }
+table.general td.insert				{ border-top:0; padding:0; }
+table.general tr.even td,
+table.general tr.on td				{ background:#f4f4f4; }
+table.general tr td.highlight		{ background:#fafafa; font-weight:bold; }
+table.general tr.on td.highlight	{ background:#efefef; font-weight:bold;  }
+table.general tr.odd				{ background:#fff; }
+table.general tr.you td				{ font-weight:bold; border:1px solid; border-width:1px 0; }
+table.general tr.on.disabled,
+table.general tr.on.disabled a		{ color:#999; }
+table.general tr.selected td		{ border-color:#ddd; border-top:1px solid #ccc; background:#e6e6e6; }
+table.general tr.bordertop td		{ border-top:3px solid #ccc }
+table.general td.highlight			{ font-weight:bold; }
+table.general th.text-right,
+table.general td.text-right			{ text-align:right; }
+table.general th.text-center,
+table.general td.text-center		{ text-align:center; }
+table.general td img				{ margin:0 5px 0 0; }
+table.general td a.list-name		{ background:url(../images/icons/add.png) left no-repeat; padding-left:20px; }
+table.general td.small				{ font-size:10px; }
+table.general td.strong				{ font-weight:bold; }
+table.general tr.selected a.list-name { background-image:url(../images/icons/remove.png); }
+table.general th.header				{ background:#F3F3F3 url(../images/tabs_back.jpg) repeat-x bottom; cursor:pointer; }
+table.general th.headerSortUp		{ background:#dedede url(../images/icons/asc.gif) right center no-repeat; }
+table.general th.headerSortDown		{ background:#dedede url(../images/icons/desc.gif) right center no-repeat; }
+table.general tfoot td				{ background:#ecf3f9; font-weight:bold; }
+table.general tfoot tr.coupon td	{ background:#f4f8fb; }
+table.general td.gained				{ background:#f2f9f3; }
+table.general tr.on td.gained		{ background:#e9f3e9; }
+table.general td.lost				{ background:#f9f2f2; } 
+table.general tr.on td.lost			{ background:#f3e9e9; }
+table.general td.green				{ background:#DAF7D9; }
+table.general td.red				{ background:#F8CDCD; }
+table.general tr.even td.green		{ background:#bfebbe; }
+table.general tr.even td.red		{ background:#e6abab; }
+table.inset							{ border-bottom:1px solid #135e99; border-collapse:separate; *border-collapse:collapse; }
+
+div#yourTeams						{ margin:15px 0; clear:both; float:left; width:100%;}
+div#yourTeams table					{ margin:0 0 25px; }
+
+table.PremierLeagueTable thead th			{ text-align:center; }
+table.PremierLeagueTable td					{ text-align:right; }
+table.PremierLeagueTable tr.subheader th	{ text-align:right; padding:5px 0; }
+table.PremierLeagueTable tr.subheader th.tleft { text-align:left; }
+
+table.PremierLeagueTable td.overall			{ background:#f6f6f6;  }
+table.PremierLeagueTable td.home			{ background:#f1f1f1; }
+table.PremierLeagueTable td.away			{ background:#eaeaea; }
+table.PremierLeagueTable tr.on td.overall	{ background:#f1f1f1;  }
+table.PremierLeagueTable tr.on td.home		{ background:#e8e8e8; }
+table.PremierLeagueTable tr.on td.away		{ background:#e0e0e0; }
+
+table.PremierLeagueTable td.total			{ background:#e0e0e0; font-weight:bold; }
+table.PremierLeagueTable tr.on td.total		{ background:#d8d8d8; }
+table.PremierLeagueTable td.tleft			{ font-weight:bold; text-align:left; }
+
+
+/* Sub Table*/
+table.general table.insert-data		{ width:100%; }
+table.general table.insert-data td	{ background:#eee; border:1px dashed #ddd; border-width:1px 0; padding:5px 3px; }
+table.general table.insert-data td a{ font-weight:normal; }
+table.general table.sub-table		{ width:100%; float:left; border:1px solid #ddd; }
+table.general table.sub-table th,
+table.general table.sub-table td	{ background:#f3f3f3; padding:0 5px; height:20px; }
+table.general table.sub-table th	{ background:#f9f9f9; font-size:11px; }
+.sub-table							{ width:100%; float:left; border:1px solid #ddd; }
+.sub-table th,
+.sub-table td						{ background:#fff; padding:0 5px; height:20px; border:1px solid #ddd; }
+.sub-table th						{ background:#f9f9f9; font-size:11px; }
+.sub-table tr.highlight td			{ background:#ededed; font-weight:bold; }
+.sub-table td.highlight,
+.sub-table th.highlight 			{ background:#ededed; font-weight:bold; }
+
+/* Player Position Icons */
+table.general .pos					{ background:url(../images/icons/PosIcons_14x14.gif) no-repeat left top; width:14px; height:14px; margin:1px 1px 0 3px; }
+table.general .pos.pos0				{ visibility:hidden; }
+table.general .pos.pos1				{ background-position:0 0; }
+table.general .pos.pos2				{ background-position:-28px 0; }
+table.general .pos.pos3				{ background-position:-14px 0; }
+table.general .pos.pos4				{ background-position:-42px 0; }
+table.general .pos.pos6				{ background-position:-56px 0; }
+table.general .pos.pos10			{ background-position:-70px 0; }
+
+table.general tr.on .pos.pos1		{ background-position:0 -14px; }
+table.general tr.on .pos.pos2		{ background-position:-28px -14px; }
+table.general tr.on .pos.pos3		{ background-position:-14px -14px; }
+table.general tr.on .pos.pos4		{ background-position:-42px -14px; }
+table.general tr.on .pos.pos6		{ background-position:-56px -14px; }
+table.general tr.on .pos.pos10		{ background-position:-70px -14px; }
+
+table.general .pos.yes				{ background:url(../images/icons/cross_small.gif) no-repeat left top; background-position:-16px -16px; width:16px; height:16px; }
+table.general .pos.no				{ background:url(../images/icons/cross_small.gif) no-repeat left top; background-position:-16px 0; width:16px; height:16px; }
+
+/* Player Icons */
+.playerstatus						{ background:url(../images/icons/InjuryIcons_16x16.gif) no-repeat 0 0; width: 16px; height: 16px; display: block; }
+.playerstatus.latefitnesstest		{ background-position:0 -16px; }
+.playerstatus.international			{ background-position:-16px -16px; }
+.playerstatus.internationalduty		{ background-position:-16px -16px; }
+.playerstatus.injured				{ background-position:-32px -16px; }
+.playerstatus.suspended				{ background-position:-48px -16px; }
+.playerstatus.doubtful				{ background-position:-64px -16px; }
+.playerstatus.ineligible			{ background-position:-80px -16px; }
+
+tr.on .playerstatus.latefitnesstest	{ background-position:0 0; }
+tr.on .playerstatus.international	{ background-position:-16px 0; }
+tr.on .playerstatus.injured			{ background-position:-32px 0; }
+tr.on .playerstatus.suspended		{ background-position:-48px 0; }
+tr.on .playerstatus.doubtful		{ background-position:-64px 0; }
+tr.on .playerstatus.ineligible		{ background-position:-80px 0; }
+
+.matchevent							{ background:url(../images/icons/GameIcons_14x14.gif) no-repeat 0 0; margin-top:2px; width: 14px; height: 14px; display: block; }
+.matchevent.playedhalf				{ background-position:0 0; }
+.matchevent.playedfull				{ background-position:-14px 0; }
+.matchevent.assist					{ background-position:-28px 0; }
+.matchevent.goal					{ background-position:-42px 0; }
+.matchevent.yellowcard				{ background-position:-56px 0; }
+.matchevent.redcard					{ background-position:-70px 0; }
+.matchevent.notpicked				{ background-position:-84px 0; }
+.matchevent.cameoff					{ background-position:-98px 0; }
+.matchevent.cameon					{ background-position:-112px 0; }
+
+tr.on .matchevent.playedhalf		{ background-position:0 -14px; }
+tr.on .matchevent.playedfull		{ background-position:-14px -14px; }
+tr.on .matchevent.assist			{ background-position:-28px -14px; }
+tr.on .matchevent.goal				{ background-position:-42px -14px; }
+tr.on .matchevent.yellowcard		{ background-position:-56px -14px; }
+tr.on .matchevent.redcard			{ background-position:-70px -14px; }
+tr.on .matchevent.notpicked			{ background-position:-84px -14px; }
+tr.on .matchevent.cameoff			{ background-position:-98px -14px; }
+tr.on .matchevent.cameon			{ background-position:-112px -14px; }
+
+
+/* Package Icons & Live */
+div.ClassicPackageStandard			{ background:url(../images/icons/user.gif) 0 0 no-repeat; width:14px; height:14px; display:block; }
+div.ClassicPackageGold				{ background:url(../images/icons/user.gif) -14px 0 no-repeat; width:14px; height:14px; display:block; }
+div.ClassicPackageSilver			{ background:url(../images/icons/user.gif) -28px 0 no-repeat; width:14px; height:14px; display:block; }
+div.LIVE							{ background:url(../images/icons/user.gif) -42px 0 no-repeat; width:37px; height:14px; display:inline-block; }
+div.LIVE							{ *display:inline; }
+
+tr.even div.ClassicPackageStandard	{ background:url(../images/icons/user.gif) 0 -14px no-repeat; width:14px; height:14px; display:block; }
+tr.even div.ClassicPackageGold		{ background:url(../images/icons/user.gif) -14px -14px no-repeat; width:14px; height:14px; display:block; }
+tr.even div.ClassicPackageSilver	{ background:url(../images/icons/user.gif) -28px -14px no-repeat; width:14px; height:14px; display:block; }
+tr.even div.LIVE					{ background:url(../images/icons/user.gif) -42px -14px no-repeat; width:37px; height:14px; display:inline-block; }
+tr.even div.LIVE					{ *display:inline; }
+
+/**
+**  Template
+**/
+
+/* Template > Wrappers  */
+#content, #header, 
+#footer, #menu						{ clear:both; }
+#wrapper							{ width:960px; margin:0 auto;  }
+#content							{ width:960px; min-height:600px; margin:20px -330px 30px auto; float:left; background-color:#fff; }
+#header								{ width:960px; position:relative; height:116px; }
+#header #logo						{ float:left; position:relative; margin:25px 0 30px -3px; *margin:25px 0 13px -3px; }
+#header #partner					{ display: block; margin: 20px 10px; position: absolute; top:58px; left:90px; z-index: 100;}
+#header #partner h3					{ margin: 0 0 0 10px; font-size: 10px; padding: 0; }
+#header #partner img				{ margin-left: 10px;}
+
+/* Homepage Slider */
+#hp										{ width:630px; height:280px; overflow:hidden; position:relative; }
+#hp ul									{ left:0; margin-bottom:0; overflow:hidden; padding:0; top:0; z-index:1; }
+#hp li									{ cursor: pointer; width:630px; float:left; height:280px; position:relative; }
+#hp li a.link							{ text-decoration:none; font-family:Arial; background:url(../images/home/fade_black.png); color:#fff; bottom:60px; display:block; font-size:24px; font-weight:bold; padding:8px 15px; position:absolute; -moz-border-radius-topright:5px; -moz-border-radius-bottomright:5px; -webkit-border-top-right-radius:5px; -webkit-border-bottom-right-radius:5px; }
+#hp li a.link:hover						{ background:#000; }
+#hp li a.enter							{ text-decoration:none; font-family:Arial; background:url(../images/home/fade_black.png); color:#fff; right:0; bottom:60px; display:block; font-size:24px; font-weight:bold; padding:8px 15px; position:absolute; margin-left:-5px; -moz-border-radius-topleft:5px; -moz-border-radius-bottomleft:5px; -webkit-border-top-left-radius:5px; -webkit-border-bottom-left-radius:5px; }
+#hp li a.enter:hover					{ background:#000; }
+
+#slider									{ display:block; float:left; overflow:hidden; position:relative; width:630px; margin:0 0 25px; }
+#slider	img.corners-tl					{ position:absolute; top:0; left:0; z-index:500; }
+#slider	img.corners-tr					{ position:absolute; top:0; right:0; z-index:500; }
+#slider	img.corners-bl					{ position:absolute; bottom:0; left:0; z-index:500; }
+#slider	img.corners-br					{ position:absolute; bottom:0; right:0; z-index:500; }
+#slider .jcarousel-clip-horizontal		{ width:630px; height:280px; overflow:hidden; }
+#slider .jcarousel-container-horizontal	{ clear:both;  width:630px; height: 280px; }
+
+#slider .jcarousel-control				{ float:left; width:630px; position:relative; margin-top:-10px; }
+#slider .jcarousel-control dl			{ width:630px; padding-left: 5px; }
+#slider .jcarousel-control dt			{ float:left; outline:none; }
+#slider .jcarousel-control dt a			{ display:block; outline:none; padding:5px 7px; font-size:12px; font-weight:bold; text-decoration:none; }
+#slider .jcarousel-control dt.last		{ margin-right:0; }
+#slider .jcarousel-control a.tabs_promo1, #slider .jcarousel-control a.tabs_promo2, #slider .jcarousel-control a.tabs_promo3
+										{ background-image: url(http://images.fantasyleague.com/promo/home_tabs_sprite.jpg); background-repeat: no-repeat; width: 190px !important; height:40px !important; text-indent: -9999px; display: block; background-repeat: no-repeat; }
+
+#slider .jcarousel-control a.tabs_promo1 { background-position: 0px 0 ;}
+#slider .jcarousel-control a.tabs_promo2 { background-position: -205px 0 ;}
+#slider .jcarousel-control a.tabs_promo3 { background-position: -409px 0;}
+
+/* Template > Menu  */
+#menu								{ width:960px; float:left; }
+#menu ul.nav1						{ width:630px;  }
+#menu ul.nav1 li					{ float:left; position:relative; z-index:1000; }
+#menu ul.nav1 li a,
+#menu ul.nav3 li a,
+#menu ul.nav1 li span				{ display:block; cursor:pointer; font-size:16px; font-weight:bold; text-decoration:none; text-indent:-9999px; background:url(../images/menu.png) no-repeat left top; padding:6px 0 7px; width:40px; }
+
+#menu ul.nav1 li a.global			{ text-indent:-9999px; background:url(../images/home-icon.gif) no-repeat center 10px; padding:6px 0; width:40px; }			
+#menu ul.nav1 li a.fl_pro			{ background-position:-40px top; width:127px; }
+#menu ul.nav1 li a.fl_pro:hover,
+#menu ul.nav1 li.current a.fl_pro	{ background-position:-40px bottom;   }
+#menu ul.nav1 li a.fl_cl			{ background-position:-168px top; width:85px; }
+#menu ul.nav1 li a.fl_cl:hover,
+#menu ul.nav1 li.current a.fl_cl	{ background-position:-168px bottom; }
+#menu ul.nav1 li span.fl_ic			{ background-position:-253px top; width:58px;}
+#menu ul.nav1 li span.fl_ic:hover,
+#menu ul.nav1 li.current span.fl_ic	{ background-position:-253px bottom; }
+#menu ul.nav1 li span.fl_pl			{ background-position:-253px top; width:155px;}
+#menu ul.nav1 li span.fl_pl:hover,
+#menu ul.nav1 li.current span.fl_pl	{ background-position:-253px bottom; }
+#menu ul.nav1 li a.fl_f1			{ background-position:-312px top; width:39px; }
+#menu ul.nav1 li a.fl_f1:hover,
+#menu ul.nav1 li.current a.fl_f1	{ background-position:-312px bottom;  }
+#menu ul.nav1 li a.fl_golf			{ background-position:-351px top; width:59px; }
+#menu ul.nav1 li a.fl_golf:hover,
+#menu ul.nav1 li.current a.fl_golf	{ background-position:-351px bottom;  }
+#menu ul.nav1 li a.fl_fives			{ background-position:-507px top; width:67px; }
+#menu ul.nav1 li a.fl_fives:hover,
+#menu ul.nav1 li.current a.fl_fives	{ background-position:-507px bottom;  }
+
+#menu ul.nav2						{ border:1px solid #CCCCCC; border-width:0 1px; display:none; position:absolute; top:32px; width:205px; z-index:10000; -moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.25); }
+#menu ul.nav2 li					{ border:0; color:#333333; float:none; }
+#menu ul.nav2 li a					{ text-indent:0; width:auto; background:#FFFFFF; border:1px solid #DDDDDD;  border-width:0 0 1px 0; color:#333333 !important; font-size:13px; font-weight:normal; height:16px; padding:6px 8px !important; }
+#menu ul.nav2 li a:hover			{ color:#333 !important; text-decoration:none; background:#f5f5f5; }
+#menu ul.nav2 li span				{ border:1px solid #f1f1f1; text-indent:0; width:190px; border-width:0 0 1px 1px; letter-spacing:0; background:#fff !important; text-transform:none; padding:5px 15px !important; color:#999 !important; font-size:12px; height:auto; font-weight:bold; }
+
+#menu ul.nav3						{ margin:0; width:300px; }
+#menu ul.nav3 li					{ float:right; position:relative; z-index:1000; }
+#menu ul.nav3 li a.fl_a				{ background-position:-744px top; width:99px; }
+#menu ul.nav3 li a.fl_a:hover		{ background-position:-744px bottom; }
+#menu ul.nav3 li a.fl_c				{ background-position:-843px top; width:117px; }
+#menu ul.nav3 li a.fl_c:hover		{ background-position:-843px bottom;  }
+#menu ul.nav3 li a.fl_g				{ background-position:-660px top; width:84px; }
+#menu ul.nav3 li a.fl_g:hover		{ background-position:-660px bottom;  }
+
+.current							{ color:#fff; text-decoration:none; }
+.current a							{ background:#f8f8f8; } 
+#menu ul li.end						{ background:0 !important; }
+
+#menu ul.nav1 li.split ul			{ background:#fff !important; padding:0; width:208px; border:1px solid #CCCCCC; border-width:0 1px 0; }
+#menu ul.nav1 li.split ul li		{ background:#fff !important; width:50%; float:left; }
+#menu ul.nav1 li.split ul li a		{ width:88px; }
+
+/**
+**  Main
+**/
+
+#main								{ display:inline; float:left; }
+#mainContent						{ height:100%; float:left; padding:0 0 10px 0; width:630px; }
+
+.login								{ float:left; clear:both; width:343px; margin:0 0 10px; padding:10px; background:#F1F1F1; }
+.login label						{ width:177px; clear:both; float:left; margin:2px; padding:3px 0; font-weight:bold; }
+.login input						{ float:left; margin:2px; }
+.login input.text					{ width:150px; }
+.facebook_user						{ width:92px; height: 35px; display: block; float: left; text-indent:-9999px; background: url(http://images.fantasyleague.com/promo/social_but1.jpg)-2px 0 no-repeat ; padding: 5px;}
+.twitter_user						{ width:92px; height: 35px; display: block; float: left; text-indent:-9999px; background: url(http://images.fantasyleague.com/promo/social_but1.jpg)-105px 0 no-repeat ; padding: 5px;}
+.newsnow_user						{ width:85px; height: 35px; display: block; float: left; text-indent:-9999px; background: url(http://images.fantasyleague.com/promo/social_but1.jpg)right 0 no-repeat ; padding: 5px;}
+.podcast_promo						{ display: block; width:305px; height: 70px; float:left; text-indent: -9999px; background: url(http://images.fantasyleague.com/promo/podcast_promo.jpg) 0 0 no-repeat ; margin: 5px 0px 10px -3px;}
+
+
+/* Main > Intro *** IMPROVE *** */
+#mainContent .inset-flash			{ margin:-14px 0 15px; }
+#newsItems							{ margin:0 0 15px; border-top:0;  }
+#newsItems .articles-list			{ border-bottom:1px solid #ccc; width:630px; padding:0 0 10px 0; margin-top:-5px; float:left; height:248px; position:relative; }
+#newsItems .main-newsItem			{ clear:both; float:left; width:630px; padding:10px 0; }
+#newsItems .main-newsItem h4 a		{ color:#0ba245; }
+#newsItems .main-newsItem span.item-content { line-height:16px; width:465px; padding:5px 0; }
+#newsItems .main-newsItem .item-date { padding:0 0 5px; color:#999; width:465px; }
+
+#newsItems .articles-img			{ position:absolute; right:0; margin:0; }
+#newsItems .articles-img img		{ height:248px; width:310px; float:left; }
+#newsItems .articles-img p			{ position:absolute; bottom:0px; width:290px; left:0; margin:0; background:url(../images/preview_bg.png); color:#fff; padding:10px;  }
+#newsItems .item-content			{ float:left; width:320px; }
+#newsItems a.articles-link			{ background:#eee; padding:0 10px; line-height:1.91em; font-weight:bold; display:block; width:300px; _width:295px; clear:both; float:left; }
+#newsItems a.articles-link:hover,
+#newsItems a.on						{ background:#0BA245 url(../images/icons/arrow-white.gif) no-repeat 305px center; color:#fff; border-color:#0BA245; }
+#newsItems span.articles-date		{ font-weight:bold; display:block; }
+#newsItems a.item-comments			{ background-color:#FFFFFF; font-size:0.9em; padding:0 17px 0 3px; -moz-border-radius:2px;  }
+
+#moreNewsItems						{ margin:0 0 15px; float:left; width:300px; clear:both; }
+#moreNewsItems h4					{ font-weight:700; font-size:14px; margin:0 0 5px; width:300px; }
+#moreNewsItems h4 a					{ color:#0ba245; }
+#moreNewsItems .more-newsItem		{ clear:both; float:left; padding:5px 10px 10px; border-bottom:1px solid #efefef; width:280px; }
+#moreNewsItems .item-date			{ padding:0 0 5px; color:#999; }
+#moreNewsItems span.item-content	{ line-height:16px; clear:both; width:300px; }
+#moreNewsItems a.item-comments		{ font-size:0.9em; padding:0 17px 0 3px; margin-left:10px; }
+
+#FbFan								{ width:300px; float:right; margin:0 0 10px; }
+
+#mainFixRes							{ margin:0 0 15px 30px; float:right; width:300px; }
+#mainFixRes ul.tabs					{ margin:7px 0 0 5px; }
+#mainFixRes div.module-content		{ border-top:0; }
+
+table#mainFixturesTable				{ display:table; }
+table#mainResultsTable				{ display:none; }
+table#mainStandingsTable			{ display:none; }
+
+#teamFixRes							{ width:630px; }
+#teamfixresView table#mainResultsTable { display:table; }
+
+
+img.virgin-video					{ clear:left; float:left; }
+
+/* Main > Team News Fixtures */
+ul.teamnews-fixtures li				{ width:157px; float:left; } 
+h2.teamnews-week					{ border-bottom:1px solid #DDDDDD; font-size:1.2em; margin:0 0 10px; padding:0 0 10px; }
+
+/* Main > Match Results */
+div.goal							{ margin:0 0 -3px; background:url(../images/icons/GameIcons_14x14.gif) -42px top no-repeat; width:14px; height:14px; display:inline-block; }
+div.assist							{ margin:0 0 -3px 0; background:url(../images/icons/GameIcons_14x14.gif) -28px top no-repeat; width:14px; height:14px; display:inline-block; }
+div.goal,
+div.assist							{ *display:inline; }
+
+tr.on div.goal						{ background-position:-42px bottom; }
+tr.on div.assist					{ background-position:-28px bottom; }
+
+/* Main > General Page */
+.content							{ float:left; width:100%; }
+.content div.page-icon				{ float:left; height:16px; margin:0 10px 0 5px; width:16px; display:none; }
+.content-page						{ float:left; width:100%; }
+.content-page p,					
+.content-page form					{ clear:both; margin:0 0 15px 0; line-height:19px; color:#333; }
+.content-page p						{ width:90%; }
+.content-page label					{ padding:3px 5px 0 0; font-weight:normal; width:120px; float:left; text-align:right; clear:both; }
+.content-page .radio 				{ float:left; padding:6px 0; }
+.content-page .radio input			{ margin-right:5px; padding:0;  }
+.content-page .radio input:focus	{ padding:0 !important; border:0px !important }
+.content-page .radio label			{ float:none; }
+.content-page div.form				{ margin:15px 0; }
+.content-page div.form strong		{ margin:3px 3px 0; float:left; }
+.content-page .form-text			{ background:#f8f8f8; width:250px; border:1px solid #ccc; padding:1px; font-size:13px;  }
+.content-page .sub-header			{ padding:4px 10px; font-size:24px; color:#666; font-weight:bold; letter-spacing:-1px; border-left:1px solid #DDDDDD; }
+.content-page img.main-image		{ position:relative; float:right; padding:4px; border:1px solid #ccc; width:150px; background:#fff; margin-top:-69px; margin-left:10px; }
+.content-page-inset					{ background:#f1f1f1; padding:10px; width:610px; margin:15px 0; }
+.content-page-inset-blank			{ margin:15px 0; }
+
+.content .grey						{ color:#ccc; padding:0 3px; }
+.content #related					{ margin:0 0 20px 0; width:41% !important; padding:20px 20px 10px; background:#f6f6f6; -moz-border-radius:10px; -webkit-border-radius:10px; }
+.content #related .module-header	{ background:0; } 
+.content #related .module-header h3	{ width:256px; padding:0; }
+.content #articleInfo				{ margin:0 0 20px 0; clear:both; }
+.content #articleInfo h3			{ border-bottom:1px solid #ddd; padding:0 2px 5px; }
+.content #articleInfo div			{ margin:0 0 15px; float:left; }
+.content #articleInfo div a			{ float:left; } 
+.content p.subheading				{ font-size:16px; margin:0; line-height:20px; font-weight:500; }
+.content p.bold						{ font-weight:bold; }
+.content p.last						{ width:50%; float:left; }
+.content .bookmarks					{ float:right; padding:0 0 25px; }
+span.grey							{ float:left; padding-right:3px; color:#ccc; }
+
+
+/* Article Create */
+#createArticle .content-page form			{ background:#F1F1F1; padding:15px; }
+#createArticle .content-page form span		{ margin:2px; padding:2px; width:250px; float:left; }
+#createArticle .content-page input.text		{ margin:2px; width:205px; float:left; }
+#createArticle .content-page input.check	{ margin:2px; }
+#createArticle .content-page select			{ margin:2px; float:left; }
+#createArticle .content-page label			{ width:143px; font-weight:bold; clear:both; }
+#createArticle .content-page small			{ float:left; padding-left:155px; width:250px; clear:both; }
+
+/* Article Edit */
+#articleEdit div.edit-content		{ padding:10px; background:#efefef; float:left; }
+#articleEdit label					{ width:170px; padding:5px 10px 5px 0; }
+#articleEdit textarea				{ float:left; width:400px; height:45px; margin:5px 2px 15px; }
+#articleEdit .checkbox input		{ float:left; margin:5px; }
+#articleEdit div.text				{ margin:2px; padding:2px; float:left; width:410px; }
+#articleEdit span.black				{ float:left; }
+#articleEdit small					{ padding-left:184px; margin:0 0 15px; }
+#articleEdit #previewWrapper		{ margin:0 0 15px; padding-top:15px; border-top:3px solid #0aa245; }
+#articleEdit #htmlWrapper			{ padding:0 0 15px; clear:both; float:left; border-top:3px solid #0aa245; }
+#articleEdit h2						{ margin:15px 0 10px; float:left; }
+
+/* Comments */
+/* Main */
+a.replies-toggle							{ font-size:11px; margin:0 0 10px 5px; }
+div.replyBox								{ background:url(../images/icons/reply.gif) -5px 9px no-repeat; float:left; }
+div.replyBox h3								{ margin:13px 0 0 14px; }
+div.replyBox .reply-container				{ float:left;  }
+div.replyBox .reply-container input.text	{ margin:0 0 0 14px; width:305px; float:none; background:#fff; border:1px solid #aaa; padding:5px; } 
+div.replyBox .reply-container textarea		{ font-size:13px; width:263px; height:70px; margin:5px 0; background:#fff; border:1px solid #aaa; padding:5px;  }
+
+#main #mainComments											{ float:left; width:100%; clear:both; }
+#main #mainComments ul.comments-list						{ clear:both; } 
+#mainComments ul.comments-list li							{ background:url(../images/icons/reply.gif) no-repeat left top; border-top:1px solid #CCCCCC; clear:both; float:left; margin-left:140px; padding-left:20px; position:relative; width:470px; }
+#mainComments ul.comments-list li:hover						{ background-color:#eee; }
+#mainComments ul.comments-list li div.comment				{ padding:5px 10px; width:275px; }
+#mainComments ul.comments-list li div b						{ line-height:16px; }
+#mainComments ul.comments-list li div p						{ padding:0 0 5px; line-height:17px; }
+#mainComments ul.comments-list li div span					{ font-size:11px; }
+#mainComments ul.comments-list li span.comment_time			{ font-weight:normal; font-size:11px; color:#999; }
+#mainComments ul.comments-list li div.comment_by			{ padding:5px 10px; width:124px; }
+#mainComments div.your-comment								{  }
+#mainComments div.your-comment textarea						{ margin:0 0 10px; width:619px; font-size:13px; height:50px; }
+
+.reply-Level_0								{ margin-left:0px !important; width:630px !important; background-image:none !important; padding-left:0 !important;  }
+.reply-Level_1								{ margin-left:20px !important; width:590px !important; _width:560px !important; }
+.reply-Level_2								{ margin-left:40px !important; width:570px !important; _width:540px !important; }
+.reply-Level_3								{ margin-left:60px !important; width:550px !important; _width:520px !important; }
+.reply-Level_4								{ margin-left:80px !important; width:530px !important; _width:500px !important; }
+.reply-Level_5								{ margin-left:100px !important; width:510px !important; _width:480px !important; }
+.reply-Level_6								{ margin-left:120px !important; width:490px !important; _width:460px !important; }
+.reply-Level_7								{ margin-left:140px !important; width:470px !important; _width:440px !important; }
+
+.reply-Level_1,								
+.reply-Level_2,								
+.reply-Level_3,								
+.reply-Level_4,								
+.reply-Level_5,								
+.reply-Level_6,								
+.reply-Level_7								{ padding-left:20px !important; background:url(../images/icons/reply.gif) top left no-repeat; }
+
+.reply-Level_0 .comment						{ width:465px !important; }
+.reply-Level_1 .comment						{ width:425px !important; }
+.reply-Level_2 .comment						{ width:405px !important; }
+.reply-Level_3 .comment						{ width:385px !important; }
+.reply-Level_4 .comment						{ width:355px !important; }
+.reply-Level_5 .comment						{ width:325px !important; }
+.reply-Level_6 .comment						{ width:305px !important; }
+.reply-Level_7 .comment						{ width:275px !important; }
+
+.reply-Level_0 textarea						{ width:453px !important; }
+.reply-Level_1 textarea						{ width:413px !important; }
+.reply-Level_2 textarea						{ width:393px !important; }
+.reply-Level_3 textarea						{ width:373px !important; }
+.reply-Level_4 textarea						{ width:343px !important; }
+.reply-Level_5 textarea						{ width:313px !important; }
+.reply-Level_6 textarea						{ width:293px !important; }
+.reply-Level_7 textarea						{ width:263px !important; }
+
+.reply-Level_4 input						{ width:276px !important; }
+.reply-Level_5 input						{ width:246px !important; }
+.reply-Level_6 input						{ width:226px !important; }
+.reply-Level_7 input						{ width:196px !important; }
+
+div.user-actions							{
+background: #EEEEEE;
+border: 1px solid #cccccc;
+border-top: 0;
+display: none;
+padding: 3px 0;
+position: absolute;
+right: -0px;
+top: 0;
+z-index: 10;
+width: 181px;
+}
+div.user-actions a							{ float:left; font-size:11px; padding:0 2px; }
+div.user-actions span						{ margin:2px; background:url(../images/icons/icons.gif) top left no-repeat; float:left; width:10px; height:10px;  }
+div.user-actions span.user-actions-delete	{ background-position:left -700px;  }	
+div.user-actions span.user-actions-reply	{ background-position:left -680px;  }
+div.user-actions span.user-actions-report	{ background-position:left -690px;  }
+
+/* Article*/
+#main #articleComments						{ float:left; }
+.content .article,
+.content .article_ext						{ border-bottom:1px solid #ddd; float:left; *padding-bottom:10px; }
+.content h2.article-heading					{ float:left; width:100%; color:#555; font-size:24px; font-weight:700; letter-spacing:-1px; line-height:32px; margin:10px 0 25px; *margin:10px 0 25px;  }
+.content .article_ext p						{ clear: none; }
+.content .article_ext img.leftside			{ float:left; padding-right: 10px; }
+.content .article_ext img.rightside			{ float:right; padding-left: 10px; }
+
+/* Articles */
+.articles-search							{ float:right; width:100%; padding:0 0 10px 0; margin:0 0 10px;  border-bottom:1px solid #0aa245; }
+.articles-search div						{ padding:5px 0;  }
+.articles-search div a,
+.articles-search div span					{ float:left; margin:0 3px 0 0; } 
+.articles-search input						{ float:right; margin:2px; }
+
+.articles-item								{ display:block; float:left; }
+.articles-list								{ float:left; }
+.articles-list li							{ clear:both; float:left; padding:10px 0; width:630px; }
+.articles-list li h3						{ font-size:19px; padding:0; color:#0ba245; width:90%; font-weight:normal; }
+.articles-list .item-footer					{ float:left; width:455px; }
+.articles-list .item-footer a				{ font-size:11px; text-decoration:underline; margin-right:3px; float:left; }
+.articles-list .item-footer a:hover			{ text-decoration:underline; }
+.articles-list .item-content				{ width:455px; float:left; }
+.articles-list .item-content a:hover		{ text-decoration:none; }
+.articles-list .item-content p				{ margin:0 0 5px; padding:0; line-height:16px; color:#333; }
+.articles-list .item-actions				{ font-size:11px; float:left; }
+.articles-list .item-actions a				{ float:left; padding:0 17px 0 0; font-size:11px; margin-right:15px; } 
+.articles-list .item-actions span			{ color:#999; margin-right:15px; }
+
+#club .articles-list .articles-img img			{ width:125px; float:left; margin:10px 10px 0 0; }
+#club .articles-list .articles-link				{ font-weight:bold; width:435px; float:left; text-decoration:underline; font-size:1.1em; }
+#club .articles-list .articles-link:hover		{ text-decoration:none; }
+#club .articles-list .item-content				{ background:#eee; margin:10px 0 25px; padding:10px; }
+#club .articles-list .item-content p			{ margin:10px 0; float:left; width:320px; }
+#club .articles-list a.item-comments			{ padding: 0 17px 0 3px; font-size:0.9em; height:15px; }
+#club .articles-list .articles-date				{ font-weight:bold; display:block; font-size:0.9em; }
+
+.articles-filter							{ float:left; margin:0 0 10px; padding:0 0 10px; border-bottom:3px solid #0aa245; }
+.articles-filter select						{ float:left; margin-right:5px; }
+.articles-filter span						{ float:left; margin:0 5px 0 2px; } 
+.articles-filter a							{ margin-top:-1px; }
+
+/* Main > Rating */
+#rating										{ padding:5px 0 3px; width:390px; float:left; }
+#rating em									{ margin:0 15px 0 3px; font-weight:bold; font-size:13px; float:left; }
+#rating a.ball								{ float:left; height:16px; padding:4px 15px; margin-top:-3px; background:url(../images/icons/football_off.png) no-repeat left bottom; }
+#rating a.ball img							{ border:0; width:22px; margin:0; cursor:pointer; }
+#rating a#ratingReset						{ display:none; margin:-3px 35px; }
+
+/* Main > Player List */
+#playerListTabs								{ margin:15px 0 0; }
+.club-filter								{ float:right; margin-top:-4px; }
+.table-filter								{ float:left; clear:both; width:100%; }
+.table-filter span							{ color:#ccc; margin:4px 4px 0 0; display:block; padding:2px 10px 2px 0; float:left; cursor:help; width:70px; }
+.table-filter span.enabled					{ color:#333; }
+.table-filter input							{ position:relative; top:2px; margin-right:2px; }
+
+/** Prem table **/
+#leaguetable table tr.winners td			{ background-color:#e1f2e2; }
+#leaguetable table tr.winners td.highlight	{ background-color:#e1ebe2; }
+#leaguetable table tr.relegated td			{ background-color:#f3dede; }
+#leaguetable table tr.relegated td.highlight{ background-color:#e8d6d6; }
+
+/* Main > Club */
+.content h2.club-heading					{ border:0; color:#333333; float:left; font-size:34px; font-weight:700; letter-spacing:-1px; margin:10px 25px 0 10px; padding:0; }
+#club .club-info							{ margin:0 0 5px; float:left; }
+#club .club-shirt-large						{ float:left; margin:7px 6px 0 0; background:url(../images/shirts/large/default.jpg); width:110px; height:110px; }
+#club .club-shirt-large	img					{ font-size:0; }
+#club .club-details-actions					{ width:504px; padding:10px 0; margin:10px 0 10px 10px; border-top:1px solid #efefef; }
+#club .club-details-actions a				{ font-size:11px; color:#4b4b4b; margin-right:15px; padding:2px 21px 1px 0; }
+#club .club-league-position					{ font-size:18px; float:left; width:200px; margin:-5px 0; }
+#club .club-league-position em				{ font-size:18px; color:#ccc; position:relative; bottom:-1px; margin:0 5px 0 0; font-weight:bold; } 
+#club #clubClubs							{ float:right; margin-top:30px; }
+#club .club-profile							{ margin:15px 0 0 0;  }	
+
+/** Club Shirt Images **/
+
+/*
+.club-big,
+.club-big-arsenal,
+.club-big-aston-villa,
+.club-big-chelsea,
+.club-big-everton,
+.club-big-fulham,
+.club-big-liverpool,
+.club-big-man-city,
+.club-big-man-utd,
+.club-big-newcastle,
+.club-big-norwich,
+.club-big-qpr,
+.club-big-reading,
+.club-big-soton,
+.club-big-stoke,
+.club-big-sunderland,
+.club-big-swansea,
+.club-big-tottenham,
+.club-big-west-ham,
+.club-big-west-brom,
+.club-big-wigan				{ width:107px; height:107px; display:block; background:url(http://imageseasynet.fantasyleague.com/common/shirts1213/big/shirts-big.png) left -12px no-repeat; }
+
+.club-big-arsenal			{ background-position:-12px -3px; }
+.club-big-aston-villa		{ background-position:-12px -118px; }
+.club-big-chelsea			{ background-position:-12px -233px; }
+.club-big-everton			{ background-position:-12px -348px; }
+.club-big-fulham			{ background-position:-12px -463px; }
+.club-big-liverpool			{ background-position:-12px -578px; }
+.club-big-man-city			{ background-position:-12px -693px; }
+.club-big-man-utd			{ background-position:-12px -808px; }
+.club-big-newcastle			{ background-position:-12px -923px; }
+.club-big-norwich			{ background-position:-12px -1038px; }
+.club-big-qpr				{ background-position:-12px -1153px; }
+.club-big-reading			{ background-position:-12px -1268px; }
+.club-big-soton				{ background-position:-12px -1383px; }
+.club-big-stoke				{ background-position:-12px -1498px; }
+.club-big-sunderland		{ background-position:-12px -1613px; }
+.club-big-swansea			{ background-position:-12px -1728px; }
+.club-big-tottenham			{ background-position:-12px -1843px; }
+.club-big-west-ham			{ background-position:-12px -1958px; }
+.club-big-west-brom			{ background-position:-12px -2073px; }
+.club-big-wigan				{ background-position:-12px -2188px; }
+*/
+
+.club-medium,
+.club-medium-arsenal,
+.club-medium-aston-villa,
+.club-medium-chelsea,
+.club-medium-everton,
+.club-medium-fulham,
+.club-medium-liverpool,
+.club-medium-man-city,
+.club-medium-man-utd,
+.club-medium-newcastle,
+.club-medium-norwich,
+.club-medium-qpr,
+.club-medium-reading,
+.club-medium-soton,
+.club-medium-stoke,
+.club-medium-sunderland,
+.club-medium-swansea,
+.club-medium-tottenham,
+.club-medium-west-ham,
+.club-medium-west-brom,
+.club-medium-wigan					{ width:64px; height:66px; display:block; background:url(http://imageseasynet.fantasyleague.com/common/shirts1213/medium/shirts-medium.png) left -1475px no-repeat; }
+
+.club-medium-arsenal				{ background-position:0 0; }
+.club-medium-aston-villa			{ background-position:0 -67px; }
+.club-medium-chelsea				{ background-position:0 -134px; }
+.club-medium-everton				{ background-position:0 -203px; }
+.club-medium-fulham					{ background-position:0 -267px; }
+.club-medium-liverpool				{ background-position:0 -337px; }
+.club-medium-man-city				{ background-position:0 -404px; }
+.club-medium-man-utd				{ background-position:0 -471px; }
+.club-medium-newcastle				{ background-position:0 -538px; }
+.club-medium-norwich				{ background-position:0 -605px; }
+.club-medium-qpr					{ background-position:0 -672px; }
+.club-medium-reading				{ background-position:0 -739px; }
+.club-medium-soton					{ background-position:0 -806px; }
+.club-medium-stoke					{ background-position:0 -873px; }
+.club-medium-sunderland				{ background-position:0 -940px; }
+.club-medium-swansea				{ background-position:0 -1006px; }
+.club-medium-tottenham				{ background-position:0 -1072px; }
+.club-medium-west-ham				{ background-position:0 -1141px; }
+.club-medium-west-brom				{ background-position:0 -1208px; }
+.club-medium-wigan					{ background-position:0 -1275px; }
+
+.club-medium-arsenal-gk				{ background-position:-64px 0; }
+.club-medium-aston-villa-gk			{ background-position:-64px -67px; }
+.club-medium-chelsea-gk				{ background-position:-64px -134px; }
+.club-medium-everton-gk				{ background-position:-64px -203px; }
+.club-medium-fulham-gk				{ background-position:-64px -267px; }
+.club-medium-liverpool-gk			{ background-position:-64px -337px; }
+.club-medium-man-city-gk			{ background-position:-64px -404px; }
+.club-medium-man-utd-gk				{ background-position:-64px -471px; }
+.club-medium-newcastle-gk			{ background-position:-64px -538px; }
+.club-medium-norwich-gk				{ background-position:-64px -605px; }
+.club-medium-qpr-gk					{ background-position:-64px -672px; }
+.club-medium-reading-gk				{ background-position:-64px -739px; }
+.club-medium-soton-gk				{ background-position:-64px -806px; }
+.club-medium-stoke-gk				{ background-position:-64px -873px; }
+.club-medium-sunderland-gk			{ background-position:-64px -940px; }
+.club-medium-swansea-gk				{ background-position:-64px -1006px; }
+.club-medium-tottenham-gk			{ background-position:-64px -1072px; }
+.club-medium-west-ham-gk			{ background-position:-64px -1141px; }
+.club-medium-west-brom-gk			{ background-position:-64px -1208px; }
+.club-medium-wigan-gk				{ background-position:-64px -1275px; }
+
+.club-small,
+.club-small-arsenal,
+.club-small-aston-villa,
+.club-small-chelsea,
+.club-small-everton,
+.club-small-fulham,
+.club-small-liverpool,
+.club-small-man-city,
+.club-small-man-utd,
+.club-small-newcastle,
+.club-small-norwich,
+.club-small-qpr,
+.club-small-reading,
+.club-small-soton,
+.club-small-stoke,
+.club-small-sunderland,
+.club-small-swansea,
+.club-small-tottenham,
+.club-small-west-ham,
+.club-small-west-brom,
+.club-small-wigan					{ width:31px; height:33px; display:block; background:url(http://imageseasynet.fantasyleague.com/common/shirts1213/small/shirts-small.png) left -738px no-repeat; }
+
+.club-small-arsenal					{ background-position:0 0; }
+.club-small-aston-villa				{ background-position:0 -34px; }
+.club-small-chelsea					{ background-position:0 -68px; }
+.club-small-everton					{ background-position:0 -102px; }
+.club-small-fulham					{ background-position:0 -135px; }
+.club-small-liverpool				{ background-position:0 -168px; }
+.club-small-man-city				{ background-position:0 -202px; }
+.club-small-man-utd					{ background-position:0 -236px; }
+.club-small-newcastle				{ background-position:0 -269px; }
+.club-small-norwich					{ background-position:0 -303px; }
+.club-small-qpr						{ background-position:0 -336px; }
+.club-small-reading					{ background-position:0 -370px; }
+.club-small-soton					{ background-position:0 -404px; }
+.club-small-stoke					{ background-position:0 -438px; }
+.club-small-sunderland				{ background-position:0 -470px; }
+.club-small-swansea					{ background-position:0 -504px; }
+.club-small-tottenham				{ background-position:0 -536px; }
+.club-small-west-ham				{ background-position:0 -572px; }
+.club-small-west-brom				{ background-position:0 -604px; }
+.club-small-wigan					{ background-position:0 -638px; }
+
+.club-small-arsenal-gk				{ background-position:-31px 0; }
+.club-small-aston-villa-gk			{ background-position:-31px -34px; }
+.club-small-chelsea-gk				{ background-position:-31px -68px; }
+.club-small-everton-gk				{ background-position:-31px -102px; }
+.club-small-fulham-gk				{ background-position:-31px -135px; }
+.club-small-liverpool-gk			{ background-position:-31px -168px; }
+.club-small-man-city-gk				{ background-position:-31px -202px; }
+.club-small-man-utd-gk				{ background-position:-31px -236px; }
+.club-small-newcastle-gk			{ background-position:-31px -269px; }
+.club-small-norwich-gk				{ background-position:-31px -303px; }
+.club-small-qpr-gk					{ background-position:-31px -336px; }
+.club-small-reading-gk				{ background-position:-31px -370px; }
+.club-small-soton-gk				{ background-position:-31px -404px; }
+.club-small-stoke-gk				{ background-position:-31px -438px; }
+.club-small-sunderland-gk			{ background-position:-31px -470px; }
+.club-small-swansea-gk				{ background-position:-31px -504px; }
+.club-small-tottenham-gk			{ background-position:-31px -536px; }
+.club-small-west-ham-gk				{ background-position:-31px -572px; }
+.club-small-west-brom-gk			{ background-position:-31px -604px; }
+.club-small-wigan-gk				{ background-position:-31px -638px; }
+
+.club-tiny,
+.club-tiny-arsenal,
+.club-tiny-aston-villa,
+.club-tiny-chelsea,
+.club-tiny-everton,
+.club-tiny-fulham,
+.club-tiny-liverpool,
+.club-tiny-man-city,
+.club-tiny-man-utd,
+.club-tiny-newcastle,
+.club-tiny-norwich,
+.club-tiny-qpr,
+.club-tiny-reading,
+.club-tiny-soton,
+.club-tiny-stoke,
+.club-tiny-sunderland,
+.club-tiny-swansea,
+.club-tiny-tottenham,
+.club-tiny-west-ham,
+.club-tiny-west-brom,
+.club-tiny-wigan					{ width:16px; height:17px; display:block; background:url(http://imageseasynet.fantasyleague.com/common/shirts1213/tiny/shirts-tiny.png) left -363px no-repeat; }
+
+.club-tiny-arsenal					{ background-position:0 0; }
+.club-tiny-aston-villa				{ background-position:0 -17px; }
+.club-tiny-chelsea					{ background-position:0 -33px; }
+.club-tiny-everton					{ background-position:0 -50px; }
+.club-tiny-fulham					{ background-position:0 -66px; }
+.club-tiny-liverpool				{ background-position:0 -83px; }
+.club-tiny-man-city					{ background-position:0 -99px; }
+.club-tiny-man-utd					{ background-position:0 -116px; }
+.club-tiny-newcastle				{ background-position:0 -133px; }
+.club-tiny-norwich					{ background-position:0 -149px; }
+.club-tiny-qpr						{ background-position:0 -165px; }
+.club-tiny-reading					{ background-position:0 -182px; }
+.club-tiny-soton					{ background-position:0 -198px; }
+.club-tiny-stoke					{ background-position:0 -215px; }
+.club-tiny-sunderland				{ background-position:0 -231px; }
+.club-tiny-swansea					{ background-position:0 -247px; }
+.club-tiny-tottenham				{ background-position:0 -264px; }
+.club-tiny-west-ham					{ background-position:0 -281px; }
+.club-tiny-west-brom				{ background-position:0 -297px; }
+.club-tiny-wigan					{ background-position:0 -314px; }
+
+/** Gameweek scroller **/
+div.gameweek-scroller							{ margin:15px 0; }
+ul.gameweeks li									{ text-align:center; float:left; margin:0 2px; }
+ul.gameweeks li a								{ width:16px; background:#F4F4F4; padding:5px 7px; display:block; text-align:center;  }
+ul.gameweeks li.highlight a						{ background:#666; color:#fff; font-weight:bold; }
+
+div.gameweek-scroller .jcarousel-container					{ position: relative; }
+div.gameweek-scroller .jcarousel-clip						{ z-index: 2; padding: 0; margin: 0; height:26px; overflow: hidden; float: left; width:578px; _width:572px; }
+div.gameweek-scroller .jcarousel-list						{ z-index: 1; overflow: hidden; position: relative; top: 0; left: 0; margin: 0; padding: 0; }
+div.gameweek-scroller .jcarousel-list li,
+div.gameweek-scroller .jcarousel-item						{ float: left; list-style: none; height:26px; }
+div.gameweek-scroller .jcarousel-skin-tango 
+div.gameweek-scroller .jcarousel-item						{ height: 26px; }
+div.gameweek-scroller .jcarousel-skin-tango 
+div.gameweek-scroller .jcarousel-clip-horizontal			{ height: 26px; }
+div.gameweek-scroller .jcarousel-prev						{ float:left; color:#fff; background:#1B75BB; display:block; padding:5px; text-align:center; width:15px; border-right: solid 1px #ffffff; } 
+div.gameweek-scroller .jcarousel-next						{ float:right; color:#fff; background:#1B75BB; display:block; padding:5px; text-align:center; width:15px; border-left: solid 1px #ffffff; }
+div.gameweek-scroller .jcarousel-prev div					{ background:url(../images/icons/icons.gif) no-repeat 3px -775px; height:16px; }
+div.gameweek-scroller .jcarousel-next div					{ background:url(../images/icons/icons.gif) no-repeat 3px -786px; height:16px; }
+div.gameweek-scroller .jcarousel-prev:active,
+div.gameweek-scroller .jcarousel-next:active,
+div.gameweek-scroller .jcarousel-item a:active				{ background:#3399cc; color:#fff; }
+
+#pitchslider .jcarousel-next					{ background:#1B75BB; color:#FFFFFF; display:block; float:right; padding:5px; text-align:center; width:16px; }
+#pitchslider .jcarousel-next div				{ background:url(../images/icons/icons.gif) no-repeat 3px -786px; height:16px; }
+#pitchslider .jcarousel-prev					{ background:#1B75BB; color:#FFFFFF; display:block; float:left; padding:5px; text-align:center; width:16px; }
+#pitchslider .jcarousel-prev div				{ background:url(../images/icons/icons.gif) no-repeat 3px -775px; height:16px; }
+
+
+/* Main > Profile */
+.welcome								{ width:610px; padding:10px; font-weight: bold; font-size: 13px; border: 1px solid #bbb; background: #f7fff3; border-radius:8px; -moz-border-radius: 8px; -webkit-border-radius:8px; margin-bottom:15px; }
+.welcome h3								{ margin:2px 0 5px; }
+
+h4.subheading							{ font-size:24px; font-weight:500; margin:-5px 2px 5px 2px; }
+#profile								{ background:url(../images/profile/top.gif) no-repeat bottom left; padding:10px; width:610px; } 
+#profile img#userImage					{ height:46px; width:46px; margin:0 10px 20px 0; float:left; }
+#myFriends								{ margin:0 30px 30px 0; }
+
+.profile-details-actions				{ width:548px !important; padding:0 !important; }
+.profile-details-actions.module-footer a { margin:0 15px 0 -5px !important; }
+
+#supportedClubs							{ float:left; width:298px; border:1px solid #dddddd; border-width:0 1px 1px; min-height:100px; }
+#supportedClubs li div					{ float:left; }
+
+.profile-supporting						{ background:0 !important; margin:15px 0 0 0 !important; width:300px;  }
+.profile-supporting li					{ clear:both; position:relative; background:#fcfcfc; float:left; padding:5px 10px; width:278px; border-bottom:1px dotted #ddd; }
+.profile-supporting li.end				{ padding:5px 0; width:293px; background:#fff !important; border-bottom:0; }
+.profile-supporting li h3				{ margin:0 0 5px; width:207px; }
+.profile-supporting li div.team-info	{ line-height:18px; width:200px; text-align:left; margin-left:12px; }
+.profile-supporting li a				{ font-size:11px; line-height:normal; }
+.profile-supporting li h3 a.stop		{ width:16px; height:16px; padding-left:0; }
+.profile-supporting li.small			{ margin-bottom:0; }
+.profile-supporting li.small h3			{ width:100%; margin:0; padding:0; }
+
+.profile-support						{ background:0 !important; margin:15px 30px 0 0 !important; width:300px;  }
+.profile-support .module-content ul		{ float:left; width:298px; border:1px solid #dddddd; border-width:0 1px 1px; min-height:195px;  }
+.profile-support li						{ clear:both; position:relative; background:#fcfcfc; float:left; padding:5px 10px; width:278px; border-bottom:1px dotted #ddd; }
+.profile-support li.end					{ padding:5px 0; width:300px; background:#fff !important; border-bottom:0; }
+.profile-support li h3					{ margin:0 0 5px; width:207px; }
+.profile-support li div.team-info		{ line-height:18px; width:200px; text-align:left; margin-left:12px; }
+.profile-support .module-content li img	{ float:left }
+.profile-support .module-content li a.name	{ float:left; padding:4px; }
+.profile-support li h3 a.stop			{ width:16px; height:16px; padding-left:0; }
+.profile-support li.small				{ margin-bottom:0; }
+.profile-support li.small h3			{ width:100%; margin:0; padding:0; }
+
+
+#addTeamBox .report-form				{ height:300px; overflow:auto; margin:10px 0 15px; float:left; width:100%; border:1px solid #ccc; }
+#addTeamBox .report-form ul				{  }
+#addTeamBox .report-form ul li			{ border-bottom:1px solid #efefef; clear:both; overflow:hidden; float:left; width:100%; } 
+#addTeamBox .report-form ul li a		{ display:block; float:left; padding:5px 10px; width:100%; background:#fcfcfc; }
+#addTeamBox .report-form ul li a:hover	{ background:#fff; } 
+#addTeamBox .report-form ul li img		{ float:left; } 
+#addTeamBox .report-form ul li h3		{ float:left; padding:5px;  }
+#addTeamBox em							{ float:left; padding:5px; }
+#addTeamBox textarea#clubName			{ width:250px; float:right; margin:0 0 15px; }
+
+.profile-teams							{ margin:-15px 0 30px; width:100%; }
+
+.profile-text							{ background:0 !important; clear:both; margin:15px 30px 0 0 !important;  }
+.profile-text p							{ font-size:12px; height:80px; width:278px; border:1px solid #dddddd; border-width:0 1px 1px; }
+.profile-text p.success					{ width:auto !important; padding:5px 10px; margin:15px 0; border:1px solid #bbb; height:auto; }
+.profile-text textarea					{ width:288px; margin:0 0 10px; height:92px; font-size:12px; }
+.profile-text .max-chars span			{ padding:5px; }
+
+.profile-friends						{ width:300px; float:left; margin:0 30px 30px 0; }
+.profile-friends ul						{ margin:0 0 5px; float:left; }
+.profile-friends li						{ clear:both; padding:5px; margin-bottom:-1px; float:left; width:290px; border:1px solid #efefef; border-width:1px 0; cursor:pointer; }
+.profile-friends li a.name				{ float:left; display:block; margin:5px 10px 0 0; font-weight:bold; width:70%; }
+.profile-friends li img					{ height:46px; width:46px; float:left; margin:0 10px 0 0; }
+
+.profile-followers						{ width:300px; float:left; }
+.profile-followers ul					{ margin:0 0 5px; float:left; }
+.profile-followers li					{ clear:both; padding:5px; margin-bottom:-1px; float:left; width:290px; border:1px solid #efefef; border-width:1px 0; cursor:pointer; }
+.profile-followers li a.name			{ float:left; display:block; margin:5px 10px 0 0; font-weight:bold; }
+.profile-followers li img				{ height:46px; width:46px; float:left; margin:0 10px 0 0; }
+
+.profile-search							{ clear:both; float:left; width:100%; margin:0 0 10px; }
+.profile-search input					{ float:left; width:217px; margin-right:5px; }
+.profile-search p.message				{ margin-top:10px; }
+
+.profile-search-results					{ margin:10px 0 15px; float:left; width:70%; border-bottom:1px solid #efefef; }
+.profile-search-results	li				{ border-top:1px solid #efefef; padding:10px 0; clear:both; float:left; width:100%; } 
+.profile-search-results	li a.name		{ padding:5px 10px; font-weight:bold;  }
+.profile-search-results	li span.username { float:left; padding:5px 10px; font-size:11px; }
+.profile-search-results	li img			{ float:left; } 
+
+/* Main > Change Profile Image */
+#editProfileImage						{ float:left; margin:25px 0; }
+#editProfileImage .current-image,
+#editProfileImage .preview-image		{ float:left; padding:15px 15px 15px 0; border-right:1px solid #efefef; margin:0 15px 0 0;  }
+#editProfileImage .current-image img,
+#editProfileImage .preview-image img	{ margin:-15px 0 -15px 10px; }
+#editProfileImage .upload-image			{ float:left; margin:0 0 15px; }
+#editProfileImage .upload-image input	{ float:left; margin:0 10px 0 0;  }
+#editProfileImage .preview-image		{ margin:15px 0 0; float:left; } 
+#editProfileImage .image-actions		{ margin:24px 0 0 15px; float:left; }
+#editProfileImage #croppedImage			{ margin:0 0 15px; }
+
+div.avatars								{ margin:25px 0; float:left; }
+table#profileAvatars td					{ padding:10px 5px; }
+
+/* Main > User Options */
+#userOptions h3							{ background:url(../images/sprite.png) 0 -88px no-repeat; border:0; color:#0aa245; padding:7px 5px; }
+#userOptions input.text					{ width:250px; }
+#userOptions select, 					
+#userOptions textarea					{ margin:2px; }
+#userOptions ul.tabs					{ margin-top:30px; }
+#userOptions div.form					{ margin-bottom:30px; }
+
+.large-label							{ margin:5px 0; float:left; }
+.large-label label						{ clear:none; width:auto; text-align:left; padding-top:0; }
+.large-label input						{ clear:both; float:left; margin:2px 5px 5px 0; }
+
+.communication input					{ margin:0 5px 0 0; }
+
+/** Player Profile ******IMPROVE********/
+img.profile-image						{ width:122px; height:158px; background:url(../images/playerEmpty.gif);  float:left; margin:0 15px 0 0; }
+div.player-links						{ float:left; padding:40px 15px 0; }
+div.profile-stats						{ float:left; width:493px; }
+div.profile-stats h3,
+table#playerInfo h3						{ margin:5px 0; }
+div.profile-stats table					{ margin-bottom:10px; }
+#playerProfile h4						{ border-top:1px solid #EFEFEF; position:relative; margin-top:-18px; padding:5px 0 10px; }
+
+/** Company Info Pages **/
+.company-info #flash					{ width:630px; margin:0 0 25px; height:300px; border-top:3px solid #0aa245; }
+.company-info #frontpage .tag			{ margin-bottom:25px; }
+.company-info #games-container			{ width:630px; margin:0 0 25px; border-top:3px solid #0aa245; }
+.company-info #contactus p 				{ width:auto; }
+
+#frontpage .tag a						{ font-weight:bold; color:#0AA245; }
+
+#intro									{ display:block; float:left; overflow:hidden; position:relative; width:630px; background:url(../images/companyinfo/border.jpg) no-repeat bottom; padding-bottom:5px; }
+#intro .slideshow-flash					{ position:absolute; top:0; left:630px; z-index:10; }
+#intro #slideshow						{ height:300px; position:relative; width:630px; }
+#intro #slideshow ul					{ left:0; margin-bottom:0; overflow:hidden; padding:0; position:relative; top:0; z-index:1; }
+#intro #slideshow li					{ float:left; height:300px; width:630px; }
+#intro #slideshow li a					{ }
+#intro #slideshow .jcarousel-list		{ left:0; margin:0; overflow:hidden; padding:0; position:relative; top:0; z-index:1; }
+#intro #slideshow .jcarousel-list li, 
+#intro #slideshow .jcarousel-item		{ float:left; height:300px; list-style-image:none; list-style-position:outside; list-style-type:none; }
+#intro #slideshow .jcarousel-clip		{ height:300px; margin:0; overflow:hidden; padding:0; position:relative; width:630px; z-index:2; }
+#intro #slideshow a.next				{ padding:5px 10px; color:#fff; background:#0BA245; display:block; right:0; font-weight:bold; cursor:pointer; top:15px; width:60px; position:absolute; z-index:10; }
+#intro #slideshow a.next:hover			{}
+#intro #slideshow .slideshow-info		{ background:#0BA245; bottom:-50px; height:20px; position:absolute; width:610px; z-index:20; padding:10px; }
+#intro #slideshow .slideshow-info h3	{ color:#fff; margin:-2px 0 0; display:inline-block; padding:0 5px; font-size:1.6em; float:left; }
+#intro #slideshow .slideshow-info a		{ float:right; } 
+
+/** Game Guide **/
+
+.mini-menu li h3						{ background:#fafafa; margin:0; border-top:1px solid #ddd; border-bottom:1px solid #ddd; font-size:13px; padding:5px 10px; }
+.mini-menu								{ margin:0; }
+.mini-menu li							{ padding:5px 10px; border-bottom:1px solid #ddd; }
+.mini-menu li.tab-cur a					{ font-weight:bold; }
+
+#gameguide ol.list						{ margin:0 0 15px 20px; list-style-position:outside; }
+#gameguide ol.list li					{ padding:5px 0; width:90%; }
+
+#gg-Form, #gg-Trans, #gg-Subs			{ display:none; }	
+#sc-Goals, #sc-DPP, #sc-Ass, #sc-ET		{ display:none; }
+#cl-PL, #cl-OC							{ display:none; }
+
+/** Packages **/
+#packages h3							{ border-bottom:0; margin-bottom:0; }
+
+#packages table th.std					{ color:#00b1da; }
+#packages table td.std					{ background:#f6fbfe; }
+#packages table tr.on td.std			{ background:#d3f2f7; }
+#packages table th.slv					{ color:#999999; }
+#packages table td.slv					{ background:#fafafa; }
+#packages table tr.on td.slv			{ background:#e6e6e6; }
+#packages table th.gld					{ color:#fdaf42; }
+#packages table td.gld					{ background:#fffcf9; }
+#packages table tr.on td.gld			{ background:#fef1de; }
+#packages table td.std,
+#packages table td.slv,
+#packages table td.gld					{ text-align:center; }
+
+#siteTour h4							{ border-bottom:1px dotted #333; padding-bottom:5px; margin-bottom:10px;  }
+#siteTour ul.menu						{ bottom:-35px; float:right; position:relative; margin-top:-22px; }
+#siteTour ul.menu li					{ float:right; }
+#siteTour ul.menu li a					{  color:#0BA245; padding:5px 8px; }
+#siteTour ul.menu li.tab-cur a			{ font-weight:bold; border:1px solid #0BA245; }
+#siteTour img							{ margin:0 0 25px 0; }
+#siteTour p img							{ margin:0 25px 25px 0; }
+#siteTour #st-2, #siteTour #st-3,
+#siteTour #st-4, #siteTour #st-5		{ display:none; }
+
+.games .game a							{ font-weight:bold; }
+
+#contactus .contact-box					{ float:left; width:50%; }
+
+/** Ins and Outs **/
+#transfernews table.general td			{ padding:5px 2px; vertical-align:middle; }
+
+/**
+**  Module 
+**/
+
+.module-container						{ float:left; width:100%; }
+
+/* Module > Header */
+.module-container a.item_minus			{ padding:5px 7px 3px; background:0; background:url(../images/tabs_button_back_border.jpg) no-repeat left; }
+.module-header							{ height:25px; position:relative; background:url(../images/sprite.png) no-repeat 0 0; }
+.module-header h3						{ color:#333; padding:5px 10px 4px; margin:0; display:block; font-size:13px; font-weight:bold; }
+.module-header a.heading-button-small	{ float:right; padding:6px 10px; font-size:11px; color:#666; }
+.module-header span						{ }
+.module-buttons							{ float:right; width:29px; background:url(../images/sprite.png) no-repeat right 0px; display:inline-block; }
+.module-buttons a						{ display:block; line-height:15px; background:url(../images/module-actions-border.png) left no-repeat; font-size:11px; font-weight:normal; height:16px; letter-spacing:0; padding:5px 0px; }
+.module-buttons a.item-minus			{ padding:5px 7px 4px; float:right; }		
+
+/* Module > Header > Tabs */
+.module-header ul.tabs li				{ background-position:right -27px; }
+.module-header ul.tabs li a				{ background-position:left -27px; }
+.module-header ul.tabs li.tab-cur		{ background:url(../images/sprite.png) no-repeat right -49px; }
+.module-header ul.tabs li a.cur,
+.module-header ul.tabs li.tab-cur a		{ background:url(../images/sprite.png) no-repeat left -49px; color:#FFFFFF !important; }
+
+/* Module > Content */
+.module-content							{ clear:both; }
+.module-content p						{ padding:10px;  }
+.module-content form					{ padding:10px 15px;  }
+.module-content p.editorial				{ clear:both; line-height:18px; float:left; background:url(../images/gradient.gif) bottom repeat-x; }
+.module-content p img					{ padding:4px; background:#fff; border:1px solid #ccc; }
+.module-content img.left				{ margin:0 10px 0 0; }
+.module-content img.right				{ margin:0 0 0 10px; }
+.module-content ul.links				{  }
+.module-content ul.links li				{ padding:5px 0px;  }
+
+/* Module > Footer */
+.module-footer							{ font-size:11px; float:left; width:100%; padding:3px 0 5px; }
+.module-footer span						{ color:#777; margin:0 7px; }
+.module-footer a						{ padding:2px 21px 1px 7px !important; font-size:11px; margin-left:5px; color:#777; font-weight:normal; }
+.module-footer a#teamsAdd				{ padding-left:20px; }
+
+/* Module > Footer > Links  */
+a.more									{ background:url(../images/icons/icons.gif) no-repeat right 0px; padding-right:21px; }
+a.txt									{ background:url(../images/icons/icons.gif) no-repeat right -16px; padding-right:21px; }
+a.stop									{ background:url(../images/icons/icons.gif) no-repeat right -32px; padding-right:21px; }
+a.user-options							{ background:url(../images/icons/icons.gif) no-repeat right -48px; padding-right:21px; }
+a.change								{ background:url(../images/icons/icons.gif) no-repeat right -48px; padding-right:21px; }
+a.new									{ background:url(../images/icons/icons.gif) no-repeat right -64px; padding-right:21px; }
+a.calendar								{ background:url(../images/icons/icons.gif) no-repeat right -80px; padding-right:21px; }
+a.news									{ background:url(../images/icons/icons.gif) no-repeat right -144px; padding-right:21px; }
+a.register								{ background:url(../images/icons/icons.gif) no-repeat right -160px; padding-right:21px; }
+a.delete								{ background:url(../images/icons/icons.gif) no-repeat right -304px; text-indent:-9999px; height:16px; width:16px; }
+a.cross									{ background:url(../images/icons/icons.gif) no-repeat right -304px; padding-right:21px; }
+a.tick									{ background:url(../images/icons/icons.gif) no-repeat right -352px; padding-right:21px; }
+a.add									{ background:url(../images/icons/icons.gif) no-repeat right -176px; padding-right:21px; }
+a.addteam								{ background:url(../images/icons/icons.gif) no-repeat right -447px; padding-right:21px; }
+a.plus									{ background:url(../images/icons/icons.gif) no-repeat right -176px; height:16px; width:16px; }
+a.lost									{ padding:6px 10px; font-weight:bold; font-size:11px; }
+a.help									{ background:url(../images/icons/icons.gif) no-repeat right -208px; padding-right:21px !important; }
+a.question								{ background:url(../images/icons/icons.gif) no-repeat right -208px; height:16px; width:16px; }
+a.squad									{ background:url(../images/icons/icons.gif) no-repeat right -431px; padding-right:21px; }
+a.history								{ background:url(../images/icons/icons.gif) no-repeat right -479px; padding-right:21px; }
+a.report								{ background:url(../images/icons/icons.gif) no-repeat right -224px; padding-right:21px; }
+a.fan									{ background:url(../images/icons/icons.gif) no-repeat right -240px; padding-right:21px; }
+a.your-profile							{ background:url(../images/icons/icons.gif) no-repeat right -256px; padding-right:21px; }
+a.pic									{ background:url(../images/icons/icons.gif) no-repeat right -272px; padding-right:21px; }
+a.comments								{ background:url(../images/icons/icons.gif) no-repeat right -288px; padding-right:21px; }
+a.logout								{ background:url(../images/icons/icons.gif) no-repeat right -320px; padding-right:21px; }
+a.remove								{ background:url(../images/icons/icons.gif) no-repeat right -320px; padding-right:21px; }
+a.up									{ background:url(../images/icons/icons.gif) no-repeat right -368px; padding-right:21px; }
+a.down									{ background:url(../images/icons/icons.gif) no-repeat right -384px; padding-right:21px; }
+a.friends								{ background:url(../images/icons/icons.gif) no-repeat right -415px; padding-right:21px; }
+a.item-comments							{ background:url(../images/icons/icons.gif) no-repeat right -708px; }
+a.addfriend								{ background:url(../images/icons/icons.gif) no-repeat right -399px; padding-right:21px; }
+a.deletefriend							{ background:url(../images/icons/icons.gif) no-repeat right -304px; width:16px; height:16px; display:inline-block; }
+div.transferred							{ background:url(../images/icons/icons.gif) no-repeat right -495px; width:16px; height:16px; display:inline-block; }
+div.tied								{ background:url(../images/icons/icons.gif) no-repeat right -511px; width:16px; height:16px; display:inline-block; }
+div.lost								{ background:url(../images/icons/icons.gif) no-repeat right -304px; width:16px; height:16px; display:inline-block; }
+div.won									{ background:url(../images/icons/icons.gif) no-repeat right -352px; width:16px; height:16px; display:inline-block; }
+div.outcup								{ background:url(../images/icons/icons.gif) no-repeat right -304px; width:16px; height:16px; display:inline-block; }
+div.incup								{ background:url(../images/icons/icons.gif) no-repeat right -352px; width:16px; height:16px; display:inline-block; }
+
+/* Leaderboard Ranks */
+div.rankUp								{ background:url(../images/icons/icons.gif) no-repeat right -741px; width:16px; height:16px; display:inline-block; }
+div.rankDown							{ background:url(../images/icons/icons.gif) no-repeat right -752px; width:16px; height:16px; display:inline-block; }
+div.rankNoChange						{ background:url(../images/icons/icons.gif) no-repeat right -762px; width:16px; height:16px; display:inline-block; }
+div.rankUnknown							{ width:16px; height:16px; display:inline-block; }
+
+
+/* Team Player Appearances */
+div.tp-bench							{ background:url(../images/icons/icons.gif) no-repeat right -304px; width:16px; height:16px; display:inline-block; }
+div.tp-pitch							{ background:url(../images/icons/icons.gif) no-repeat right -352px; width:16px; height:16px; display:inline-block; }
+div.tp-bench-scheduled					{ background:url(../images/icons/icons.gif) no-repeat right -320px; width:16px; height:16px; display:inline-block; }
+div.tp-pitch-scheduled					{ background:url(../images/icons/icons.gif) no-repeat right -336px; width:16px; height:16px; display:inline-block; }
+div.tp-notinsquad						{ width:16px; height:16px; display:inline-block; }
+div.tp-unknown							{ width:16px; height:16px; display:inline-block; }
+
+
+.accept									{ background:url(../images/icons/icons.gif) no-repeat right -730px; padding-right:21px; }
+
+a.inline								{ display:inline-block; border:0 !important; margin:0 0 -4px; }
+a.inline:hover							{ background-color:transparent; }
+
+/**	
+**  User 
+**/
+
+/* ******MAKE GENERALISED******  */
+#user									{ float:right; padding-bottom:10px; width:300px; }
+#user a									{ color:#4b4b4b; }
+#user a:hover							{ color:#000; }
+#user #userContent						{ width:300px; margin: 20px 0;  }
+#user #userImage						{ float:right; margin:0; }
+#user #userImage img					{ height:46px; width:46px; }
+#user #userActions						{ height:46px; position:relative; clear:both; width:100%; margin:0 0 25px; }
+#user #userActions a					{ display:block; float:left; font-size:11px; margin:2px 6px 0 5px; padding:2px 21px 1px 0; }
+#user #userActions h2					{ font-size:13px; color:#4b4b4b; margin-right:57px; padding:4px 6px 5px; border-bottom:1px solid #efefef; }
+#user #userTeams						{ clear:both; float:left; width:100%; }
+#user #userFriends						{ border-width:1px; clear:both; float:left; width:300px; }			
+#user h2								{ color:#333; }	
+#user #userActions .change-profile-image { clear:right; display:none; line-height:18px; float:right; position:absolute; right:-46px; text-align:center; width:46px; }
+#user #userActions .change-profile-image a { padding:5px; margin:0; background:#eee; }
+#user #userSummary						{ margin:0 0 25px; }
+
+
+/* User Modules > Login */
+#loginBox								{ float:left; padding-bottom:10px; background:url(../images/light/bottom.gif) no-repeat bottom left; margin:0 0 25px; }
+#loginBox .module-header				{ background:url(../images/light/header.gif) top left no-repeat; height:26px; }
+#loginBox .module-content				{ border-top:0; }
+#loginBox input.text					{ width:200px; clear:both; margin:5px 0 }
+#loginBox .checkbox						{ float:right; margin:5px 0; }
+#loginBox .checkbox input				{ margin:2px 2px 0 5px; *margin:-2px 0 0 2px; float:right; }
+#loginBox .checkbox label				{ margin:0 1px 0 0; float:right; }
+#loginBox .top							{ padding:10px; width:278px; float:left; border:1px solid #ddd; border-width:0 1px; background:url(../images/light/rhs-Friends.gif) no-repeat -1px bottom; }						
+#loginBox .bottom						{ float:left; width:280px; background:url(../images/light/yellow.gif) repeat-y; padding:10px 10px 0; }
+#loginBox div.error-sm					{ width:233px; padding-left:33px; }
+#loginBox .top label					{ clear:both; float:left; font-weight:bold; }
+
+/* User Modules > Light User Prompts */
+.light									{ margin: 0 0 25px; width:300px; padding-bottom:10px; background:url(../images/light/bottom.gif) no-repeat bottom left; }
+.light .module-header					{ background:url(../images/light/header.gif) top left no-repeat; height:26px; }
+.light .module-header h3				{ padding:5px 10px; }
+.light .module-content					{ background:#fff; border-top:0; float:left; }
+.light div a							{ text-decoration:underline; }
+.light div a.button-lge					{ text-decoration:none; }
+.light div.top							{ padding:10px 12px; line-height:18px; width:274px; float:left; border:1px solid #ddd; border-width:0 1px;  }			
+.light div.bottom						{ float:left; width:276px; background:url(../images/light/yellow.gif) repeat-y; padding:10px 12px 0; }
+.light input.text						{ width:201px; float:left; margin:0; }
+.light img.inset-img					{ padding:0; border:0; background:0; position:relative; }
+
+#twitter.light div.top,
+#gameNews.light div.top					{ background:url(../images/light/rhs-CompleteProfile.gif) no-repeat -1px bottom; }			
+#registerNow.light div.top				{ background:url(../images/light/rhs-SignUp.gif) no-repeat -1px bottom; }				
+
+#twitter.light							{ background:url(../images/light/bottom-pale-blue.gif) no-repeat left bottom; }
+#twitter.light div.bottom				{ background:url(../images/light/pale-blue.gif) repeat-y; }
+#twitter.light img.inset-img			{ margin-top:0; margin-right:-5px; }
+#twitter ul#twitter_update_list li		{ padding:5px 0; border-bottom:1px solid #efefef; }
+
+#clubPages.light						{ margin-right:30px; }
+#clubPages.light div.bottom				{ border-top:1px solid #ddd; }
+
+#gotoLobby.light						{ padding-bottom:0; margin-bottom:0; }
+#gotoLobby.light img					{ margin:-32px -13px 1px 0 ; } 
+#gotoLobby.light div.bottom				{ background:url(../images/light/rhs-Friends.gif) no-repeat -1px bottom; }
+#gotoLobby.light div.bottom span		{ color:#ff9000; font-weight:bold;  }
+#gotoLobby.light div.bottom a			{ font-weight:bold; color:#0BA245; line-height:20px; }
+
+#teamActions							{ padding-bottom:0; margin-top:15px; }
+#teamActions div.bottom					{ padding-bottom:15px; background:url(../images/light/rhs-Friends.gif) no-repeat -1px bottom; }
+#teamActions div.bottom span			{ color:#ff9000; font-weight:bold;  }
+#teamActions div.bottom a				{ font-weight:bold; color:#0BA245; line-height:15px; }
+
+#gameNews								{ float:right; }
+#gameNews p.top							{ border:1px solid #ddd; border-width:0 1px; background:url(../images/light/rhs-CompleteProfile.gif) no-repeat -1px bottom; }
+#gameNews p.top img						{ margin:-43px -10px -10px; }
+#gameNews .bottom-short p.bottom		{ height:27px; padding-bottom:0; background:url(../images/light/yellow.gif) repeat-y; }
+
+#social									{ clear:both; float:left; margin:10px 0 0; width:630px; }
+#social .twitter						{ -moz-border-radius:5px; -webkit-border-radius:5px; background:url(https://s3.amazonaws.com/twitter_production/a/1277934004/images/buttons/bg-btn.gif) repeat 0 0 #DDDDDD; border-color:#DDDDDD #DDDDDD #CCCCCC; border-style:solid; border-width:1px; color:#333333; display:block; font:14px "Lucida Grande",sans-serif; padding:5px 10px 5px 5px; text-decoration:none; text-shadow:1px 1px 0 #FFFFFF; }
+#social .twitter:hover					{ background-position: 0 -206px; color:#000; border-color:#999999 #999999 #888888; }
+#social .twitter:active					{ background:#ddd; }
+#social .facebook						{ background:display: block; width:79px; height:27px; margin-right: 10px; float: left; background: transparent url('../images/tray_share_buttons.png') no-repeat 0 0; }
+#social .facebook:active				{ background:#4F6AA3; }
+#social .twitter span,
+#social .facebook span					{ float:left; margin-right:5px; }
+
+
+.addthis_toolbox						{ float:left; clear:both; border:1px solid #ccc; border-right:0; margin-right:10px; }
+.addthis_toolbox a						{ float:left; background-color:#eee; text-decoration:none; font-weight:bold; padding:1px 1px !important; border-right:1px solid #ccc; }
+.addthis_toolbox a:hover				{ background-color:#ddd; } 
+.addthis_toolbox a.twitter				{ background:url(http://imageseasynet.fantasyleague.com/fast/prem.1011/images/ico/twitter-icon2.png) no-repeat 5px center #FFFFFF; border-bottom:1px solid #CCCCCC; color:#33CCFF; font-size:13px; display:block; font-weight:bold; padding:5px 6px 5px 27px !important; text-decoration:none; width:82px; }
+.addthis_toolbox a.twitter:hover		{ background-color:#33CCFF; color:#fff; }
+
+
+/** Terms & Conditions **/
+#tcs ul ul								{ text-indent:20px; padding:10px 0; }
+#tcs ul li								{ margin:10px 0; }
+#privacy ul								{ margin:0 0 15px; }
+
+/* User Modules > Teams List */
+div#userLeagues							{ float:left; margin:25px 0; width:300px; }
+table.myLeagues							{ background:url(../images/light/header.gif) no-repeat center top;border-bottom:1px solid #efefef; }
+table.myLeagues h2						{ margin:0; }
+table.myLeagues th						{ background:0;  padding:6px 10px; }
+table.myLeagues td						{ border-top:1px solid #efefef;}
+table.myLeagues tr:hover td				{ background:#f8f8f8; cursor:pointer; }
+
+table.myLeagues span						{ width:14px; height:14px; float:left; margin:0 0 0 3px; background-image:url(../images/icons/gameicons2.gif); background-repeat:no-repeat; }
+table.myLeagues span.ico-pro				{ background-position:left top; }
+table.myLeagues span.ico-classic			{ background-position:left -14px; }
+table.myLeagues span.ico-f1					{ background-position:left -28px; }
+table.myLeagues span.ico-golf				{ background-position:left -42px; }
+table.myLeagues span.ico-cl					{ background-position:left -56px; }
+table.myLeagues span.ico-pic				{ background-position:left -70px; }
+table.myLeagues span.ico-cic				{ background-position:left -84px; }
+table.myLeagues span.ico-fives				{ background-position:left -98px; }
+table.myLeagues span.pro-inleague			{ background-position:left -112px; }
+table.myLeagues span.not-inleague			{ background-position:left -126px; }
+table.myLeagues span.classic-inleague		{ background-position:left -140px; }
+table.myLeagues span.fives-inleague			{ background-position:left -164px; }
+
+
+/* User Modules > Teams List */
+table.myTeams							{ background:url(../images/light/header.gif) no-repeat center top; border-bottom:1px solid #efefef; }
+table.myTeams h2						{ margin:0; }
+table.myTeams th						{ background:0; padding:6px 10px; }
+table.myTeams tr.team-cur td			{ background-color:#f8f8f8; }
+table.myTeams td						{ border-top:1px solid #efefef; background:transparent; }
+table.myTeams td a						{ padding:0; background:0; font-weight:bold; font-size:12px; }
+
+table.myTeams span						{ width:14px; height:14px; float:left; margin:0 0 0 3px; background-image:url(../images/icons/gameicons2.gif); background-repeat:no-repeat; }
+table.myTeams span.ico-pro				{ background-position:left top; }
+table.myTeams span.ico-classic			{ background-position:left -14px; }
+table.myTeams span.ico-f1				{ background-position:left -28px; }
+table.myTeams span.ico-golf				{ background-position:left -42px; }
+table.myTeams span.ico-cl				{ background-position:left -56px; }
+table.myTeams span.ico-pic				{ background-position:left -70px; }
+table.myTeams span.ico-cic				{ background-position:left -84px; }
+table.myTeams span.ico-fives			{ background-position:left -98px; }
+table.myTeams span.pro-inleague			{ background-position:left -112px; }
+table.myTeams span.not-inleague			{ background-position:left -126px; }
+table.myTeams span.classic-inleague		{ background-position:left -140px; }
+table.myTeams span.fives-inleague		{ background-position:left -154px; }
+
+table.myTeams tr.team-cur span.ico-classic			{ background-position:right -14px; }
+table.myTeams tr.team-cur span.ico-f1				{ background-position:right -28px; }
+table.myTeams tr.team-cur span.ico-golf				{ background-position:right -42px; }
+table.myTeams tr.team-cur span.ico-cl				{ background-position:right -56px; }
+table.myTeams tr.team-cur span.ico-pic				{ background-position:right -70px; }
+table.myTeams tr.team-cur span.ico-cic				{ background-position:right -84px; }
+table.myTeams tr.team-cur span.ico-fives			{ background-position:right -98px; }
+table.myTeams tr.team-cur span.pro-inleague			{ background-position:right -112px; }
+table.myTeams tr.team-cur span.not-inleague			{ background-position:right -126px; }
+table.myTeams tr.team-cur span.classic-inleague		{ background-position:right -140px; }
+table.myTeams tr.team-cur span.fives-inleague		{ background-position:right -154px; }
+
+
+/* User Modules > Updates */
+.module-content ul.updates li				{ clear:both; position:relative; padding:0 4px 6px 2px; background:#f8f8f8; border-bottom:1px solid #efefef; float:left; width:294px; }
+.module-content ul.updates li img.avatar	{ background:#FFFFFF; border:1px solid #ccc; float:left; margin:6px 5px 0 3px; padding:1px; width:16px; }
+.module-content ul.updates li a.reply		{ float:right; display:none; width:10px; height:10px; background:url(../images/icons/icons.gif) no-repeat top -681px; margin:6px 2px 0 0; }
+.module-content ul.updates li a.reply:hover	{ background:url(../images/icons/comment_actions_sprite.png) no-repeat top right; }
+.module-content ul.updates li div.update	{ float:left; width:240px; padding:5px 0 0 35px; line-height:16px; }
+.module-content ul.updates li div.left		{ margin:7px 10px 0 6px; }
+.module-content ul.updates li.user-update a	{ color:#777; text-decoration:underline; }
+.module-content ul.updates li.user-update a:hover { text-decoration:none; }
+.module-content ul.updates li.user-update a.username { color:#333; font-weight:bold; text-decoration:none; }
+.module-content ul.updates .update-time		{ color:#888; font-size:11px; }
+
+a.userIcon-dev								{ padding-left:33px; background:url(../images/icons/dev.gif) left 2px no-repeat; }
+
+/* User Modules > Status */
+.module-content #status						{ background:#f8f8f8; border-bottom:1px solid #EFEFEF; clear:both; float:left; padding:10px; } 
+.module-content #status	span				{ font-size:11px; color:#666; float:left; padding:0 2px 5px; }
+.module-content #statusPost					{ width:193px; font-size:11px; padding:4px; float:left; }
+.module-content #statusUsername				{ float:left; padding:3px 8px 3px 2px; font-size:13px; } 
+.module-content #statusInput				{ display:none; width:272px; float:left; }
+.module-content #statusUsernameInput		{ width:155px; }
+.module-content #statusSubmit				{ margin:0 0 0 5px; }
+
+/**
+**  Footer 
+**/
+
+#footer										{ background:#0ba245 url(../images/footer-top.gif) no-repeat top; width:959px; margin:0 -18px; position:relative; padding:35px 19px; }
+#footer ul									{ margin-right:25px; float:left; }
+#footer ul li								{ padding:0 10px 0 0; float:left; }
+#footer ul.copyright						{ text-align:right; color:#999; float:right; width:auto; }
+#footer a									{ color:#fff; text-decoration:underline; font-weight:bold; }
+#footer div.footer-content					{ clear:both; color:#fff; line-height:25px; margin-top:10px; float:left; width:100%; }  
+
+/**
+**  Popups & Adverts
+**/
+
+/** Popups **/
+.mini-popup									{ position:relative; cursor:pointer; float:right; width:29px; }
+.mini-popup ul								{ background:#fff; width:175px; padding:3px 8px; -moz-border-radius:3px; border:1px solid #000; }
+.mini-popup ul li							{ float:none; }
+.mini-popup ul li a							{ padding:2px 0px; display:block; border-top:1px solid #efefef; font-size:11px; color:#3975AD; }
+.mini-popup ul li a:hover					{ color:#000; }
+.mini-popup a.rss-icon						{ padding:5px 7px 2px; height:18px; cursor:default; display:none; }
+.mini-popup a.rss-icon img					{ border:0; }
+.mini-popup-popup							{ position: absolute; display: none; z-index:4000; width:213px; }
+.mini-popup-popup b							{ font-size:11px; padding:3px 0; display:block; }
+
+/** Adverts **/
+#user .advert								{ background:url(../images/advert.gif) top left no-repeat; float:left; padding-top:9px; }
+#top-banner									{ float:right; padding-top:26px; }
+.houseAd									{ width:298px; clear:both; float:left; }
+
+/** Admin **/
+#admin										{ background:url(../images/admin.png); padding-top:66px; position:fixed; right:0; top:100px; width:40px; border:1px solid #ccc; border-right:0; }
+#admin a.createarticle						{ height:113px; display:block; }
+#admin a.hijackaccount						{ height:117px; display:block;}
+/**
+** Error Messages
+**/
+
+.error										{ color: #ff0000; font-weight: bold; font-size: 11px; border: 1px solid #bbb; background: #fff9f9 url(../images/icons/cross.png) 8px 6px no-repeat; padding: 5px 10px 10px 35px; margin:0; float: left; width: 90%; border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;}
+.error-sm									{ clear: both; color: #ff0000; font-weight: bold; display:block; font-size: 13px; border: 1px solid #bbb; background: #fff9f9 url(../images/icons/cross.png) 8px 6px no-repeat; padding: 5px 10px; margin: 10px 0 0; float: left; }
+.error ul									{ font-weight: normal; margin: 0; }
+.error ul li a								{ color: #FF0000; text-decoration: underline; }
+input.input-error							{ border: 1px solid #ff0000 !important; background: #fff9f9 !important; color: #ff0000 !important; }
+input.input-error:focus						{ border: 1px solid #ff0000 !important; background: #fff9f9 !important; color: #ff0000 !important; }
+.announcement								{ clear:both; background:url(../images/profile/top.gif) no-repeat bottom left; padding:0 10px 10px; width:610px; margin:0 0 10px; } 
+.announcement p								{ margin:0; width:90%  }
+
+/**
+** Success Messages
+**/
+.message									{ width: 90% !important; color: #ff0000; font-weight: bold; font-size: 11px; border: 1px solid #bbb; background: #fff9f9; padding: 5px 10px; margin:0; float: left; }
+.message.warning							{ width:auto !important; }
+.success									{ clear: both; width: 90% !important; text-align:center; color:#40901d; font-weight:bold; font-size:11px; border:1px solid #bbb; background:#f7fff3; padding:10px; margin:15px 0 0 0 !important; border-radius:8px; -moz-border-radius: 8px; -webkit-border-radius:8px; } 
+/* .success									{ clear: both;  text-align:center; font-weight: bold; border: 1px solid #bbb; background: #f7fff3; width: 95% !important; margin: 15px 0 10px; font-size: 110%; border-radius: 10px; border-color: #009247; color: #009247; padding: 10px 5px 0; } */
+
+
+/* Fixes issue here http://code.google.com/p/jcrop/issues/detail?id=1 */
+.jcrop-holder								{ text-align: left; margin:0 0 15px; }
+.jcrop-vline, .jcrop-hline					{ font-size: 0; position: absolute; background: white url(../images/jcrop.gif) top left repeat; /* 	opacity: .5; 	*filter:alpha(opacity=50); 	*/ }
+.jcrop-vline								{ height: 100%; width: 1px !important; }
+.jcrop-hline								{ width: 100%; height: 1px !important; }
+.jcrop-handle								{ font-size: 1px; width: 7px !important; height: 7px !important; border: 1px #eee solid; background-color: #333; *width:9px; *height:9px; }
+
+.jcrop-tracker								{ *background-color:gray;width:100%;height:100%; }
+
+.custom .jcrop-vline, 
+.custom .jcrop-hline						{ background: yellow; }
+.custom .jcrop-handle						{ border-color: black; background-color: #C7BB00; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+
+/*
+ ColorBox Core Style
+ The following rules are the styles that are consistant between all ColorBox themes
+*/
+#reportBox h3								{ margin-top:0; }
+#reportBox input, 
+#reportBox label							{ font-size:13px; margin:3px; }
+#reportBox .report-form,
+#reportBox em								{ clear:both; float:left; margin:0 0 10px; font-weight:normal; } 
+#reportBox textarea							{ width:325px; clear:both; height:70px; float:left; margin:0 0 10px;  }
+
+#colorbox, #cboxOverlay, #cboxWrapper		{ position:absolute; top:0; left:0; z-index:9999; overflow:hidden; }
+#cboxOverlay								{ position:fixed; width:100%; height:100%; }
+#cboxMiddleLeft, #cboxBottomLeft			{ clear:left;}
+#cboxContent								{ position:relative; overflow:visible;}
+#cboxLoadedContent							{ overflow:auto;}
+#cboxLoadedContent iframe					{ display:block; width:100%; height:100%; border:0;}
+#cboxTitle									{ margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic	{ position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, 
+#cboxSlideshow								{ cursor:pointer;}
+
+#cboxTopLeft								{ width:21px; height:21px; background:url(../images/popup/borderTopLeft.png) 0 0 no-repeat;}
+#cboxTopCenter								{ height:21px; background:url(../images/popup/borderTopCenter.png) 0 0 repeat-x;}
+#cboxTopRight								{ width:21px; height:21px; background:url(../images/popup/borderTopRight.png) 0 0 no-repeat;}
+#cboxBottomLeft								{ width:21px; height:21px; background:url(../images/popup/borderBottomLeft.png) 0 0 no-repeat;}
+#cboxBottomCenter							{ height:21px; background:url(../images/popup/borderBottomCenter.png) 0 0 repeat-x;}
+#cboxBottomRight							{ width:21px; height:21px; background:url(../images/popup/borderBottomRight.png) 0 0 no-repeat;}
+#cboxMiddleLeft								{ width:21px; background:url(../images/popup/borderMiddleLeft.png) 0 0 repeat-y;}
+#cboxMiddleRight							{ width:21px; background:url(../images/popup/borderMiddleRight.png) 0 0 repeat-y;}
+#cboxContent								{ background:#fff;}
+#cboxLoadedContent							{ margin-bottom:5px;}
+#cboxClose									{ position:absolute; cursor:pointer; top:0; right:0; background:url(../images/icons/icons.gif) left -304px no-repeat; width:16px; height:16px; text-indent:-9999px;}
+
+/** Comments Pager **/
+.commentsPages								{ float:left; margin:5px 0; width:100%; }
+.commentsPages ul							{ border-bottom:0 !important; }
+.commentsPages li							{ float:left; margin:0 3px; padding:1px 4px; border:0; background:0; width:auto; clear:none; }
+.commentsPages li a							{ margin:0; color:#333; clear:none !important; padding:0 !important; font-weight:bold; text-decoration:underline; } 
+.commentsPages li.dots						{ padding:2px 5px !important; margin:0 5px !important; }
+.commentsPages li.next a,
+.commentsPages li.prev a,
+.commentsPages li span						{ font-weight:bold; } 
+.commentsPages li.tab-cur a					{ color:#0BA245 !important; text-decoration:none;  }
+
+/** Textbox editor **/
+
+div.wysiwyg { border: 1px solid #cccccc; padding: 5px; background-color: #ffffff; }
+div.wysiwyg * { margin: 0; padding: 0; }
+
+div.wysiwyg ul.panel { border-bottom: 1px solid #cccccc; float: left; width: 100%; padding: 0 0 0 0; }
+div.wysiwyg ul.panel li { list-style-type: none; float: left; margin: 1px 2px 3px 0;  background: #ffffff;}
+div.wysiwyg ul.panel li.separator { height: 16px; margin: 0 4px; border-left: 1px solid #cccccc; }
+div.wysiwyg ul.panel li a { text-indent: -5000px; opacity: 0.85; filter:alpha(opacity=85); display: block; width: 16px; height: 16px; background: url('../images/jquery.wysiwyg.gif') no-repeat -64px -80px; border: 0; cursor: pointer; padding: 1px; }
+div.wysiwyg ul.panel li a:hover, div.wysiwyg ul.panel li a.active { opacity: 1.00; filter:alpha(opacity=100); }
+div.wysiwyg ul.panel li a.active { background-color: #f9f9f9; border: 1px solid #cccccc; border-left-color: #aaaaaa; border-top-color: #aaaaaa; padding: 0; }
+
+div.wysiwyg ul.panel li a.bold { background-position: 0 -16px; }
+div.wysiwyg ul.panel li a.italic { background-position: -16px -16px; }
+div.wysiwyg ul.panel li a.strikeThrough { background-position: -32px -16px; }
+div.wysiwyg ul.panel li a.underline { background-position: -48px -16px; }
+
+div.wysiwyg ul.panel li a.justifyLeft { background-position: 0 0; }
+div.wysiwyg ul.panel li a.justifyCenter { background-position: -16px 0; }
+div.wysiwyg ul.panel li a.justifyRight { background-position: -32px 0; }
+div.wysiwyg ul.panel li a.justifyFull { background-position: -48px 0; }
+
+div.wysiwyg ul.panel li a.indent { background-position: -64px 0; }
+div.wysiwyg ul.panel li a.outdent { background-position: -80px 0; }
+
+div.wysiwyg ul.panel li a.subscript { background-position: -64px -16px; }
+div.wysiwyg ul.panel li a.superscript { background-position: -80px -16px; }
+
+div.wysiwyg ul.panel li a.undo { background-position: 0 -64px; }
+div.wysiwyg ul.panel li a.redo { background-position: -16px -64px; }
+
+div.wysiwyg ul.panel li a.insertOrderedList { background-position: -32px -48px; }
+div.wysiwyg ul.panel li a.insertUnorderedList { background-position: -16px -48px; }
+div.wysiwyg ul.panel li a.insertHorizontalRule { background-position: 0 -48px; }
+
+div.wysiwyg ul.panel li a.h1 { background-position: 0 -32px; }
+div.wysiwyg ul.panel li a.h2 { background-position: -16px -32px; }
+div.wysiwyg ul.panel li a.h3 { background-position: -32px -32px; }
+div.wysiwyg ul.panel li a.h4 { background-position: -48px -32px; }
+div.wysiwyg ul.panel li a.h5 { background-position: -64px -32px; }
+div.wysiwyg ul.panel li a.h6 { background-position: -80px -32px; }
+
+div.wysiwyg ul.panel li a.cut { background-position: -32px -64px; }
+div.wysiwyg ul.panel li a.copy { background-position: -48px -64px; }
+div.wysiwyg ul.panel li a.paste { background-position: -64px -64px; }
+
+div.wysiwyg ul.panel li a.increaseFontSize { background-position: -16px -80px; }
+div.wysiwyg ul.panel li a.decreaseFontSize { background-position: -32px -80px; }
+
+div.wysiwyg ul.panel li a.createLink { background-position: -80px -48px; }
+div.wysiwyg ul.panel li a.insertImage { background-position: -80px -80px; }
+
+div.wysiwyg ul.panel li a.html { background-position: -47px -46px; }
+div.wysiwyg ul.panel li a.removeFormat { background-position: -80px -63px; }
+
+div.wysiwyg ul.panel li a.empty { background-position: -64px -80px; }
+
+div.wysiwyg iframe { border: 0;  clear: left; margin: 4px 0 0 1px; }
+
+textarea { overflow: auto; }
+
+/* Match Preview */
+
+.preview p								{ width:450px; padding:0 0 10px; line-height:18px; }
+.preview ul								{ width:150px; border-left:1px solid #DDDDDD; padding:0 0 10px 20px; }
+.preview ul li							{ margin:10px 0 0; }
+.matchPreview							{ width:630px; background:url(../images/preview_pitch.jpg) left top no-repeat; padding:26px 0 14px; margin-bottom:10px; }
+.matchPreview ul						{ margin:0 auto; }
+.matchPreview ul.gk						{ width:117px; height:60px; }
+.matchPreview ul.form4					{ width:468px; height:60px; }
+.matchPreview ul.form5					{ width:585px; height:60px; }
+.matchPreview ul.form3					{ width:351px; height:60px; }
+.matchPreview ul.form2					{ width:234px; height:60px; }
+.matchPreview ul.form1					{ width:117px; height:60px; }
+.matchPreview ul li						{ width:117px; height:60px; float:left; position:relative; text-align:center; }
+.matchPreview ul li span				{ background:url(../images/preview_bg.png); _background:#000; position:relative; display:inline-block; width:105px; color:#fff; font-weight:bold; padding:3px 5px; }
+
+.matchPreview li div					{ width:31px; margin:0 auto -5px; text-indent:-9999px; position:relative; height:33px; display:block; background:url(http://imageseasynet.fantasyleague.com/common/shirts1213/small/shirts-small.png) left -738px no-repeat }
+.club-arsenal li div					{ background-position:0 0; }
+.club-aston-villa li div				{ background-position:0 -34px; }
+.club-chelsea li div					{ background-position:0 -68px; }
+.club-everton li div					{ background-position:0 -102px; }
+.club-fulham li div						{ background-position:0 -135px; }
+.club-liverpool li div					{ background-position:0 -168px; }
+.club-man-city li div					{ background-position:0 -202px; }
+.club-man-utd li div					{ background-position:0 -236px; }
+.club-newcastle li div					{ background-position:0 -269px; }
+.club-norwich li div					{ background-position:0 -303px; }
+.club-qpr li div						{ background-position:0 -336px; }
+.club-reading li div					{ background-position:0 -370px; }
+.club-soton li div						{ background-position:0 -404px; }
+.club-stoke li div						{ background-position:0 -438px; }
+.club-sunderland li div					{ background-position:0 -470px; }
+.club-swansea li div					{ background-position:0 -504px; }
+.club-tottenham li div					{ background-position:0 -536px; }
+.club-west-ham li div					{ background-position:0 -572px; }
+.club-west-brom li div					{ background-position:0 -604px; }
+.club-wigan li div						{ background-position:0 -638px; }
+
+.matchPreviewEuro						{ width:630px; background:url(../images/preview_pitch.jpg) left top no-repeat; padding:26px 0 14px; margin-bottom:10px; }
+.matchPreviewEuro ul					{ margin:0 auto; }
+.matchPreviewEuro ul.gk					{ width:117px; height:60px; }
+.matchPreviewEuro ul.form4				{ width:468px; height:60px; }
+.matchPreviewEuro ul.form5				{ width:585px; height:60px; }
+.matchPreviewEuro ul.form3				{ width:351px; height:60px; }
+.matchPreviewEuro ul.form2				{ width:234px; height:60px; }
+.matchPreviewEuro ul.form1				{ width:117px; height:60px; }
+.matchPreviewEuro ul li					{ width:117px; height:60px; float:left; position:relative; text-align:center; }
+.matchPreviewEuro ul li span			{ background:url(../images/preview_bg.png); _background:#000; position:relative; display:inline-block; width:105px; color:#fff; font-weight:bold; padding:3px 5px; }
+
+.matchPreviewEuro li div				{ width:31px; margin:0 auto -5px; text-indent:-9999px; position:relative; height:33px; display:block; background:url(../../../ClassicInternationalCup/default/images/shirts/small/shirts-small.png) left -738px no-repeat }
+.club-croatia li div					{ background-position:0 0; }
+.club-czech-republic li div				{ background-position:0 -34px; }
+.club-denmark li div					{ background-position:0 -68px; }
+.club-england li div					{ background-position:0 -101px; }
+.club-france li div						{ background-position:0 -135px; }
+.club-germany li div					{ background-position:0 -169px; }
+.club-greece li div						{ background-position:0 -202px; }
+.club-italy li div						{ background-position:0 -236px; }
+.club-netherlands li div				{ background-position:0 -268px; }
+.club-poland li div						{ background-position:0 -303px; }
+.club-portugal li div					{ background-position:0 -336px; }
+.club-ireland li div					{ background-position:0 -369px; }
+.club-russia li div						{ background-position:0 -403px; }
+.club-spain li div						{ background-position:0 -437px; }
+.club-sweden li div						{ background-position:0 -471px; }
+.club-ukraine li div					{ background-position:0 -505px; }
+
+
+/* Fives Preview */
+
+.fivesPreview 							{ width:630px; background:url(../../../Fives/default/images/Fives_Teamscreen_Pitch.jpg) left top no-repeat; padding:26px 0 14px; margin-bottom:10px; height: 400px; }
+.fivesPreview  ul						{ margin:0 auto; }
+.fivesPreview  ul li div 				{text-indent: -9999px;}
+.fivesPreview  ul.gk					{ width:117px; height:100px; }
+.fivesPreview  ul.form4					{ width:468px; height:100px; }
+.fivesPreview  ul.form5					{ width:585px; height:100px; }
+.fivesPreview  ul.form3					{ width:351px; height:100px; }
+.fivesPreview  ul.form2					{ width:480px; height:100px; }
+.fivesPreview  ul.form1					{ width:117px; height:100px; }
+.fivesPreview  ul li					{ width:117px; height:100px; float:left; position:relative; text-align:center; }
+.fivesPreview ul.form2 li				{ margin-left: 80px;}
+.fivesPreview  ul li span				{ background: #000000; _background:#000; position:relative; display:inline-block; width:105px; color:#fff; font-weight:bold; padding:3px 5px; left: 90px; top: -30px; }
+
+
+
+table.print { clear:none; font-family:Arial; width:170px; float:left; font-size:9px;  border:1px solid #000; border-collapse:separate; }
+table.print td,
+table.print th { padding:0 2px; }
+table.print th { background:#000; color:#fff; }
+table.print tr.on td { background:#f4f4f4; }
+
+table.print2 { clear:none; font-family:Arial; width:340px; float:left; font-size:9px;  border:1px solid #000; border-collapse:separate; }
+table.print2 td,
+table.print2 th { padding:0 2px; }
+table.print2 th { background:#000; color:#fff; }
+table.print2 tr.on td { background:#f4f4f4; }

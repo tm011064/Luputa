@@ -1,0 +1,79 @@
+﻿ALTER PROCEDURE AllTypesParams
+(
+           @a bigint
+           ,@b binary(50)
+           ,@c bit
+           ,@d char(10)
+           ,@f datetime
+           ,@g decimal(14,4)
+           ,@h float
+           ,@i int
+           ,@j nvarchar(50)
+           ,@k nvarchar(max)
+           ,@l smalldatetime
+           ,@m smallint
+           ,@n tinyint
+           ,@o uniqueidentifier
+           ,@p varbinary(50)
+           ,@q varbinary(max)
+           ,@r varchar(50)
+           ,@s varchar
+           ,@t xml
+)
+AS
+BEGIN
+
+  DECLARE @somevalue DECIMAL(14, 4);
+  SET     @somevalue = 11.234
+
+  SELECT [a]
+        ,[b]
+        ,[c]
+        ,[d]
+        ,[f]
+        ,[g]
+        ,[h]
+        ,[i]
+        ,[j]
+        ,[k]
+        ,[l]
+        ,[m]
+        ,[n]
+        ,[o]
+        ,[p]
+        ,[q]
+        ,[r]
+        ,[s]
+        ,(SELECT TOP 1 a AS 'Lala' FROM [AllTypes])
+        , @somevalue
+        ,(SELECT TOP 1 a AS 'Lala' FROM [AllTypes]) AS 'Custom1'
+        , @somevalue  AS Custom2
+        ,[t]
+    FROM [AllTypes]
+
+END
+GO
+
+EXEC AllTypesParams 100
+           ,null
+           ,1
+           ,'char(10)'
+           ,'01.01.2001'
+           ,11.11
+           ,11.11
+           ,10
+           ,'nvarchar(50)'
+           ,'nvarchar(max)'
+           ,'01.01.2001'
+           ,10
+           ,10
+           ,'469E1175-1CB0-4ac4-A405-0A05BDD3DAC5'
+           ,null
+           ,null
+           ,'varchar(50)'
+           ,'varchar'
+           ,'<a></a>'
+GO
+
+
+SELECT * FROM information_schema.tables

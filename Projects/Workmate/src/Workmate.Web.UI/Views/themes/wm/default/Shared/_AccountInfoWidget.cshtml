@@ -1,0 +1,33 @@
+﻿@model Workmate.Web.UI.Models.Account.LoginDetailsModel
+           
+@if (this.User.IsAnonymous)
+{   
+    using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {    
+      
+      <fieldset class="formsEntry">
+    
+        <label for="Username" class="short">Username</label>
+        @Html.TextBoxFor(model => model.UserName, new { @class = "short", @maxlength = "256" })
+        <br /><br />
+        <label for="Password" class="short">Password</label>
+        @Html.TextBoxFor(model => model.Password, new { @class = "short", @maxlength = "256" })
+        <br /><br />
+        <label for="RememberMe" class="short">Remember me</label>
+        @Html.EditorFor(model => model.RememberMe)
+        <br /><br />
+
+      </fieldset>    
+    
+      <input type="submit" value="Login" />
+    }
+}
+else
+{
+    <div class="left">REGISTERED: (@this.User.UserName)</div>      
+        
+    using (Html.BeginForm("Logout", "Account", FormMethod.Post))
+    { 
+    <div class="left"><input type="submit" value="Logout" /></div>
+    }
+}

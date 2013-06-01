@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Home"  description="" resourceKey="Home">
+    <siteMapNode url="~/Javascript" title="Javascript" resourceKey="Javascript_Home" path="/{0}/Default.aspx" 
+        pattern="/([0-9]*)/Default.aspx" vanity="/Default.aspx?Category=$1" >
+      <siteMapNode url="~/Javascript/Converter" title="Converter"  description="" resourceKey="Javascript_Converter" />
+    </siteMapNode>
+    <siteMapNode url="~/Regex" title="Regex"  description="" resourceKey="Regex_Home">
+      <siteMapNode url="~/Regex/Tester" title="Regex Tester"  description="" resourceKey="Regex_Tester" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

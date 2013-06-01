@@ -1,0 +1,136 @@
+﻿@using Workmate.Components.Contracts.Company
+@using Workmate.Web.Components.Application.Sitemaps
+
+@model IEnumerable<IOfficeModel>
+
+<div class="container">
+
+@{ 
+  HashSet<string> countries = new HashSet<string>();
+  HashSet<string> locations = new HashSet<string>();
+  int count = 0;
+  bool isInRow = false;
+  bool isFirst = true;
+}
+
+@foreach (IOfficeModel record in this.Model.OrderBy(c => c.Country).ThenBy(c => c.Location))
+{
+  if (!string.IsNullOrWhiteSpace(record.Country) && !countries.Contains(record.Country.ToUpperInvariant()))
+  {
+    if (isInRow)
+    {
+      WriteLiteral("</div><!-- row end -->");
+      isInRow = false;
+    }
+    <div class="row"><div class="span9"><h2>@record.Country</h2></div></div>
+    <text>@{ countries.Add(record.Country.ToUpperInvariant());
+             count = 0; }</text>  
+  }
+  if (!string.IsNullOrWhiteSpace(record.Location) && !locations.Contains((record.Country ?? "NA_") + record.Location.ToUpperInvariant()))
+  {
+    if (isInRow)
+    {
+      WriteLiteral("</div><!-- row end -->");
+      isInRow = false;
+    }
+    <div class="row"><div class="span9"><h3>@record.Location</h3></div></div>
+    <text>@{ locations.Add((record.Country ?? "NA_") + record.Location.ToUpperInvariant());
+             count = 0; }</text>
+  }
+
+  if (count == 0 || count % 3 == 0)
+  {
+    if (isInRow)
+    {
+      WriteLiteral("</div><!-- row end -->");
+    }
+    <text><div class="row"></text>
+    isInRow = true;
+  }
+  
+  <div class="span4">
+    <div class="contentpanel">
+    <div class="header">
+      <span>@if (!string.IsNullOrWhiteSpace(record.Name))
+            { <text>@record.Name</text> }
+            else
+            { <text>&nbsp;</text> }
+      </span> 
+      <a class="pull-right icon-trash" title="delete" href="@Url.Action("Offices_Delete", "ControlPanel", new { officeId = record.OfficeId })"></a>
+      <a class="pull-right icon-edit" title="edit" href="@Url.Action("Offices_Edit", "ControlPanel", new { officeId = record.OfficeId })"></a>
+    </div>
+    <div class="body">
+      <address>  
+  @{ isFirst = true; }
+
+  @if (!string.IsNullOrWhiteSpace(record.AddressLine1))
+  {
+    if (isFirst) { isFirst = false; } else { <text><br /></text> } 
+    <text>@record.AddressLine1</text> 
+  }
+  @if (!string.IsNullOrWhiteSpace(record.AddressLine2))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text>@record.AddressLine2</text> }
+  @if (!string.IsNullOrWhiteSpace(record.AddressLine3))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text>@record.AddressLine3</text> }
+  @if (!string.IsNullOrWhiteSpace(record.AddressLine4))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text>@record.AddressLine4</text> }
+  
+  @if (!string.IsNullOrWhiteSpace(record.PostCode)
+       || !string.IsNullOrWhiteSpace(record.Location))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> }     
+  }                                           
+  @if (!string.IsNullOrWhiteSpace(record.PostCode))
+  { <text>@record.PostCode</text> }
+  @if (!string.IsNullOrWhiteSpace(record.Location))
+  { <text>&nbsp;@record.Location</text> }
+
+  @if (!string.IsNullOrWhiteSpace(record.Country))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text>@record.Country</text> }
+  @if (!string.IsNullOrWhiteSpace(record.ContactNumber))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text><abbr title="Phone">P:</abbr>@record.ContactNumber</text> }
+  @if (!string.IsNullOrWhiteSpace(record.Fax))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text><abbr title="Fax">Fax:</abbr>@record.Fax</text> }
+  @if (!string.IsNullOrWhiteSpace(record.Email))
+  {
+    if (isFirst) { isFirst = false; }
+    else
+    { <text><br /></text> } 
+    <text><a href="mailto:@record.Email">@record.Email</a></text> }
+      </address>
+    </div>
+  </div>
+  </div>
+  count++;
+}
+@if (isInRow)
+{
+    WriteLiteral("</div><!-- row end -->");
+}
+</div>

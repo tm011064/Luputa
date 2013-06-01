@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MockupCacheController>
+  <MyCacheSection enabled="True" minutes="15">
+    <MockupCacheItem name="UniqueUser" enabled="true" cacheItemPriority="Normal" isIterating="true" suffix="_UU" />
+    <MockupCacheItem name="TestMockupObject" cacheKey="tmo" cacheItemPriority="Default" enabled="True" isIterating="False" minutes="10" />
+    <MockupCacheItem name="TestIteratingMockupObject" cacheKey="timo" cacheItemPriority="Default" enabled="True" isIterating="true" suffix="_TIMO"/>
+</MyCacheSection>
+</MockupCacheController>

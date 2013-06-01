@@ -1,0 +1,21 @@
+﻿CREATE PROCEDURE [<# schemaName #>].[<# tableName #>_Insert]
+(
+<# insertParameters #>
+)
+AS
+BEGIN
+
+  SET NOCOUNT ON;
+
+  INSERT INTO [<# schemaName #>].[<# tableName #>] 
+  (
+<# insertClause #>	
+  ) 
+  VALUES
+  (
+<# insertValues #>
+  );
+    
+  RETURN SCOPE_IDENTITY();
+  
+END

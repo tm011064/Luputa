@@ -1,0 +1,71 @@
+﻿--------------------------------------------------------------------------
+17.03.2009 -> Version 1.1.3.0 added to SVN (Roman Majewski)
+Description: Changed the clustered cache section to allow multiple
+applications at one database.
+BREAKING CHANGE: The database schema for the clusetered cache component
+has changed as it now implements an ApplicationId.
+
+--------------------------------------------------------------------------
+26.02.2009 -> Version 1.1.2.1 added to SVN (Roman Majewski)
+Description: Added domain information to the authenticationmanager for
+domain sharing.
+
+--------------------------------------------------------------------------
+22.01.2009 -> Version 1.1.1.0 added to SourceSafe (Roman Majewski)
+Description: Added business tier validation functionality.
+BREAKING CHANGE: Removed GetResourceText() methods at TextResourceManager
+and replaced it with GetFormattedResourceText()
+
+--------------------------------------------------------------------------
+02.06.2008 -> Version 1.0.1.6 added to SourceSafe (Roman Majewski)
+Description: Added functionality to clustered cache section to allow
+for clustered cache items. Also implemented this mechanism into the 
+BusinessObjectManager.LoadFromCache method.
+
+--------------------------------------------------------------------------
+22.05.2008 -> Version 1.0.1.5 added to SourceSafe (Roman Majewski)
+Description: Added auto insert functionality for clustered caching component
+
+--------------------------------------------------------------------------
+16.05.2008 -> Version 1.0.1.4 added to SourceSafe (Roman Majewski)
+Description: Added a multiple form submit button behaviour control
+
+--------------------------------------------------------------------------
+14.05.2008 -> Version 1.0.1.3 added to SourceSafe (Roman Majewski)
+Description: Fixed exception log view update status bug
+
+--------------------------------------------------------------------------
+14.05.2008 -> Version 1.0.1.2 added to SourceSafe (Roman Majewski)
+Description: Added clustered cache functionality. See the 
+Components\Caching\ClusteredCache.README.txt file for further details. 
+
+--------------------------------------------------------------------------
+12.05.2008 -> Version 1.0.1.1 added to SourceSafe (Roman Majewski)
+Description: A new clustered cache caching mode was added which doesn't
+use Service Broker. See the Components\Caching\ClusteredCache.README.txt file
+for further details. 
+
+--------------------------------------------------------------------------
+12.05.2008 -> Version 1.0.1.0 added to SourceSafe (Roman Majewski)
+Description: A new component was added handling localizable resource text 
+content stored at xml files. See the Components\TextResources\README.txt file
+for further details.
+
+--------------------------------------------------------------------------
+12.05.2008 -> Version 1.0.0.3 added to SourceSafe (Roman Majewski)
+Description: Fixed business object validation bug regarding numeric validation
+with negative numbers.
+
+--------------------------------------------------------------------------
+09.05.2008 -> Version 1.0.0.2 added to SourceSafe (Roman Majewski)
+Description: Added the ClusteredCacheManager class at the caching namespace
+to enable HttpRuntime.Cache synchronization on a cluster. 
+
+--------------------------------------------------------------------------
+15.04.2008 -> Version 1.0.0.1 added to SourceSafe (Roman Majewski)
+Description: updated warnings as errors application settings
+
+--------------------------------------------------------------------------
+15.04.2008 -> Version 1.0.0.0 added to SourceSafe (Roman Majewski)
+
+

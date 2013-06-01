@@ -1,0 +1,30 @@
+<project name="Solution Build Example" default="rebuild">
+
+    <property name="configuration" value="release"/>
+    <property name="projectFolder" value="CommonTools"/>
+    <property name="projectFile" value="CommonTools.csproj"/>
+    <property name="libraryPath" value="../../../Libraries/internal/CommonTools/1.1.4.0"/>
+	<property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"/>  
+    
+	<target name="copyFiles" description="Copy all files to Libraries folder">
+		<copy todir="${libraryPath}">
+			<fileset basedir="${projectFolder}/bin/${configuration}">
+				<include name="*.dll" />
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+	</target>
+        
+    <target name="rebuild" depends="build.commontools copyFiles" />  
+	
+    <target name="build.commontools">
+        <exec program="${MSBuildPath}">
+                <arg line='"${projectFolder}/${projectFile}"' />
+                <arg line="/property:Configuration=${configuration}" />
+                <arg value="/target:Rebuild" />
+                <arg value="/verbosity:normal" />
+                <arg value="/nologo" />
+        </exec>
+    </target>
+    
+</project>

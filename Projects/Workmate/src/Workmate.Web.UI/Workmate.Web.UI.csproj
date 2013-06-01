@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49049FF8-36F9-4FCF-9A4C-1C28F1C5473C}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.Web.UI</RootNamespace>
+    <AssemblyName>Workmate.Web.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonTools, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\internal\CommonTools\CommonTools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\ControlPanelController.cs" />
+    <Compile Include="Controllers\AnnualLeaveController.cs" />
+    <Compile Include="Controllers\HomeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Account\ViewAccountModel.cs" />
+    <Compile Include="Models\Account\SearchAccountModel.cs" />
+    <Compile Include="Models\Account\CreateAccountModel.cs" />
+    <Compile Include="Models\Account\LoginDetailsModel.cs" />
+    <Compile Include="Models\Articles\CreateArticleModel.cs" />
+    <Compile Include="Models\ControlPanel\Departments\DepartmentIndexModel.cs" />
+    <Compile Include="Models\TopMenuModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Themes\wm\default\contents.xml" />
+    <Content Include="Themes\wm\default\contents.scripts.xml" />
+    <Content Include="Themes\wm\default\contents.languages.xml" />
+    <Content Include="Themes\wm\default\contents.countries.xml" />
+    <Content Include="Themes\wm\default\contents.emails.xml" />
+    <Content Include="Themes\wm\default\images\countries\ABW.png" />
+    <Content Include="Themes\wm\default\images\countries\AFG.png" />
+    <Content Include="Themes\wm\default\images\countries\AGO.png" />
+    <Content Include="Themes\wm\default\images\countries\AIA.png" />
+    <Content Include="Themes\wm\default\images\countries\ALA.png" />
+    <Content Include="Themes\wm\default\images\countries\ALB.png" />
+    <Content Include="Themes\wm\default\images\countries\AND.png" />
+    <Content Include="Themes\wm\default\images\countries\ARE.png" />
+    <Content Include="Themes\wm\default\images\countries\ARG.png" />
+    <Content Include="Themes\wm\default\images\countries\ARM.png" />
+    <Content Include="Themes\wm\default\images\countries\ASM.png" />
+    <Content Include="Themes\wm\default\images\countries\ATA.png" />
+    <Content Include="Themes\wm\default\images\countries\ATF.png" />
+    <Content Include="Themes\wm\default\images\countries\ATG.png" />
+    <Content Include="Themes\wm\default\images\countries\AUS.png" />
+    <Content Include="Themes\wm\default\images\countries\AUT.png" />
+    <Content Include="Themes\wm\default\images\countries\AZE.png" />
+    <Content Include="Themes\wm\default\images\countries\BDI.png" />
+    <Content Include="Themes\wm\default\images\countries\BEL.png" />
+    <Content Include="Themes\wm\default\images\countries\BEN.png" />
+    <Content Include="Themes\wm\default\images\countries\BES.png" />
+    <Content Include="Themes\wm\default\images\countries\BFA.png" />
+    <Content Include="Themes\wm\default\images\countries\BGD.png" />
+    <Content Include="Themes\wm\default\images\countries\BGR.png" />
+    <Content Include="Themes\wm\default\images\countries\BHR.png" />
+    <Content Include="Themes\wm\default\images\countries\BHS.png" />
+    <Content Include="Themes\wm\default\images\countries\BIH.png" />
+    <Content Include="Themes\wm\default\images\countries\BLM.png" />
+    <Content Include="Themes\wm\default\images\countries\BLR.png" />
+    <Content Include="Themes\wm\default\images\countries\BLZ.png" />
+    <Content Include="Themes\wm\default\images\countries\BMU.png" />
+    <Content Include="Themes\wm\default\images\countries\BOL.png" />
+    <Content Include="Themes\wm\default\images\countries\BRA.png" />
+    <Content Include="Themes\wm\default\images\countries\BRB.png" />
+    <Content Include="Themes\wm\default\images\countries\BRN.png" />
+    <Content Include="Themes\wm\default\images\countries\BTN.png" />
+    <Content Include="Themes\wm\default\images\countries\BVT.png" />
+    <Content Include="Themes\wm\default\images\countries\BWA.png" />
+    <Content Include="Themes\wm\default\images\countries\CAF.png" />
+    <Content Include="Themes\wm\default\images\countries\CAN.png" />
+    <Content Include="Themes\wm\default\images\countries\CCK.png" />
+    <Content Include="Themes\wm\default\images\countries\CHE.png" />
+    <Content Include="Themes\wm\default\images\countries\CHL.png" />
+    <Content Include="Themes\wm\default\images\countries\CHN.png" />
+    <Content Include="Themes\wm\default\images\countries\CIV.png" />
+    <Content Include="Themes\wm\default\images\countries\CMR.png" />
+    <Content Include="Themes\wm\default\images\countries\CNG.png" />
+    <Content Include="Themes\wm\default\images\countries\COD.png" />
+    <Content Include="Themes\wm\default\images\countries\COG.png" />
+    <Content Include="Themes\wm\default\images\countries\COK.png" />
+    <Content Include="Themes\wm\default\images\countries\COL.png" />
+    <Content Include="Themes\wm\default\images\countries\COM.png" />
+    <Content Include="Themes\wm\default\images\countries\CPV.png" />
+    <Content Include="Themes\wm\default\images\countries\CRI.png" />
+    <Content Include="Themes\wm\default\images\countries\CUB.png" />
+    <Content Include="Themes\wm\default\images\countries\CUW.png" />
+    <Content Include="Themes\wm\default\images\countries\CXR.png" />
+    <Content Include="Themes\wm\default\images\countries\CYM.png" />
+    <Content Include="Themes\wm\default\images\countries\CYP.png" />
+    <Content Include="Themes\wm\default\images\countries\CZE.png" />
+    <Content Include="Themes\wm\default\images\countries\DEU.png" />
+    <Content Include="Themes\wm\default\images\countries\DJI.png" />
+    <Content Include="Themes\wm\default\images\countries\DMA.png" />
+    <Content Include="Themes\wm\default\images\countries\DNK.png" />
+    <Content Include="Themes\wm\default\images\countries\DOM.png" />
+    <Content Include="Themes\wm\default\images\countries\DZA.png" />
+    <Content Include="Themes\wm\default\images\countries\ECU.png" />
+    <Content Include="Themes\wm\default\images\countries\EGY.png" />
+    <Content Include="Themes\wm\default\images\countries\ERI.png" />
+    <Content Include="Themes\wm\default\images\countries\ESH.png" />
+    <Content Include="Themes\wm\default\images\countries\ESP.png" />
+    <Content Include="Themes\wm\default\images\countries\EST.png" />
+    <Content Include="Themes\wm\default\images\countries\ETH.png" />
+    <Content Include="Themes\wm\default\images\countries\FIN.png" />
+    <Content Include="Themes\wm\default\images\countries\FJI.png" />
+    <Content Include="Themes\wm\default\images\countries\FLK.png" />
+    <Content Include="Themes\wm\default\images\countries\FRA.png" />
+    <Content Include="Themes\wm\default\images\countries\FRO.png" />
+    <Content Include="Themes\wm\default\images\countries\FSM.png" />
+    <Content Include="Themes\wm\default\images\countries\GAB.png" />
+    <Content Include="Themes\wm\default\images\countries\GBR.png" />
+    <Content Include="Themes\wm\default\images\countries\GEO.png" />
+    <Content Include="Themes\wm\default\images\countries\GGY.png" />
+    <Content Include="Themes\wm\default\images\countries\GHA.png" />
+    <Content Include="Themes\wm\default\images\countries\GIB.png" />
+    <Content Include="Themes\wm\default\images\countries\GIN.png" />
+    <Content Include="Themes\wm\default\images\countries\GLP.png" />
+    <Content Include="Themes\wm\default\images\countries\GMB.png" />
+    <Content Include="Themes\wm\default\images\countries\GNB.png" />
+    <Content Include="Themes\wm\default\images\countries\GNQ.png" />
+    <Content Include="Themes\wm\default\images\countries\GRC.png" />
+    <Content Include="Themes\wm\default\images\countries\GRD.png" />
+    <Content Include="Themes\wm\default\images\countries\GRL.png" />
+    <Content Include="Themes\wm\default\images\countries\GTM.png" />
+    <Content Include="Themes\wm\default\images\countries\GUF.png" />
+    <Content Include="Themes\wm\default\images\countries\GUM.png" />
+    <Content Include="Themes\wm\default\images\countries\GUY.png" />
+    <Content Include="Themes\wm\default\images\countries\HKG.png" />
+    <Content Include="Themes\wm\default\images\countries\HMD.png" />
+    <Content Include="Themes\wm\default\images\countries\HND.png" />
+    <Content Include="Themes\wm\default\images\countries\HRV.png" />
+    <Content Include="Themes\wm\default\images\countries\HTI.png" />
+    <Content Include="Themes\wm\default\images\countries\HUN.png" />
+    <Content Include="Themes\wm\default\images\countries\IDN.png" />
+    <Content Include="Themes\wm\default\images\countries\IMN.png" />
+    <Content Include="Themes\wm\default\images\countries\IND.png" />
+    <Content Include="Themes\wm\default\images\countries\IOT.png" />
+    <Content Include="Themes\wm\default\images\countries\IRL.png" />
+    <Content Include="Themes\wm\default\images\countries\IRN.png" />
+    <Content Include="Themes\wm\default\images\countries\IRQ.png" />
+    <Content Include="Themes\wm\default\images\countries\ISL.png" />
+    <Content Include="Themes\wm\default\images\countries\ISR.png" />
+    <Content Include="Themes\wm\default\images\countries\ITA.png" />
+    <Content Include="Themes\wm\default\images\countries\JAM.png" />
+    <Content Include="Themes\wm\default\images\countries\JEY.png" />
+    <Content Include="Themes\wm\default\images\countries\JOR.png" />
+    <Content Include="Themes\wm\default\images\countries\JPN.png" />
+    <Content Include="Themes\wm\default\images\countries\KAZ.png" />
+    <Content Include="Themes\wm\default\images\countries\KEN.png" />
+    <Content Include="Themes\wm\default\images\countries\KGZ.png" />
+    <Content Include="Themes\wm\default\images\countries\KHM.png" />
+    <Content Include="Themes\wm\default\images\countries\KIR.png" />
+    <Content Include="Themes\wm\default\images\countries\KNA.png" />
+    <Content Include="Themes\wm\default\images\countries\KOR.png" />
+    <Content Include="Themes\wm\default\images\countries\KWT.png" />
+    <Content Include="Themes\wm\default\images\countries\LAO.png" />
+    <Content Include="Themes\wm\default\images\countries\LBN.png" />
+    <Content Include="Themes\wm\default\images\countries\LBR.png" />
+    <Content Include="Themes\wm\default\images\countries\LBY.png" />
+    <Content Include="Themes\wm\default\images\countries\LCA.png" />
+    <Content Include="Themes\wm\default\images\countries\LIE.png" />
+    <Content Include="Themes\wm\default\images\countries\LKA.png" />
+    <Content Include="Themes\wm\default\images\countries\LSO.png" />
+    <Content Include="Themes\wm\default\images\countries\LTU.png" />
+    <Content Include="Themes\wm\default\images\countries\LUX.png" />
+    <Content Include="Themes\wm\default\images\countries\LVA.png" />
+    <Content Include="Themes\wm\default\images\countries\MAC.png" />
+    <Content Include="Themes\wm\default\images\countries\MAF.png" />
+    <Content Include="Themes\wm\default\images\countries\MAR.png" />
+    <Content Include="Themes\wm\default\images\countries\MCO.png" />
+    <Content Include="Themes\wm\default\images\countries\MDA.png" />
+    <Content Include="Themes\wm\default\images\countries\MDG.png" />
+    <Content Include="Themes\wm\default\images\countries\MDV.png" />
+    <Content Include="Themes\wm\default\images\countries\MEX.png" />
+    <Content Include="Themes\wm\default\images\countries\MHL.png" />
+    <Content Include="Themes\wm\default\images\countries\MKD.png" />
+    <Content Include="Themes\wm\default\images\countries\MLI.png" />
+    <Content Include="Themes\wm\default\images\countries\MLT.png" />
+    <Content Include="Themes\wm\default\images\countries\MMR.png" />
+    <Content Include="Themes\wm\default\images\countries\MNE.png" />
+    <Content Include="Themes\wm\default\images\countries\MNG.png" />
+    <Content Include="Themes\wm\default\images\countries\MNP.png" />
+    <Content Include="Themes\wm\default\images\countries\MOZ.png" />
+    <Content Include="Themes\wm\default\images\countries\MRT.png" />
+    <Content Include="Themes\wm\default\images\countries\MSR.png" />
+    <Content Include="Themes\wm\default\images\countries\MTQ.png" />
+    <Content Include="Themes\wm\default\images\countries\MUS.png" />
+    <Content Include="Themes\wm\default\images\countries\MWI.png" />
+    <Content Include="Themes\wm\default\images\countries\MYS.png" />
+    <Content Include="Themes\wm\default\images\countries\MYT.png" />
+    <Content Include="Themes\wm\default\images\countries\NAM.png" />
+    <Content Include="Themes\wm\default\images\countries\NCL.png" />
+    <Content Include="Themes\wm\default\images\countries\NER.png" />
+    <Content Include="Themes\wm\default\images\countries\NFK.png" />
+    <Content Include="Themes\wm\default\images\countries\NGA.png" />
+    <Content Include="Themes\wm\default\images\countries\NIC.png" />
+    <Content Include="Themes\wm\default\images\countries\NIU.png" />
+    <Content Include="Themes\wm\default\images\countries\NLD.png" />
+    <Content Include="Themes\wm\default\images\countries\NOR.png" />
+    <Content Include="Themes\wm\default\images\countries\NPL.png" />
+    <Content Include="Themes\wm\default\images\countries\NRU.png" />
+    <Content Include="Themes\wm\default\images\countries\NZL.png" />
+    <Content Include="Themes\wm\default\images\countries\OMN.png" />
+    <Content Include="Themes\wm\default\images\countries\PAK.png" />
+    <Content Include="Themes\wm\default\images\countries\PAN.png" />
+    <Content Include="Themes\wm\default\images\countries\PCN.png" />
+    <Content Include="Themes\wm\default\images\countries\PER.png" />
+    <Content Include="Themes\wm\default\images\countries\PHL.png" />
+    <Content Include="Themes\wm\default\images\countries\PLW.png" />
+    <Content Include="Themes\wm\default\images\countries\PNG.png" />
+    <Content Include="Themes\wm\default\images\countries\POL.png" />
+    <Content Include="Themes\wm\default\images\countries\PRI.png" />
+    <Content Include="Themes\wm\default\images\countries\PRK.png" />
+    <Content Include="Themes\wm\default\images\countries\PRT.png" />
+    <Content Include="Themes\wm\default\images\countries\PRY.png" />
+    <Content Include="Themes\wm\default\images\countries\PSE.png" />
+    <Content Include="Themes\wm\default\images\countries\PYF.png" />
+    <Content Include="Themes\wm\default\images\countries\QAT.png" />
+    <Content Include="Themes\wm\default\images\countries\REU.png" />
+    <Content Include="Themes\wm\default\images\countries\ROU.png" />
+    <Content Include="Themes\wm\default\images\countries\RUS.png" />
+    <Content Include="Themes\wm\default\images\countries\RWA.png" />
+    <Content Include="Themes\wm\default\images\countries\SAU.png" />
+    <Content Include="Themes\wm\default\images\countries\SDN.png" />
+    <Content Include="Themes\wm\default\images\countries\SEN.png" />
+    <Content Include="Themes\wm\default\images\countries\SGP.png" />
+    <Content Include="Themes\wm\default\images\countries\SGS.png" />
+    <Content Include="Themes\wm\default\images\countries\SHN.png" />
+    <Content Include="Themes\wm\default\images\countries\SJM.png" />
+    <Content Include="Themes\wm\default\images\countries\SLB.png" />
+    <Content Include="Themes\wm\default\images\countries\SLE.png" />
+    <Content Include="Themes\wm\default\images\countries\SLV.png" />
+    <Content Include="Themes\wm\default\images\countries\SMR.png" />
+    <Content Include="Themes\wm\default\images\countries\SOM.png" />
+    <Content Include="Themes\wm\default\images\countries\SPM.png" />
+    <Content Include="Themes\wm\default\images\countries\SRB.png" />
+    <Content Include="Themes\wm\default\images\countries\SSD.png" />
+    <Content Include="Themes\wm\default\images\countries\STP.png" />
+    <Content Include="Themes\wm\default\images\countries\SUR.png" />
+    <Content Include="Themes\wm\default\images\countries\SVK.png" />
+    <Content Include="Themes\wm\default\images\countries\SVN.png" />
+    <Content Include="Themes\wm\default\images\countries\SWE.png" />
+    <Content Include="Themes\wm\default\images\countries\SWZ.png" />
+    <Content Include="Themes\wm\default\images\countries\SXM.png" />
+    <Content Include="Themes\wm\default\images\countries\SYC.png" />
+    <Content Include="Themes\wm\default\images\countries\SYR.png" />
+    <Content Include="Themes\wm\default\images\countries\TCA.png" />
+    <Content Include="Themes\wm\default\images\countries\TCD.png" />
+    <Content Include="Themes\wm\default\images\countries\TGO.png" />
+    <Content Include="Themes\wm\default\images\countries\THA.png" />
+    <Content Include="Themes\wm\default\images\countries\TJK.png" />
+    <Content Include="Themes\wm\default\images\countries\TKL.png" />
+    <Content Include="Themes\wm\default\images\countries\TKM.png" />
+    <Content Include="Themes\wm\default\images\countries\TLS.png" />
+    <Content Include="Themes\wm\default\images\countries\TON.png" />
+    <Content Include="Themes\wm\default\images\countries\TTO.png" />
+    <Content Include="Themes\wm\default\images\countries\TUN.png" />
+    <Content Include="Themes\wm\default\images\countries\TUR.png" />
+    <Content Include="Themes\wm\default\images\countries\TUV.png" />
+    <Content Include="Themes\wm\default\images\countries\TWN.png" />
+    <Content Include="Themes\wm\default\images\countries\TZA.png" />
+    <Content Include="Themes\wm\default\images\countries\UGA.png" />
+    <Content Include="Themes\wm\default\images\countries\UKR.png" />
+    <Content Include="Themes\wm\default\images\countries\UMI.png" />
+    <Content Include="Themes\wm\default\images\countries\URY.png" />
+    <Content Include="Themes\wm\default\images\countries\USA.png" />
+    <Content Include="Themes\wm\default\images\countries\UZB.png" />
+    <Content Include="Themes\wm\default\images\countries\VAT.png" />
+    <Content Include="Themes\wm\default\images\countries\VCT.png" />
+    <Content Include="Themes\wm\default\images\countries\VEN.png" />
+    <Content Include="Themes\wm\default\images\countries\VGB.png" />
+    <Content Include="Themes\wm\default\images\countries\VIR.png" />
+    <Content Include="Themes\wm\default\images\countries\VNM.png" />
+    <Content Include="Themes\wm\default\images\countries\VUT.png" />
+    <Content Include="Themes\wm\default\images\countries\WLF.png" />
+    <Content Include="Themes\wm\default\images\countries\WSM.png" />
+    <Content Include="Themes\wm\default\images\countries\YEM.png" />
+    <Content Include="Themes\wm\default\images\countries\ZAF.png" />
+    <Content Include="Themes\wm\default\images\countries\ZMB.png" />
+    <Content Include="Themes\wm\default\images\countries\ZWE.png" />
+    <Content Include="Themes\wm\default\images\profileimage_female.png" />
+    <Content Include="Themes\wm\default\images\profileimage_male.png" />
+    <Content Include="Themes\wm\default\images\progressbar.gif" />
+    <Content Include="Themes\wm\default\images\throbber.gif" />
+    <Content Include="Themes\wm\default\scripts\fileupload\canvas-to-blob.min.js" />
+    <Content Include="Themes\wm\default\scripts\fileupload\load-image.min.js" />
+    <Content Include="Themes\wm\default\scripts\fileupload\tmpl.min.js" />
+    <Content Include="Themes\wm\default\scripts\internal\jquery.workmate-1.0.0.js" />
+    <Content Include="Themes\wm\default\scripts\internal\jquery.workmate.content-1.0.0.js" />
+    <Content Include="Themes\wm\default\scripts\jit\jit-2.0.1.min.js" />
+    <Content Include="Themes\wm\default\scripts\jit\jit-2.0.1.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-1.8.0.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.fileupload-ip.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.fileupload-ui.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.fileupload.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.iframe-transport.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-1.5.1.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-1.5.1.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-ui-1.8.11.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery-ui-1.8.11.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.fileupload-ip.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.fileupload-ui.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.fileupload.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.iframe-transport.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.searchabledropdown-1.0.7.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.searchabledropdown-1.0.7.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.ui.selectmenu.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.validate.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Themes\wm\default\scripts\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Themes\wm\default\scripts\modernizr\modernizr-1.7.js" />
+    <Content Include="Themes\wm\default\scripts\modernizr\modernizr-1.7.min.js" />
+    <Content Include="Themes\wm\default\styles\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Themes\wm\default\styles\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Themes\wm\default\styles\bootstrap\css\bootstrap.css" />
+    <Content Include="Themes\wm\default\styles\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Themes\wm\default\styles\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Themes\wm\default\styles\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Themes\wm\default\styles\bootstrap\js\bootstrap.js" />
+    <Content Include="Themes\wm\default\styles\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.fileupload-ui.css" />
+    <Content Include="Themes\wm\default\styles\original_main_1.0.0.css" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-icons_454545_256x240.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-icons_888888_256x240.png" />
+    <Content Include="Themes\wm\default\styles\jquery\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.accordion.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.all.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.autocomplete.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.base.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.button.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.core.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.datepicker.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.dialog.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.progressbar.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.resizable.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.selectable.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.slider.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.tabs.css" />
+    <Content Include="Themes\wm\default\styles\jquery\jquery.ui.theme.css" />
+    <Content Include="Themes\wm\default\styles\main_1.0.0.css" />
+    <Content Include="Themes\wm\default\styles\reset_1.0.0.css" />
+    <Content Include="Views\Home\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Themes\wm\debug_german\" />
+    <Folder Include="Themes\wm\debug_localhost\" />
+    <Folder Include="Themes\wm\default\images\profile\" />
+    <Folder Include="Views\themes\wm\debug_german\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workmate.Components.Contracts\Workmate.Components.Contracts.csproj">
+      <Project>{57495C2D-2E2E-4DA1-874A-D430AA29A75D}</Project>
+      <Name>Workmate.Components.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components.Entities\Workmate.Components.Entities.csproj">
+      <Project>{18DD4A64-70F7-4613-8F29-77B4482C080D}</Project>
+      <Name>Workmate.Components.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components\Workmate.Components.csproj">
+      <Project>{0663AB42-AAF0-4AB1-A7FE-BEF4D3169237}</Project>
+      <Name>Workmate.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Messaging.Contracts\Workmate.Messaging.Contracts.csproj">
+      <Project>{A36CA57A-8011-4C0B-8C60-FF041641E7FD}</Project>
+      <Name>Workmate.Messaging.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Web.Components\Workmate.Web.Components.csproj">
+      <Project>{2217E7A3-B577-48A9-8F90-78952E10D178}</Project>
+      <Name>Workmate.Web.Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\wm\sitemap.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\_AccountInfoWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Shared\_AccountInfoWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Logout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ViewAccount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Account\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_ViewFeedbackHistory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_EditFeedback.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_ViewEducation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_EditEducation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_ViewArticles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_EditAnnualLeave.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_ViewAnnualLeave.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_ViewDepartment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_ViewCV.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\todo_EditCV.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\ViewArticle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Articles\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Articles\ViewArticle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Articles\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Articles\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Shared\_TopMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ClearCache.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Account\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\Account\ViewAccount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Accounts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Wiki.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\License.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\License.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Accounts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Wiki.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\AnnualLeave.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\AnnualLeave.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ViewAccountUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnnualLeave\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnnualLeave\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnnualLeave\Bookings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnnualLeave\Settings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\AnnualLeave\Bookings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\AnnualLeave\Settings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\AnnualLeave\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\AnnualLeave\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Departments_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Departments_Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Departments_Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Departments_Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Departments\ViewDepartment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Departments\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Departments\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Departments\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Departments_View.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Departments\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Offices_Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Offices_View.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Offices_Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Offices_Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Offices_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Offices\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Offices\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Offices\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Offices\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\ControlPanel\Offices\ViewDepartment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\PageNotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\AccessDenied.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\PageNotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\themes\wm\default\AccessDenied.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17267</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MvcMovie</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

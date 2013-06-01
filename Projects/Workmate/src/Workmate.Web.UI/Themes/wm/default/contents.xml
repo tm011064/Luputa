@@ -1,0 +1,39 @@
+﻿<contents>
+
+  <content key="menu_Home">Home</content>
+  <content key="menu_Account">Account</content>
+  <content key="menu_Wiki">Wiki</content>
+  <content key="menu_Wiki_Overview">Overview</content>
+  <content key="menu_Wiki_Search">Search</content>
+  <content key="menu_Wiki_Create">Create</content>
+  <content key="menu_ControlPanel">Settings</content>
+  <content key="menu_ControlPanel_Company">Company</content>
+  <content key="menu_ControlPanel_Accounts">Accounts</content>
+  <content key="menu_ControlPanel_Wiki">Wiki</content>
+  <content key="menu_ControlPanel_License">License</content>
+  <content key="menu_ControlPanel_AnnualLeave">Annual Leave</content>
+  
+  <content key="menu_AnnualLeave">Annual Leave</content>
+  <content key="menu_AnnualLeave_Bookings">Bookings</content>
+  <content key="menu_AnnualLeave_History">History</content>
+  <content key="menu_AnnualLeave_Settings">Settings</content>
+  
+  <content key="menu_ControlPanel_Departments_Create">Create</content>
+  <content key="menu_ControlPanel_Departments">Departments</content>
+  <content key="menu_ControlPanel_Offices_Create">Create</content>
+  <content key="menu_ControlPanel_Offices">Offices</content>
+  
+  <content key="bc_Home">Home</content>
+  <content key="bc_ControlPanel">Settings</content>
+  <content key="bc_ControlPanel_Offices">Offices</content>
+  <content key="bc_ControlPanel_Offices_View">View</content>
+  <content key="bc_ControlPanel_Offices_Edit">Edit</content>
+  <content key="bc_ControlPanel_Offices_Delete">Delete</content>
+  <content key="bc_ControlPanel_Offices_Create">Create</content>  
+  
+  <content key="global_js_permissionDenied">You don't have permission to execute this request. Please ensure that you are logged in.</content>
+  <content key="global_js_generalError">Sorry! There has been an error. Please contact our support team with any enquiries.</content>
+  <content key="global_js_validationFailed">Your input was not valid. Please resolve all conflicts.</content>
+  <content key="global_js_invalidHtml">The HTML you've entered has some errors.</content>
+  
+</contents>

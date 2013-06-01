@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2217E7A3-B577-48A9-8F90-78952E10D178}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.Web.Components</RootNamespace>
+    <AssemblyName>Workmate.Web.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonTools">
+      <HintPath>..\..\lib\internal\CommonTools\CommonTools.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\external\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\lib\external\protobuf\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationMessageHandler.cs" />
+    <Compile Include="Application\ApplicationDataCache.cs" />
+    <Compile Include="Application\ApplicationThemeInfo.cs" />
+    <Compile Include="Application\ApplicationThemeInfoImages.cs" />
+    <Compile Include="Application\Country.cs" />
+    <Compile Include="Application\Interfaces\IApplicationThemeInfoImages.cs" />
+    <Compile Include="Application\Interfaces\IApplicationThemeInfo.cs" />
+    <Compile Include="Application\Interfaces\IApplicationDataCache.cs" />
+    <Compile Include="Application\Interfaces\IWikiLanguageThreadLookupItem.cs" />
+    <Compile Include="Application\Language.cs" />
+    <Compile Include="Application\Sitemaps\Breadcrumb.cs" />
+    <Compile Include="Application\Sitemaps\MenuInfo.cs" />
+    <Compile Include="Application\Sitemaps\MenuItem.cs" />
+    <Compile Include="Application\Sitemaps\Menu.cs" />
+    <Compile Include="Application\WikiLanguageThreadLookupItem.cs" />
+    <Compile Include="BaseController.cs" />
+    <Compile Include="BaseWebViewPage.cs" />
+    <Compile Include="Application\Interfaces\IStaticContentLookup.cs" />
+    <Compile Include="Application\Interfaces\ISitemapLookup.cs" />
+    <Compile Include="Application\Interfaces\IThemeFolderLookup.cs" />
+    <Compile Include="Application\Interfaces\IApplicationContext.cs" />
+    <Compile Include="ContentFormatUtility.cs" />
+    <Compile Include="Emails\EmailPublisher.cs" />
+    <Compile Include="Enumerations\ProfileImageSize.cs" />
+    <Compile Include="Interfaces\IApplicationMessageHandler.cs" />
+    <Compile Include="MagicNumbers.cs" />
+    <Compile Include="MagicStrings.cs" />
+    <Compile Include="RequestContextData.cs" />
+    <Compile Include="RequestHelper.cs" />
+    <Compile Include="RouteHandlers\AuthorizedRequestHandler.cs" />
+    <Compile Include="RouteHandlers\FileUpload\ArticlesFileUploadHandler.cs" />
+    <Compile Include="RouteHandlers\GlobalJavascriptRouteHandler.cs" />
+    <Compile Include="Security\AllowAnonymousAttribute.cs" />
+    <Compile Include="Security\AuthenticationCookieManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Interfaces\ITicketManager.cs" />
+    <Compile Include="Security\TicketManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\WMUserIdentity.cs" />
+    <Compile Include="Security\WMUserPrincipal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\WorkmateAuthorizeAttribute.cs" />
+    <Compile Include="InstanceContainer.cs" />
+    <Compile Include="Application\StaticContentLookup.cs" />
+    <Compile Include="MvcApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Application\Sitemaps\Enumerations\SitemapItemType.cs" />
+    <Compile Include="Application\Sitemaps\RouteTag.cs" />
+    <Compile Include="Application\Sitemaps\SitemapItem.cs" />
+    <Compile Include="Application\Sitemaps\SitemapLookup.cs" />
+    <Compile Include="Application\ApplicationContext.cs" />
+    <Compile Include="Application\ThemeFolderLookup.cs" />
+    <Compile Include="Validation\EmailAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workmate.Components.Contracts\Workmate.Components.Contracts.csproj">
+      <Project>{57495C2D-2E2E-4DA1-874A-D430AA29A75D}</Project>
+      <Name>Workmate.Components.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components.Entities\Workmate.Components.Entities.csproj">
+      <Project>{18DD4A64-70F7-4613-8F29-77B4482C080D}</Project>
+      <Name>Workmate.Components.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components\Workmate.Components.csproj">
+      <Project>{0663AB42-AAF0-4AB1-A7FE-BEF4D3169237}</Project>
+      <Name>Workmate.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Configuration\Workmate.Configuration.csproj">
+      <Project>{6820B266-258C-4D7E-BAEB-F256A0F707C3}</Project>
+      <Name>Workmate.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Data\Workmate.Data.csproj">
+      <Project>{01737C63-4BE2-43C7-B58B-693DD9ED7480}</Project>
+      <Name>Workmate.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Messaging.Contracts\Workmate.Messaging.Contracts.csproj">
+      <Project>{A36CA57A-8011-4C0B-8C60-FF041641E7FD}</Project>
+      <Name>Workmate.Messaging.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Messaging\Workmate.Messaging.csproj">
+      <Project>{8A23A9CC-92E6-4F97-AB50-0D1182B162FB}</Project>
+      <Name>Workmate.Messaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

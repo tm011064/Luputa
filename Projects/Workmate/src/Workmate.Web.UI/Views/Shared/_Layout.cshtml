@@ -1,0 +1,23 @@
+﻿@using Workmate.Web.Components.Application.Sitemaps
+@{    
+  this.RegisterCssInclude("main");
+  this.RegisterCssInclude("reset");
+  this.RegisterCssInclude("bootstrap");
+  this.RegisterJavascriptInclude("modernizr");
+  this.RegisterJavascriptInclude("jquery");
+  this.RegisterJavascriptInclude("jqueryui");
+  this.RegisterJavascriptInclude("bootstrap_scripts");
+}
+<!DOCTYPE html>
+<html>
+<head>
+  @{ this.RenderCssIncludes(); }
+</head>
+<body>
+  @Html.Partial(this.GetThemedViewPath("Shared/_TopMenu.cshtml"), new Workmate.Web.UI.Models.Account.SearchAccountModel())
+  @RenderBody()
+  <div class="container footer"></div>
+  @{ this.RenderJavascriptIncludes(); }
+  @{ this.RenderJavascriptMarkup(); }
+</body>
+</html>

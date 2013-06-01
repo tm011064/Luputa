@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workmate.Installers.Sql", "Workmate.Installers.Sql\Workmate.Installers.Sql.csproj", "{90D41DDD-C626-41F6-A7BE-3867EA264143}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Workmate.Installers.Sql.Installer", "Workmate.Installers.Sql.Installer\Workmate.Installers.Sql.Installer.vdproj", "{3070B316-E9D8-47C6-93D3-F8A06CFFFE13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90D41DDD-C626-41F6-A7BE-3867EA264143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D41DDD-C626-41F6-A7BE-3867EA264143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D41DDD-C626-41F6-A7BE-3867EA264143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D41DDD-C626-41F6-A7BE-3867EA264143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3070B316-E9D8-47C6-93D3-F8A06CFFFE13}.Debug|Any CPU.ActiveCfg = Debug
+		{3070B316-E9D8-47C6-93D3-F8A06CFFFE13}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

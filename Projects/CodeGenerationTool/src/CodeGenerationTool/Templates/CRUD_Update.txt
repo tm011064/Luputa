@@ -1,0 +1,16 @@
+﻿CREATE PROCEDURE [<# schemaName #>].[<# tableName #>_Update]
+(
+<# updateParameters #>
+)
+AS
+BEGIN
+
+  SET NOCOUNT ON;
+
+  UPDATE  [<# schemaName #>].[<# tableName #>] 
+  SET     <# updateSetParameters #>
+  WHERE   <# whereClause #>
+	
+  RETURN @@ROWCOUNT;
+  
+END

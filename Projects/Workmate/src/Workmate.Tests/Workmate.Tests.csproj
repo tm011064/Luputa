@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{081208A1-D32E-43D4-9FF2-B14CBCA80C75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.Tests</RootNamespace>
+    <AssemblyName>Workmate.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\lib\External\Autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonTools">
+      <HintPath>..\..\lib\Internal\CommonTools\CommonTools.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\lib\external\NSubstitute\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\external\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Web\Test_ContentFormatter.cs" />
+    <Compile Include="DataAccess\SqlProvider\BulkDataCreationHelper.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Articles\Test_ArticleGroupThreads.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Articles\Test_ArticleGroups.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Articles\Test_Articles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Content\Test_ContentPlaceholderGroup.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Content\Test_ContentPlaceholderHistory.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Content\Test_ContentPlaceholder.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Content\Test_ContentBlocks.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Membership\Test_SystemProfileImages.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Membership\Test_ProfileImages.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\MessageBoards\Test_MessageBoardRatings.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\MessageBoards\Test_MessageBoardThreads.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\MessageBoards\Test_MessageBoards.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\MessageBoards\Test_Messages.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\PrivateMessages\Test_PrivateMessages.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\PrivateMessages\Test_Folders.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\PrivateMessages\Test_Inboxes.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSContentLevelNodes.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSContentUser.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSContentRatings.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSContents.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSFiles.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSThreadRatings.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSThreads.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSSections.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\CMS\Test_CMSGroups.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\Company\Test_Departments.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\Company\Test_Offices.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\Emails\Test_Emails.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\Membership\Test_WorkmateMembershipProvider.cs" />
+    <Compile Include="DataAccess\SqlProvider\Components\Test_Applications.cs" />
+    <Compile Include="DataAccess\SqlProvider\TestSetup.cs" />
+    <Compile Include="DataAccess\BaseTestSetup.cs" />
+    <Compile Include="Performance\Autofac\PerformanceTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataAccess\SqlProvider\SetupScript.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workmate.Components.Contracts\Workmate.Components.Contracts.csproj">
+      <Project>{57495C2D-2E2E-4DA1-874A-D430AA29A75D}</Project>
+      <Name>Workmate.Components.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components.Entities\Workmate.Components.Entities.csproj">
+      <Project>{18DD4A64-70F7-4613-8F29-77B4482C080D}</Project>
+      <Name>Workmate.Components.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components\Workmate.Components.csproj">
+      <Project>{0663AB42-AAF0-4AB1-A7FE-BEF4D3169237}</Project>
+      <Name>Workmate.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Configuration\Workmate.Configuration.csproj">
+      <Project>{6820B266-258C-4D7E-BAEB-F256A0F707C3}</Project>
+      <Name>Workmate.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Data.SqlProvider\Workmate.Data.SqlProvider.csproj">
+      <Project>{09994B9F-AC30-4981-9B76-FC6ED064B9A5}</Project>
+      <Name>Workmate.Data.SqlProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Data\Workmate.Data.csproj">
+      <Project>{01737C63-4BE2-43C7-B58B-693DD9ED7480}</Project>
+      <Name>Workmate.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Web.Components\Workmate.Web.Components.csproj">
+      <Project>{2217E7A3-B577-48A9-8F90-78952E10D178}</Project>
+      <Name>Workmate.Web.Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAccess\DummyData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

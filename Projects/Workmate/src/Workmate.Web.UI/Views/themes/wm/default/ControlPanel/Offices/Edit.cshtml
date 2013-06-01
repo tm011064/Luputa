@@ -1,0 +1,98 @@
+﻿@using Workmate.Components.Contracts.Company
+@model IOfficeModel
+
+@{
+    this.RegisterJavascriptInclude("validate");
+    this.RegisterJavascriptInclude("validateUnobtrusive");
+    this.RegisterJavascriptInclude("selectmenu");   
+}       
+
+<div class="container content">
+  <div class="header">
+    <span>Edit office: @if (string.IsNullOrWhiteSpace(this.Model.Name)) { <text>@Model.AddressLine1</text> } else { <text>@Model.Name</text> }</span>
+    <a class="pull-right" href="@Url.Action("Offices_Index","ControlPanel")">go back</a>
+  </div>
+  <p>Here you can edit office details TODO (Roman): validation</p>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "createForm", @class = "form-horizontal" }))
+{    
+  
+  <div class="control-group">
+	  <label class="control-label" for="Name">Name</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Name, new { @maxlength = "256", @placeholder = "ie: Main Building" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Address">Address</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.AddressLine1, new { @maxlength = "256", @placeholder = "Line 1" })
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      @Html.TextBoxFor(model => model.AddressLine2, new { @maxlength = "256", @placeholder = "Line 2" })
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      @Html.TextBoxFor(model => model.AddressLine3, new { @maxlength = "256", @placeholder = "Line 3" })
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      @Html.TextBoxFor(model => model.AddressLine4, new { @maxlength = "256", @placeholder = "Line 4" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="PostCode">Post Code</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.PostCode, new { @maxlength = "256", @placeholder = "Post Code" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Location">City/Town</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Location, new { @maxlength = "256", @placeholder = "City/Town" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Country">Country</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Country, new { @maxlength = "256", @placeholder = "Country" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="ContactNumber">Contact Number</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.ContactNumber, new { @maxlength = "256", @placeholder = "ie: +44 1234 333 555" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Fax">Fax</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Fax, new { @maxlength = "256", @placeholder = "ie: +44 1234 333 555" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Email">Email</label>
+    <div class="controls">
+      @Html.TextBoxFor(model => model.Email, new { @maxlength = "256", @placeholder = "ie: info@company.com" })
+    </div>
+  </div>
+  <div class="control-group">
+	  <label class="control-label" for="Description">Description</label>
+    <div class="controls">
+      @Html.TextAreaFor(model => model.Description, new { @maxlength = "256", @placeholder = "Description" })
+    </div>
+  </div> 
+  
+  <div class="control-group">
+    <div class="controls">    
+      <button class="btn" type="submit">Save &amp; Return</button>
+      <a href="@Url.Action("Offices_Index","ControlPanel")">Cancel</a>
+    </div>
+  </div>
+}
+
+</div>

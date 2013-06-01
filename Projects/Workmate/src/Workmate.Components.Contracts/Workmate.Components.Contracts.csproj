@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57495C2D-2E2E-4DA1-874A-D430AA29A75D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.Components.Contracts</RootNamespace>
+    <AssemblyName>Workmate.Components.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonTools">
+      <HintPath>..\..\lib\internal\CommonTools\CommonTools.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CMS\Articles\IArticleCategoryModel.cs" />
+    <Compile Include="CMS\Articles\IArticleAttachment.cs" />
+    <Compile Include="CMS\Articles\IArticleAttachmentModel.cs" />
+    <Compile Include="CMS\Articles\Enumerations\ArticleGroupThreadStatus.cs" />
+    <Compile Include="CMS\Articles\Enumerations\ArticleImageSize.cs" />
+    <Compile Include="CMS\Articles\Enumerations\ArticleStatus.cs" />
+    <Compile Include="CMS\Articles\Enumerations\ArticleType.cs" />
+    <Compile Include="CMS\Articles\IArticleManager.cs" />
+    <Compile Include="CMS\Articles\IArticleModel.cs" />
+    <Compile Include="CMS\Content\Enumerations\ContentBlockStatus.cs" />
+    <Compile Include="CMS\Enumerations\CMSGroupType.cs" />
+    <Compile Include="CMS\Enumerations\CMSSectionType.cs" />
+    <Compile Include="CMS\Enumerations\LinkedThreadRelationshipType.cs" />
+    <Compile Include="CMS\Enumerations\RatingDataStoreActionStatus.cs" />
+    <Compile Include="CMS\Enumerations\FileType.cs" />
+    <Compile Include="CMS\ICMSConentLevelNode.cs" />
+    <Compile Include="CMS\MessageBoards\Enumerations\MessageRatingType.cs" />
+    <Compile Include="CMS\MessageBoards\Enumerations\MessageStatus.cs" />
+    <Compile Include="CMS\MessageBoards\IMessage.cs" />
+    <Compile Include="CMS\PrivateMessages\Enumerations\MessageStatus.cs" />
+    <Compile Include="CMS\PrivateMessages\Enumerations\MessageType.cs" />
+    <Compile Include="Company\IDepartmentWithOfficesModel.cs" />
+    <Compile Include="Company\IDepartmentManager.cs" />
+    <Compile Include="Company\IDepartmentModel.cs" />
+    <Compile Include="Company\IOfficeManager.cs" />
+    <Compile Include="Company\IOfficeModel.cs" />
+    <Compile Include="Emails\EmailType.cs" />
+    <Compile Include="Emails\EmailPriority.cs" />
+    <Compile Include="Emails\EmailStatus.cs" />
+    <Compile Include="Emails\IEmail.cs" />
+    <Compile Include="Emails\IEmailManager.cs" />
+    <Compile Include="Enumerations\DataRepositoryActionStatus.cs" />
+    <Compile Include="IApplication.cs" />
+    <Compile Include="IApplicationManager.cs" />
+    <Compile Include="IBaseModel.cs" />
+    <Compile Include="Interfaces\IProtobufSerializable.cs" />
+    <Compile Include="ITheme.cs" />
+    <Compile Include="Membership\IWorkmateRoleProvider.cs" />
+    <Compile Include="Membership\Enumerations\Gender.cs" />
+    <Compile Include="Membership\IUserModel.cs" />
+    <Compile Include="Membership\IBaseUserModel.cs" />
+    <Compile Include="Membership\IMembershipSettings.cs" />
+    <Compile Include="Membership\IWorkmateMembershipProvider.cs" />
+    <Compile Include="Membership\Enumerations\AccountStatus.cs" />
+    <Compile Include="Membership\Enumerations\ChangeCredentialsStatus.cs" />
+    <Compile Include="Membership\Enumerations\ChangePasswordStatus.cs" />
+    <Compile Include="Membership\Enumerations\UserCreateStatus.cs" />
+    <Compile Include="Membership\Enumerations\UserNameDisplayMode.cs" />
+    <Compile Include="Membership\Enumerations\UserRole.cs" />
+    <Compile Include="Membership\Enumerations\ValidatePasswordStatus.cs" />
+    <Compile Include="Membership\Enumerations\ValidateUserStatus.cs" />
+    <Compile Include="Membership\IUserBasic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

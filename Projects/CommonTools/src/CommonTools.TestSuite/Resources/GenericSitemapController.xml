@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MockupSitemapControllerFromGeneric>
+  
+  <page name="UrlRewriteTest_HomeSpecial" parentName="UrlRewriteTest_Home" title="FirstTitle" breadcrumbTitle="First" 
+        directory="~/UrlRewriteTest/" filepath="SpecialTestTheme/Default.aspx" pattern="SpecialTestTheme/Default.aspx" vanity="/Default.aspx?theme=123" />
+  <page name="UrlRewriteTest_HomeSpecial_Special1" parentName="UrlRewriteTest_HomeSpecial" breadcrumbTitle="Second" title="SecondTitle"
+        directory="~/UrlRewriteTest/" filepath="SpecialTestTheme2/Default.aspx" pattern="SpecialTestTheme2/Default.aspx" vanity="/Default.aspx?theme=124" />
+  <page name="UrlRewriteTest_HomeSpecial_Special2" parentName="UrlRewriteTest_HomeSpecial_Special1" breadcrumbTitle="Third" title="ThirdTitle"
+        directory="~/UrlRewriteTest/" filepath="SpecialTestTheme3/Default.aspx" pattern="SpecialTestTheme3/Default.aspx" vanity="/Default.aspx?theme=125" />
+
+  <page name="UrlRewriteTest_Home" breadcrumbTitle="Root"
+        directory="~/UrlRewriteTest" filepath="/Default.aspx" pattern="/([a-zA-Z]*)/Default.aspx" vanity="/Default.aspx?theme=$1" />
+
+  <page name="Home" directory="~/" filepath="Default.aspx" />
+  
+</MockupSitemapControllerFromGeneric>

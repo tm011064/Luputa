@@ -1,0 +1,67 @@
+﻿<contents>
+
+  <!-- Code -->
+  <content key="js_globals">
+    //Cufon.replace('h1.page-heading:not(.no-cufon), h3.sub-heading, h2.club-heading, .articles-list li h3, p.prize-heading1, p.prize-heading2, #newsItems .item-content h3, #pitch #teamTop h1, div.points-display h1, h2.article-heading, p.subheading, #mainContent #intro h1');
+    // TODO (Roman): cufon font
+    try {
+      console.log('console available...done')
+    } catch (e) {
+      console = {
+        log: function () {}
+      }
+    }(function ($) {
+      $.workmate = {}
+    })(jQuery);
+    (function ($) {
+      $.workmate.global = {
+        history: {},
+        services: {
+          userController: {
+            url: '/Account/',
+            methods: {
+              IsUsernameValid: 'IsUsernameValid'
+            }
+          },
+          articlesController: {
+            url: '/wm/Articles/',
+            methods: {
+              GetArticleCategories: 'Create/LoadCategories'
+            }
+          },
+          contentController: {
+            url: '/Content/',
+            methods: {
+              GetArticleCategories: 'GetArticleCategories',
+              UpdateContentBlock: 'UpdateContentBlock',
+              CropProfileImage: 'CropProfileImage',
+              DeleteMessage: 'DeleteMessage',
+              ReplyToMessage: 'ReplyToMessage',
+              RateMessage: 'RateMessage',
+              DeleteCroppedProfileImage: 'DeleteCroppedProfileImage'
+            }
+          },
+          logController: {
+            url: '/LogController/',
+            methods: {
+              LogException: 'LogException'
+            }
+          }
+        },
+        text: {
+          permissionDenied: '##content(global_js_permissionDenied)##',
+          generalError: '##content(global_js_generalError)##',
+          validationFailed: '##content(global_js_validationFailed)##',
+          invalidHtml: '##content(global_js_invalidHtml)##'
+        },
+        paths: {
+          throbber: '##url(images/throbber.gif)##'
+        }
+      }
+    })(jQuery);
+    $(document).ready(function () {
+
+    });
+  </content>
+  
+</contents>

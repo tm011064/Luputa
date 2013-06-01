@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0663AB42-AAF0-4AB1-A7FE-BEF4D3169237}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workmate.Components</RootNamespace>
+    <AssemblyName>Workmate.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonTools, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Internal\CommonTools\CommonTools.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\External\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\lib\external\lucene.net\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationManager.cs" />
+    <Compile Include="CMS\Articles\ArticleAttachmentManager.cs" />
+    <Compile Include="CMS\Articles\ArticleGroupManager.cs" />
+    <Compile Include="CMS\Articles\ArticleGroupThreadManager.cs" />
+    <Compile Include="CMS\Articles\ArticleImageManager.cs" />
+    <Compile Include="CMS\Articles\ArticleManager.cs" />
+    <Compile Include="CMS\BaseCMSManager.cs" />
+    <Compile Include="CMS\CMSContentManager.cs" />
+    <Compile Include="CMS\CMSContentRatingManager.cs" />
+    <Compile Include="CMS\CMSContentUserManager.cs" />
+    <Compile Include="CMS\CMSFileManager.cs" />
+    <Compile Include="CMS\CMSGroupManager.cs" />
+    <Compile Include="CMS\CMSSectionManager.cs" />
+    <Compile Include="CMS\CMSTagManager.cs" />
+    <Compile Include="CMS\CMSThreadManager.cs" />
+    <Compile Include="CMS\CMSThreadRatingManager.cs" />
+    <Compile Include="CMS\Content\ContentBlockManager.cs" />
+    <Compile Include="CMS\Content\ContentPlaceholderGroupManager.cs" />
+    <Compile Include="CMS\Content\ContentPlaceholderHistoryManager.cs" />
+    <Compile Include="CMS\Content\ContentPlaceholderManager.cs" />
+    <Compile Include="CMS\Content\ContentUpdateStatus.cs" />
+    <Compile Include="CMS\CMSContentLevelNodeManager.cs" />
+    <Compile Include="CMS\Membership\SystemProfileImageManager.cs" />
+    <Compile Include="CMS\MessageBoards\MessageBoardManager.cs" />
+    <Compile Include="CMS\MessageBoards\MessageBoardThreadManager.cs" />
+    <Compile Include="CMS\MessageBoards\MessageManager.cs" />
+    <Compile Include="CMS\MessageBoards\MessageRatingManager.cs" />
+    <Compile Include="CMS\PrivateMessages\FolderManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CMS\PrivateMessages\InboxManager.cs" />
+    <Compile Include="CMS\PrivateMessages\PrivateMessageManager.cs" />
+    <Compile Include="CMS\Membership\ProfileImageManager.cs" />
+    <Compile Include="CMS\TripleTagKeys.cs" />
+    <Compile Include="Company\DepartmentManager.cs" />
+    <Compile Include="Company\OfficeManager.cs" />
+    <Compile Include="Emails\EmailManager.cs" />
+    <Compile Include="Membership\AuthenticationHelper.cs" />
+    <Compile Include="Membership\MembershipSettings.cs" />
+    <Compile Include="Membership\WorkmateMembershipProvider.cs" />
+    <Compile Include="Membership\WorkmateRoleProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InstanceContainer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workmate.Components.Contracts\Workmate.Components.Contracts.csproj">
+      <Project>{57495C2D-2E2E-4DA1-874A-D430AA29A75D}</Project>
+      <Name>Workmate.Components.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Components.Entities\Workmate.Components.Entities.csproj">
+      <Project>{18DD4A64-70F7-4613-8F29-77B4482C080D}</Project>
+      <Name>Workmate.Components.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Configuration\Workmate.Configuration.csproj">
+      <Project>{6820B266-258C-4D7E-BAEB-F256A0F707C3}</Project>
+      <Name>Workmate.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workmate.Data\Workmate.Data.csproj">
+      <Project>{01737C63-4BE2-43C7-B58B-693DD9ED7480}</Project>
+      <Name>Workmate.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SearchEngine\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
