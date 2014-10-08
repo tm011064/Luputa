@@ -186,6 +186,7 @@
     <Compile Include="Components\Threading\JobControllerFactory.cs" />
     <Compile Include="Components\Threading\JobSectionManager.cs" />
     <Compile Include="Core\CatastrophicException.cs" />
+    <Compile Include="Core\Collections\ChangeTrackingObservableCollection.cs" />
     <Compile Include="Core\Collections\Generic\LimitedQueue.cs" />
     <Compile Include="Core\CompareHelper.cs" />
     <Compile Include="Core\BaseException.cs" />
