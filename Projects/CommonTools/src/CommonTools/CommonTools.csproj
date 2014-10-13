@@ -321,6 +321,7 @@
     <Compile Include="Components\BusinessTier\BusinessObjectValidationResult.cs" />
     <Compile Include="Components\BusinessTier\Enumerations\ValidationStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WPF\BaseViewModel.cs" />
     <Compile Include="WPF\HotkeyMappingManager.cs" />
     <Compile Include="Xml\Attributes\CascadableAttribute.cs" />
     <Compile Include="Xml\Attributes\XmlExtraInfoAttribute.cs" />
